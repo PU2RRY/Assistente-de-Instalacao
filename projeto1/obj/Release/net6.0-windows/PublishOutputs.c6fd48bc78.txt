@@ -1,0 +1,8 @@
+C:\projeto1.exe
+C:\projeto1.dll
+C:\projeto1.deps.json
+C:\projeto1.runtimeconfig.json
+C:\projeto1.pdb
+C:\System.CodeDom.dll
+C:\System.Management.dll
+C:\runtimes\win\lib\net6.0\System.Management.dll

@@ -1,0 +1,8 @@
+C:\Users\Micro\Documents\Meu Projeto\projeto1.exe
+C:\Users\Micro\Documents\Meu Projeto\projeto1.dll
+C:\Users\Micro\Documents\Meu Projeto\projeto1.deps.json
+C:\Users\Micro\Documents\Meu Projeto\projeto1.runtimeconfig.json
+C:\Users\Micro\Documents\Meu Projeto\projeto1.pdb
+C:\Users\Micro\Documents\Meu Projeto\System.CodeDom.dll
+C:\Users\Micro\Documents\Meu Projeto\System.Management.dll
+C:\Users\Micro\Documents\Meu Projeto\runtimes\win\lib\net6.0\System.Management.dll

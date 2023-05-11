@@ -1,0 +1,48 @@
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.exe
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.deps.json
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.runtimeconfig.json
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.pdb
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\System.CodeDom.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\System.Management.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.AssemblyReference.cache
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.MenuPrincipal.resources
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.Form2.resources
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.Form3.resources
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente_de_Instalação.Properties.Resources.resources
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.GenerateResource.cache
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.AssemblyInfoInputs.cache
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.AssemblyInfo.cs
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.CoreCompileInputs.cache
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.CopyComplete
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\refint\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.pdb
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.genruntimeconfig.cache
+C:\Users\Micro\Desktop\projeto1\projeto1\obj\Debug\net6.0-windows\ref\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.exe
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.deps.json
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.runtimeconfig.json
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\Assistente de Instalação.pdb
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\System.CodeDom.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\System.Management.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.AssemblyReference.cache
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.MenuPrincipal.resources
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.Form2.resources
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\projeto1.Form3.resources
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente_de_Instalação.Properties.Resources.resources
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.GenerateResource.cache
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.AssemblyInfoInputs.cache
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.AssemblyInfo.cs
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.CoreCompileInputs.cache
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.csproj.CopyComplete
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\refint\Assistente de Instalação.dll
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.pdb
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\Assistente de Instalação.genruntimeconfig.cache
+C:\Users\Micro\Desktop\ARQUIVOS\Assistente RODRIGO\projeto1\projeto1\obj\Debug\net6.0-windows\ref\Assistente de Instalação.dll

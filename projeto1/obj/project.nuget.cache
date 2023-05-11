@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KgJqGYDENrWKR5F312TrGVKbaDCOEOIpnUNv1kRokoqiG57cHzi3HFHAjg66RJ0DGCOLn5RiTg5NMmbVjHQuWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\Assistente de Instalação.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Micro\\.nuget\\packages\\system.codedom\\8.0.0-preview.3.23174.8\\system.codedom.8.0.0-preview.3.23174.8.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\system.management\\8.0.0-preview.3.23174.8\\system.management.8.0.0-preview.3.23174.8.nupkg.sha512"
+  ],
+  "logs": []
+}
