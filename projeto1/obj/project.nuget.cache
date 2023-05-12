@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UOreuAGMKVvPspNLSazHxA1Rw2BduYVrvCWjyWXdOLmFYVD3L3GH3cYMa4HUItKXkHijbQ/A74ttdPnEMtgURw==",
+  "dgSpecHash": "CWYTrpuVD3cAZoO/CGcIFtGu1ltUT6eAm6F2naoJ6nHe1IA0DsqdIA5GEALsxfrzUQQ3u+b0K5zyhxXiS0BWXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\system.codedom\\8.0.0-preview.3.23174.8\\system.codedom.8.0.0-preview.3.23174.8.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.management\\8.0.0-preview.3.23174.8\\system.management.8.0.0-preview.3.23174.8.nupkg.sha512"
