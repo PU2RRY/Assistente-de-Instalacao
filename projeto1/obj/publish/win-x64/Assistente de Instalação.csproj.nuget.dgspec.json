@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\Assistente de Instalação.csproj": {}
+    "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\Assistente de Instalação.csproj": {
+    "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\Assistente de Instalação.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
         "projectName": "Assistente de Instalação",
-        "projectPath": "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\Assistente de Instalação.csproj",
-        "packagesPath": "C:\\Users\\Micro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micro\\Desktop\\ARQUIVOS\\Assistente RODRIGO\\projeto1\\projeto1\\obj\\publish\\win-x64\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,8 +42,8 @@
         }
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "dependencies": {
             "System.Management": {
               "target": "Package",
@@ -56,6 +61,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[7.0.5, 7.0.5]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
