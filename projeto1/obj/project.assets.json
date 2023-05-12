@@ -119,11 +119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "projectUniqueName": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
       "projectName": "Assistente de Instalação",
-      "projectPath": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\obj\\",
+      "projectPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "packagesPath": "C:\\Users\\Micro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
