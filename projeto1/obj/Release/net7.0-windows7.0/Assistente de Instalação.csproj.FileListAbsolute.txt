@@ -22,4 +22,56 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\ob
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.pdb
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.genruntimeconfig.cache
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\ref\Assistente de Instalação.dll
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Forms.BackupLogsForm.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.exe
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.deps.json
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.runtimeconfig.json
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.pdb
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\System.CodeDom.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\System.Management.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Forms.BackupLogsForm.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.PingForm.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.MenuPrincipal.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.RenomeiaMaquinaForm.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Properties.Resources.resources
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.GenerateResource.cache
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.AssemblyInfo.cs
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.CopyComplete
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\refint\Assistente de Instalação.dll
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.pdb
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.genruntimeconfig.cache
+C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\ref\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.exe
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.deps.json
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.runtimeconfig.json
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.pdb
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\System.CodeDom.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\System.Management.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Forms.BackupLogsForm.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.PingForm.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.MenuPrincipal.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.RenomeiaMaquinaForm.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Properties.Resources.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.GenerateResource.cache
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.AssemblyInfoInputs.cache
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.AssemblyInfo.cs
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.CopyComplete
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\refint\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.pdb
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.genruntimeconfig.cache
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\ref\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\obj\MAS.bat
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\obj\Resources.resx
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.obj.Resources.resources

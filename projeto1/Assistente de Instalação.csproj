@@ -15,6 +15,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="MAS.bat" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="obj\Resources.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\MAS.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Management" Version="8.0.0-preview.3.23174.8" />
   </ItemGroup>
 

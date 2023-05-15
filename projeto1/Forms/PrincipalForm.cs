@@ -1,14 +1,21 @@
+using System;
 using System.Diagnostics;
 using System.IO.Enumeration;
+using System.Reflection;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using Assistente_de_Instalação.Forms;
+using System.ServiceProcess;
 
 namespace projeto1
 {
+
     public partial class MenuPrincipal : Form
     {
+        public object ServiceControllerStatus { get; private set; }
+
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -21,14 +28,13 @@ namespace projeto1
         private void button1_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
-            form2.FormClosed += Form2_FormClosed; // Assine o evento FormClosed            
             OcultaExibForm(false);
             form2.ShowDialog();
             OcultaExibForm(true);
         }
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //   this.Show(); // Exibe o Form1 novamente quando o Form2 for fechado
+
         }
         private void BT2_Click(object sender, EventArgs e)
         {
@@ -95,6 +101,53 @@ namespace projeto1
             OcultaExibForm(false);
             form.ShowDialog();
             OcultaExibForm(true);
+        }
+        private void ColocaAppIniciarWin_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", "shell:Startup");
+        }
+        private void AtivaRecursos_Click(object sender, EventArgs e)
+        {
+            Process.Start("optionalfeatures");
+        }
+
+        private void MasAtivador_Click(object sender, EventArgs e)
+        {
+            string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.bat");
+            Process.Start(mas);
+            
+        }
+
+        private void ReiniciaSpooler_Click(object sender, EventArgs e)
+        {
+            lbSpooler.Text = "AGUARDE..";
+            string serviço = "spooler";
+
+            Spooler("net stop " + serviço);
+            Spooler("net start " + serviço);
+
+            // MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            lbSpooler.Text = "FINALIZADO";
+        }
+        private void Spooler(string command)
+        {
+            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command);
+            processInfo.CreateNoWindow = true;
+            processInfo.UseShellExecute = false;
+            processInfo.RedirectStandardError = true;
+            processInfo.RedirectStandardOutput = true;
+
+            using (Process process = new Process())
+            {
+                process.StartInfo = processInfo;
+                process.Start();
+                process.WaitForExit();
+            }
+        }
+
+        private void Mensagem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("TESTE DE ICONE DA MANSAGEM", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -1,0 +1,4 @@
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.pdb
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\MAS.bat
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\Resources.resx
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.exe
