@@ -1,13 +1,6 @@
-using System;
 using System.Diagnostics;
-using System.IO.Enumeration;
-using System.Reflection;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Windows.Forms.VisualStyles;
 using Assistente_de_Instalação.Forms;
-using System.ServiceProcess;
+
 
 namespace projeto1
 {
@@ -117,11 +110,19 @@ namespace projeto1
             Process.Start(mas);
 
         }
-
+        private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
+        {
+            DirectoryInfo diSource = new(dir);
+            return diSource.GetFiles().Where(w=>w.Extension.Equals(ext, StringComparison.OrdinalIgnoreCase)).ToList();
+            //return diSource.GetFiles().Where(w => w.Extension.ToLower() == ext.ToLower()).ToList();
+        }
         private void ReiniciaSpooler_Click(object sender, EventArgs e)
         {
             string serviço = "spooler";
             Spooler("net stop " + serviço);
+            var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
+            txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
+            txtFiles.ForEach(f => { File.Delete(f.FullName);});
             Spooler("net start " + serviço);
             MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -140,7 +141,6 @@ namespace projeto1
                 process.WaitForExit();
             }
         }
-
         private void Mensagem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("TESTE DE ICONE DA MENSAGEM", "TESTE DE MENSAGEM", MessageBoxButtons.OK, MessageBoxIcon.Question);
