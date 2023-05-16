@@ -115,27 +115,23 @@ namespace projeto1
         {
             string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.bat");
             Process.Start(mas);
-            
+
         }
 
         private void ReiniciaSpooler_Click(object sender, EventArgs e)
         {
-            lbSpooler.Text = "AGUARDE..";
             string serviço = "spooler";
-
             Spooler("net stop " + serviço);
             Spooler("net start " + serviço);
-
-            // MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            lbSpooler.Text = "FINALIZADO";
+            MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void Spooler(string command)
         {
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command);
-            processInfo.CreateNoWindow = true;
+            processInfo.CreateNoWindow = false;
             processInfo.UseShellExecute = false;
             processInfo.RedirectStandardError = true;
-            processInfo.RedirectStandardOutput = true;
+            processInfo.RedirectStandardOutput = false;
 
             using (Process process = new Process())
             {
@@ -147,7 +143,7 @@ namespace projeto1
 
         private void Mensagem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TESTE DE ICONE DA MANSAGEM", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("TESTE DE ICONE DA MENSAGEM", "TESTE DE MENSAGEM", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }

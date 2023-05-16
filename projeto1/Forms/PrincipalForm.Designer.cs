@@ -42,7 +42,6 @@
             MasAtivador = new Button();
             ReiniciaSpooler = new Button();
             Mensagem = new Button();
-            lbSpooler = new Label();
             SuspendLayout();
             // 
             // BT1REDE
@@ -94,7 +93,7 @@
             BT3PainelControle.BackColor = Color.DodgerBlue;
             BT3PainelControle.FlatStyle = FlatStyle.Flat;
             BT3PainelControle.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BT3PainelControle.Location = new Point(12, 162);
+            BT3PainelControle.Location = new Point(12, 159);
             BT3PainelControle.Name = "BT3PainelControle";
             BT3PainelControle.Size = new Size(301, 40);
             BT3PainelControle.TabIndex = 3;
@@ -235,7 +234,7 @@
             Mensagem.FlatStyle = FlatStyle.Flat;
             Mensagem.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             Mensagem.ForeColor = SystemColors.ControlText;
-            Mensagem.Location = new Point(319, 208);
+            Mensagem.Location = new Point(319, 438);
             Mensagem.Name = "Mensagem";
             Mensagem.Size = new Size(187, 40);
             Mensagem.TabIndex = 12;
@@ -243,24 +242,12 @@
             Mensagem.UseVisualStyleBackColor = false;
             Mensagem.Click += Mensagem_Click;
             // 
-            // lbSpooler
-            // 
-            lbSpooler.AutoSize = true;
-            lbSpooler.BackColor = Color.FromArgb(0, 0, 64);
-            lbSpooler.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            lbSpooler.ForeColor = Color.Crimson;
-            lbSpooler.Location = new Point(319, 162);
-            lbSpooler.Name = "lbSpooler";
-            lbSpooler.Size = new Size(0, 30);
-            lbSpooler.TabIndex = 13;
-            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(516, 491);
-            Controls.Add(lbSpooler);
             Controls.Add(Mensagem);
             Controls.Add(ReiniciaSpooler);
             Controls.Add(MasAtivador);
@@ -300,6 +287,5 @@
         private Button MasAtivador;
         private Button ReiniciaSpooler;
         private Button Mensagem;
-        private Label lbSpooler;
     }
 }
