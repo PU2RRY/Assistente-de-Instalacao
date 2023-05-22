@@ -44,6 +44,20 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
+          "dependencies": {
+            "DeviceId": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "DeviceId.Windows": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "DeviceId.Windows.Wmi": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

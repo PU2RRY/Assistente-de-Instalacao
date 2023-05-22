@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Assistente_de_Instalação.Forms;
-
+using Assistente_de_Instalação.Services;
+using DeviceId;
+using Microsoft.VisualBasic;
 
 namespace projeto1
 {
@@ -133,5 +135,11 @@ namespace projeto1
         {
             MessageBox.Show("TESTE DE ICONE DA MENSAGEM", "TESTE DE MENSAGEM", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(DeviceService.GetUserName() + " " + DeviceService.GetMachineName());
+        }
+
     }
 }

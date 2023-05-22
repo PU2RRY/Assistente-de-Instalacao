@@ -36,7 +36,7 @@
             tbDescricaoDoProblema = new TextBox();
             label3 = new Label();
             tbNomeDoArquivoZip = new TextBox();
-            button1 = new Button();
+            btnPreparaArquivo = new Button();
             progressBar1 = new ProgressBar();
             label4 = new Label();
             SuspendLayout();
@@ -49,7 +49,7 @@
             btSelecionaArquivoBkp.TabIndex = 0;
             btSelecionaArquivoBkp.Text = "Selecionar";
             btSelecionaArquivoBkp.UseVisualStyleBackColor = true;
-            btSelecionaArquivoBkp.Click += button1_Click;
+            btSelecionaArquivoBkp.Click += btnPreparaArquivo_Click;
             // 
             // tbCaminhoBkp
             // 
@@ -102,15 +102,15 @@
             tbNomeDoArquivoZip.Size = new Size(395, 23);
             tbNomeDoArquivoZip.TabIndex = 6;
             // 
-            // button1
+            // btnPreparaArquivo
             // 
-            button1.Location = new Point(12, 278);
-            button1.Name = "button1";
-            button1.Size = new Size(395, 26);
-            button1.TabIndex = 7;
-            button1.Text = "Preparar arquivo";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            btnPreparaArquivo.Location = new Point(12, 278);
+            btnPreparaArquivo.Name = "btnPreparaArquivo";
+            btnPreparaArquivo.Size = new Size(395, 26);
+            btnPreparaArquivo.TabIndex = 7;
+            btnPreparaArquivo.Text = "Preparar arquivo";
+            btnPreparaArquivo.UseVisualStyleBackColor = true;
+            btnPreparaArquivo.Click += btnPreparaArquivo_Click_1;
             // 
             // progressBar1
             // 
@@ -135,7 +135,7 @@
             ClientSize = new Size(416, 364);
             Controls.Add(label4);
             Controls.Add(progressBar1);
-            Controls.Add(button1);
+            Controls.Add(btnPreparaArquivo);
             Controls.Add(tbNomeDoArquivoZip);
             Controls.Add(label3);
             Controls.Add(tbDescricaoDoProblema);
@@ -159,7 +159,7 @@
         private TextBox tbDescricaoDoProblema;
         private Label label3;
         private TextBox tbNomeDoArquivoZip;
-        private Button button1;
+        private Button btnPreparaArquivo;
         private ProgressBar progressBar1;
         private Label label4;
     }

@@ -78,3 +78,9 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\ob
 C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\MAS.bat
 C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\Resources.resx
 C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente_de_Instalação.obj.Resources.resources
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\DeviceId.dll
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\DeviceId.Windows.dll
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\DeviceId.Windows.Wmi.dll
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\System.Management.dll
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.csproj.CopyComplete

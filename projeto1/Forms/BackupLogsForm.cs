@@ -32,7 +32,7 @@ namespace Assistente_de_Instalação.Forms
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPreparaArquivo_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
@@ -67,7 +67,7 @@ namespace Assistente_de_Instalação.Forms
             }
             return;
         }
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnPreparaArquivo_Click_1(object sender, EventArgs e)
         {
             string dirTEMP = @".\TEMP";
             if (Directory.Exists(dirTEMP))
@@ -87,9 +87,8 @@ namespace Assistente_de_Instalação.Forms
             File.Copy(tbCaminhoBkp.Text, destinoCopia);
 
             using (StreamWriter sw = new StreamWriter(@".\TEMP\Descritivo_do_problema.txt"))
-            {
                 sw.WriteLine(tbDescricaoDoProblema.Text);
-            }
+
             string startPath = @".\TEMP";
             string zipPath = @".\" + tbNomeDoArquivoZip.Text + ".zip";
             ZipFile.CreateFromDirectory(startPath, zipPath);
