@@ -1,132 +1,31 @@
 {
   "version": 3,
   "targets": {
-    "net7.0-windows7.0": {
-      "System.CodeDom/8.0.0-preview.3.23174.8": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Management/8.0.0-preview.3.23174.8": {
-        "type": "package",
-        "dependencies": {
-          "System.CodeDom": "8.0.0-preview.3.23174.8"
-        },
-        "compile": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      }
-    }
+    "net7.0-windows7.0": {}
   },
-  "libraries": {
-    "System.CodeDom/8.0.0-preview.3.23174.8": {
-      "sha512": "phl1BIXpkmEOoWfCiPQCyw6Zu5F7Y3a2o+8WZIETxyiobBxqPwe+k5miNYEe06JxZNp90vIVhjIYWz4b7JfUXw==",
-      "type": "package",
-      "path": "system.codedom/8.0.0-preview.3.23174.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.CodeDom.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
-        "lib/net462/System.CodeDom.dll",
-        "lib/net462/System.CodeDom.xml",
-        "lib/net6.0/System.CodeDom.dll",
-        "lib/net6.0/System.CodeDom.xml",
-        "lib/net7.0/System.CodeDom.dll",
-        "lib/net7.0/System.CodeDom.xml",
-        "lib/net8.0/System.CodeDom.dll",
-        "lib/net8.0/System.CodeDom.xml",
-        "lib/netstandard2.0/System.CodeDom.dll",
-        "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.8.0.0-preview.3.23174.8.nupkg.sha512",
-        "system.codedom.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Management/8.0.0-preview.3.23174.8": {
-      "sha512": "yWEm41a+MSQOH0rkSg5tZQmuYbRnsDQ51NuJcazf/oQDYrtB+ZiatqBlHxtoXMieYQRQKoWowh5cSC2bmX8Qwg==",
-      "type": "package",
-      "path": "system.management/8.0.0-preview.3.23174.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Management.targets",
-        "lib/net462/_._",
-        "lib/net6.0/System.Management.dll",
-        "lib/net6.0/System.Management.xml",
-        "lib/net7.0/System.Management.dll",
-        "lib/net7.0/System.Management.xml",
-        "lib/net8.0/System.Management.dll",
-        "lib/net8.0/System.Management.xml",
-        "lib/netstandard2.0/System.Management.dll",
-        "lib/netstandard2.0/System.Management.xml",
-        "runtimes/win/lib/net6.0/System.Management.dll",
-        "runtimes/win/lib/net6.0/System.Management.xml",
-        "runtimes/win/lib/net7.0/System.Management.dll",
-        "runtimes/win/lib/net7.0/System.Management.xml",
-        "runtimes/win/lib/net8.0/System.Management.dll",
-        "runtimes/win/lib/net8.0/System.Management.xml",
-        "system.management.8.0.0-preview.3.23174.8.nupkg.sha512",
-        "system.management.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0-windows7.0": [
-      "System.Management >= 8.0.0-preview.3.23174.8"
-    ]
+    "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Micro\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
       "projectName": "Assistente de Instalação",
-      "projectPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
-      "packagesPath": "C:\\Users\\Micro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\obj\\",
+      "projectPath": "C:\\Users\\User\\Source\\Repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Source\\Repos\\lerufino\\Assistente-de-Instalacao\\projeto1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -134,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -151,12 +51,6 @@
     "frameworks": {
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows7.0",
-        "dependencies": {
-          "System.Management": {
-            "target": "Package",
-            "version": "[8.0.0-preview.3.23174.8, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -176,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenomeiaMaquinaForm));
             textBox1 = new TextBox();
-            button1 = new Button();
+            btnFinalizarRenomeia = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -45,18 +45,18 @@
             textBox1.Size = new Size(373, 38);
             textBox1.TabIndex = 0;
             // 
-            // button1
+            // btnFinalizarRenomeia
             // 
-            button1.BackColor = SystemColors.InactiveCaptionText;
-            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.DarkOrange;
-            button1.Location = new Point(281, 79);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 32);
-            button1.TabIndex = 1;
-            button1.Text = "Finalizar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnFinalizarRenomeia.BackColor = SystemColors.InactiveCaptionText;
+            btnFinalizarRenomeia.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFinalizarRenomeia.ForeColor = Color.DarkOrange;
+            btnFinalizarRenomeia.Location = new Point(281, 79);
+            btnFinalizarRenomeia.Name = "btnFinalizarRenomeia";
+            btnFinalizarRenomeia.Size = new Size(104, 32);
+            btnFinalizarRenomeia.TabIndex = 1;
+            btnFinalizarRenomeia.Text = "Finalizar";
+            btnFinalizarRenomeia.UseVisualStyleBackColor = false;
+            btnFinalizarRenomeia.Click += btnFinalizarRenomeia_Click;
             // 
             // label1
             // 
@@ -97,7 +97,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnFinalizarRenomeia);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -112,7 +112,7 @@
         #endregion
 
         private TextBox textBox1;
-        private Button button1;
+        private Button btnFinalizarRenomeia;
         private Label label1;
         private Label label2;
         private Label label3;

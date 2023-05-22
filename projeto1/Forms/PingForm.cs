@@ -26,19 +26,13 @@ namespace projeto1
             string QNunPing = textBox3.Text;
             string comandoPing = "";
             if (radioButton1.Checked == true && radioButton2.Checked == false)
-            {
                 comandoPing = "/C ping -t " + IPDigitado;
-            }
             else
             {
                 if (radioButton2.Checked == true && radioButton1.Checked == false)
-                {
                     comandoPing = "/C ping " + IPDigitado + " -n " + QNunPing;
-                }
                 else
-                {
                     comandoPing = "/C ping " + IPDigitado;
-                }
             }
             // Abre o CMD e executa o "coamando de Ping" :
             Process process = new Process();
@@ -49,10 +43,6 @@ namespace projeto1
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -101,32 +91,12 @@ namespace projeto1
             }
             textBox2.Text = $"IP v4: {meuip}{Environment.NewLine}Gateway: {meuGateway}";
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void QuantBox_CheckedChanged(object sender, EventArgs e)
-        {
-        }
         private void Form2_Load(object sender, EventArgs e)
         {
             radioButton2.Checked = true;
         }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnIpsEmRede_Click(object sender, EventArgs e)
         {
-        }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
             // Cria um novo processo do CMD
             Process processo = new Process();
             processo.StartInfo.FileName = "cmd.exe";
@@ -142,7 +112,6 @@ namespace projeto1
             //string output = processo.StandardOutput.ReadToEnd();            
             processo.WaitForExit();
             processo.Close();
-
         }
     }
 }

@@ -28,9 +28,6 @@ C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\Assistente de Instalação.runtimeconfig.json
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\Assistente de Instalação.dll
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\Assistente de Instalação.pdb
-C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\System.CodeDom.dll
-C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\System.Management.dll
-C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente_de_Instalação.Forms.BackupLogsForm.resources
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\projeto1.PingForm.resources
@@ -42,7 +39,6 @@ C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.AssemblyInfo.cs
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.csproj.CopyComplete
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.dll
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\refint\Assistente de Instalação.dll
 C:\Users\User\source\repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente de Instalação.pdb
@@ -79,3 +75,6 @@ C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\MAS.bat
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\Resources.resx
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente_de_Instalação.obj.Resources.resources
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\MAS.bat
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\bin\Debug\net7.0-windows7.0\obj\Resources.resx
+C:\Users\User\Source\Repos\lerufino\Assistente-de-Instalacao\projeto1\obj\Debug\net7.0-windows7.0\Assistente_de_Instalação.obj.Resources.resources

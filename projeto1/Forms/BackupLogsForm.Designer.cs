@@ -58,7 +58,6 @@
             tbCaminhoBkp.ReadOnly = true;
             tbCaminhoBkp.Size = new Size(306, 23);
             tbCaminhoBkp.TabIndex = 1;
-            tbCaminhoBkp.TextChanged += tbCaminhoBkp_TextChanged;
             // 
             // label1
             // 

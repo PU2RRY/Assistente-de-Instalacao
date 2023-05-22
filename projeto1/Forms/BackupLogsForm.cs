@@ -28,13 +28,10 @@ namespace Assistente_de_Instalação.Forms
             @"C:\ApiComanda\Logs#ApiComanda",
             @"C:\VirtualDCS\Log#SincronizadorERP"
         };
-
-
         public BackupLogsForm()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
@@ -47,9 +44,6 @@ namespace Assistente_de_Instalação.Forms
                 }
             }
         }
-
-
-
         public void CopyDirectory(string sourceDir, string destinoDir, bool recursive)
         {
             var dir = new DirectoryInfo(sourceDir);
@@ -71,16 +65,8 @@ namespace Assistente_de_Instalação.Forms
                     CopyDirectory(subDir.FullName, newDestinationDir, true);
                 }
             }
-
             return;
-
         }
-
-        private void tbCaminhoBkp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string dirTEMP = @".\TEMP";

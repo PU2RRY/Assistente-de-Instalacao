@@ -37,7 +37,7 @@
             textBox3 = new TextBox();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
-            ipsrede = new Button();
+            btnIpsEmRede = new Button();
             SuspendLayout();
             // 
             // startping
@@ -65,7 +65,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(259, 23);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // meuip
             // 
@@ -85,7 +84,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(259, 53);
             textBox2.TabIndex = 6;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -94,7 +92,6 @@
             textBox3.Size = new Size(47, 23);
             textBox3.TabIndex = 8;
             textBox3.Text = "5";
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // radioButton1
             // 
@@ -107,7 +104,6 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Ping infinito";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -120,17 +116,16 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Nª de vezes :";
             radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
-            // ipsrede
+            // btnIpsEmRede
             // 
-            ipsrede.Location = new Point(93, 86);
-            ipsrede.Name = "ipsrede";
-            ipsrede.Size = new Size(96, 26);
-            ipsrede.TabIndex = 11;
-            ipsrede.Text = "IPs em rede";
-            ipsrede.UseVisualStyleBackColor = true;
-            ipsrede.Click += button1_Click_1;
+            btnIpsEmRede.Location = new Point(93, 86);
+            btnIpsEmRede.Name = "btnIpsEmRede";
+            btnIpsEmRede.Size = new Size(96, 26);
+            btnIpsEmRede.TabIndex = 11;
+            btnIpsEmRede.Text = "IPs em rede";
+            btnIpsEmRede.UseVisualStyleBackColor = true;
+            btnIpsEmRede.Click += btnIpsEmRede_Click;
             // 
             // PingForm
             // 
@@ -138,7 +133,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkCyan;
             ClientSize = new Size(282, 179);
-            Controls.Add(ipsrede);
+            Controls.Add(btnIpsEmRede);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(textBox3);
@@ -167,6 +162,6 @@
         private TextBox textBox3;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
-        private Button ipsrede;
+        private Button btnIpsEmRede;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Management;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +27,7 @@ namespace projeto1
             // string nomeDaMaquina = Environment.MachineName;
             label3.Text = Environment.MachineName;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFinalizarRenomeia_Click(object sender, EventArgs e)
         {
             string Newname = textBox1.Text;
             try
@@ -40,14 +39,9 @@ namespace projeto1
                     bool success = NativeMethods.SetComputerName(Newname);
 
                     if (success)
-                    {
                         MessageBox.Show("Nome da máquina alterado com sucesso para: " + Newname);
-                        // NativeMethods.ExitWindowsEx(NativeMethods.ExitFlags.EWX_REBOOT, 0);
-                    }
                     else
-                    {
                         MessageBox.Show("Falha ao alterar o nome da máquina.");
-                    }
                 }
             }
             catch (Exception ex)
