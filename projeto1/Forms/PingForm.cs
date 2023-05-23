@@ -50,10 +50,6 @@ namespace projeto1
             process.Start();
             process.WaitForExit();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             string meuGateway = string.Empty;
@@ -101,32 +97,12 @@ namespace projeto1
             }
             textBox2.Text = $"IP v4: {meuip}{Environment.NewLine}Gateway: {meuGateway}";
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void QuantBox_CheckedChanged(object sender, EventArgs e)
-        {
-        }
         private void Form2_Load(object sender, EventArgs e)
         {
             radioButton2.Checked = true;
         }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
-
             // Cria um novo processo do CMD
             Process processo = new Process();
             processo.StartInfo.FileName = "cmd.exe";
@@ -137,12 +113,9 @@ namespace projeto1
             // Inicia o processo
             processo.Start();
             // Executa um comando no CMD
-            processo.StandardInput.WriteLine("arp -a");
-            // Aguarda a saída do comando
-            //string output = processo.StandardOutput.ReadToEnd();            
+            processo.StandardInput.WriteLine("arp -a");          
             processo.WaitForExit();
             processo.Close();
-
         }
     }
 }

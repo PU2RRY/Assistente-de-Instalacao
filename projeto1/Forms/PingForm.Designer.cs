@@ -65,7 +65,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(259, 23);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // meuip
             // 
@@ -85,7 +84,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(259, 53);
             textBox2.TabIndex = 6;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -94,7 +92,6 @@
             textBox3.Size = new Size(47, 23);
             textBox3.TabIndex = 8;
             textBox3.Text = "5";
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // radioButton1
             // 
@@ -107,7 +104,6 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Ping infinito";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -120,7 +116,6 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Nª de vezes :";
             radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // ipsrede
             // 

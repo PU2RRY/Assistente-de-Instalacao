@@ -8,6 +8,7 @@ namespace projeto1
     public partial class MenuPrincipal : Form
     {
         public object ServiceControllerStatus { get; private set; }
+        public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
 
         private void OcultaExibForm(bool exibe)
         {
@@ -25,10 +26,8 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
 
-        }
+
         private void BT2_Click(object sender, EventArgs e)
         {
             Process process = new Process();
@@ -85,9 +84,10 @@ namespace projeto1
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            PediSenha pediSenha = new PediSenha();
+            pediSenha.ShowDialog();
+            
         }
-
         private void tbBackupLogs_Click(object sender, EventArgs e)
         {
             BackupLogsForm form = new BackupLogsForm();
@@ -103,7 +103,6 @@ namespace projeto1
         {
             Process.Start("optionalfeatures");
         }
-
         private void MasAtivador_Click(object sender, EventArgs e)
         {
             string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.bat");
@@ -113,8 +112,7 @@ namespace projeto1
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
             DirectoryInfo diSource = new(dir);
-            return diSource.GetFiles().Where(w=>w.Extension.Equals(ext, StringComparison.OrdinalIgnoreCase)).ToList();
-            //return diSource.GetFiles().Where(w => w.Extension.ToLower() == ext.ToLower()).ToList();
+            return diSource.GetFiles().Where(w => w.Extension.Equals(ext, StringComparison.OrdinalIgnoreCase)).ToList();
         }
         private void ReiniciaSpooler_Click(object sender, EventArgs e)
         {
@@ -122,7 +120,7 @@ namespace projeto1
             Spooler("net stop " + serviço);
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
             txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
-            txtFiles.ForEach(f => { File.Delete(f.FullName);});
+            txtFiles.ForEach(f => { File.Delete(f.FullName); });
             Spooler("net start " + serviço);
             MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -145,5 +143,7 @@ namespace projeto1
         {
             MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+
     }
 }
