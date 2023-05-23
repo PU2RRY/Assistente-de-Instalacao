@@ -1,4 +1,6 @@
 C:\Users\User\Desktop\publish\Assistente de Instalação.pdb
+C:\Users\User\Desktop\publish\obj\MAS.bat
+C:\Users\User\Desktop\publish\obj\Resources.resx
 C:\Users\User\Desktop\publish\D3DCompiler_47_cor3.dll
 C:\Users\User\Desktop\publish\PenImc_cor3.dll
 C:\Users\User\Desktop\publish\PresentationNative_cor3.dll
