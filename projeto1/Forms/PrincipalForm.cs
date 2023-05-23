@@ -8,6 +8,7 @@ namespace projeto1
     public partial class MenuPrincipal : Form
     {
         public object ServiceControllerStatus { get; private set; }
+        public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
 
         private void OcultaExibForm(bool exibe)
         {
@@ -25,10 +26,8 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
 
-        }
+
         private void BT2_Click(object sender, EventArgs e)
         {
             Process process = new Process();
@@ -85,9 +84,10 @@ namespace projeto1
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            PediSenha pediSenha = new PediSenha();
+            pediSenha.ShowDialog();
+            
         }
-
         private void tbBackupLogs_Click(object sender, EventArgs e)
         {
             BackupLogsForm form = new BackupLogsForm();
@@ -143,5 +143,7 @@ namespace projeto1
         {
             MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+
     }
 }

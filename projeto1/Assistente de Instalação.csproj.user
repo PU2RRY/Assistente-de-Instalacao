@@ -7,6 +7,9 @@
     <Compile Update="Forms\BackupLogsForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\PediSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\PingForm.cs">
       <SubType>Form</SubType>
     </Compile>
