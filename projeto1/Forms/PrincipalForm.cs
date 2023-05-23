@@ -81,13 +81,6 @@ namespace projeto1
             if (sender is Button btn)
                 btn.BackColor = Color.DodgerBlue;
         }
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-            PediSenha pediSenha = new PediSenha();
-            pediSenha.ShowDialog();
-            
-        }
         private void tbBackupLogs_Click(object sender, EventArgs e)
         {
             BackupLogsForm form = new BackupLogsForm();
