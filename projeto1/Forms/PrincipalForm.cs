@@ -143,7 +143,7 @@ namespace projeto1
         }
         private void Mensagem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TESTE DE ICONE DA MENSAGEM", "TESTE DE MENSAGEM", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }
