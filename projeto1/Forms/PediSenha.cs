@@ -20,6 +20,10 @@ namespace Assistente_de_Instalação.Forms
         string senhaCorreta = "217493220";
         private void btnEntrarSenha_Click(object sender, EventArgs e)
         {
+            ValidarSenha();
+        }
+        private void ValidarSenha()
+        {
             if (senhaDigitada == senhaCorreta)
             {
                 DialogResult = DialogResult.Continue;
@@ -30,6 +34,12 @@ namespace Assistente_de_Instalação.Forms
                 senhaDigitada = "";
             }
         }
+        private void tbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)            
+                ValidarSenha();           
+        }
+
         private void tbSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))

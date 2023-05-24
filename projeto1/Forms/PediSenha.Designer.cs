@@ -54,6 +54,7 @@
             tbSenha.Name = "tbSenha";
             tbSenha.Size = new Size(273, 29);
             tbSenha.TabIndex = 1;
+            tbSenha.KeyDown += tbSenha_KeyDown;
             tbSenha.KeyPress += tbSenha_KeyPress;
             // 
             // lbSenha
