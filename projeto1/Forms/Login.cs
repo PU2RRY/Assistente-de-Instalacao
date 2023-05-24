@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assistente_de_Instalação.Forms
 {
-    public partial class PediSenha : Form
+    public partial class Login : Form
     {
-        public PediSenha()
+        public Login()
         {
             InitializeComponent();
         }
@@ -36,8 +36,8 @@ namespace Assistente_de_Instalação.Forms
         }
         private void tbSenha_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)            
-                ValidarSenha();           
+            if (e.KeyCode == Keys.Enter)
+                ValidarSenha();
         }
 
         private void tbSenha_KeyPress(object sender, KeyPressEventArgs e)

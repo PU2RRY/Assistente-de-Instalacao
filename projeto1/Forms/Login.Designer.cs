@@ -1,6 +1,6 @@
 ﻿namespace Assistente_de_Instalação.Forms
 {
-    partial class PediSenha
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             btnEntrarSenha = new Button();
             tbSenha = new TextBox();
             lbSenha = new Label();
@@ -80,7 +81,7 @@
             btnSenhaSair.UseVisualStyleBackColor = false;
             btnSenhaSair.Click += btnSenhaSair_Click;
             // 
-            // PediSenha
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -90,9 +91,10 @@
             Controls.Add(lbSenha);
             Controls.Add(tbSenha);
             Controls.Add(btnEntrarSenha);
-            Name = "PediSenha";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "PediSenha";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }
