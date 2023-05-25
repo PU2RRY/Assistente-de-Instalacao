@@ -9,7 +9,6 @@ namespace projeto1
     {
         public object ServiceControllerStatus { get; private set; }
         public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
-
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -18,7 +17,6 @@ namespace projeto1
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
@@ -26,8 +24,6 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-
-
         private void BT2_Click(object sender, EventArgs e)
         {
             Process process = new Process();
@@ -100,7 +96,6 @@ namespace projeto1
         {
             string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.bat");
             Process.Start(mas);
-
         }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
@@ -124,7 +119,6 @@ namespace projeto1
             processInfo.UseShellExecute = false;
             processInfo.RedirectStandardError = true;
             processInfo.RedirectStandardOutput = false;
-
             using (Process process = new Process())
             {
                 process.StartInfo = processInfo;
@@ -136,7 +130,5 @@ namespace projeto1
         {
             MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
-
-
     }
 }

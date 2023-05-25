@@ -41,7 +41,6 @@ namespace Assistente_de_Instalação.Forms
             if (e.KeyCode == Keys.Enter)
                 ValidarSenha();
         }
-
         private void tbSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))

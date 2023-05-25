@@ -28,13 +28,10 @@ namespace Assistente_de_Instalação.Forms
             @"C:\ApiComanda\Logs#ApiComanda",
             @"C:\VirtualDCS\Log#SincronizadorERP"
         };
-
-
         public BackupLogsForm()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
@@ -47,15 +44,11 @@ namespace Assistente_de_Instalação.Forms
                 }
             }
         }
-
-
-
         public void CopyDirectory(string sourceDir, string destinoDir, bool recursive)
         {
             var dir = new DirectoryInfo(sourceDir);
             if (!dir.Exists)
                 return;
-
             DirectoryInfo[] dirs = dir.GetDirectories();
             Directory.CreateDirectory(destinoDir);
             foreach (FileInfo file in dir.GetFiles())
@@ -71,35 +64,23 @@ namespace Assistente_de_Instalação.Forms
                     CopyDirectory(subDir.FullName, newDestinationDir, true);
                 }
             }
-
             return;
-
         }
-
-        private void tbCaminhoBkp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string dirTEMP = @".\TEMP";
             if (Directory.Exists(dirTEMP))
                 Directory.Delete(dirTEMP, true);
-
             foreach (string item in caminhosDeLog)
             {
                 var itemIndexOf = item.IndexOf("#");
                 string dirOrigem = item.Substring(0, itemIndexOf);
                 string nomeDir = @".\TEMP\" + item.Substring(itemIndexOf + 1);
-
                 CopyDirectory(dirOrigem, nomeDir, true);
             }
-
             var origemCopiaIndexOf = tbCaminhoBkp.Text.LastIndexOf(@"\");
             string destinoCopia = @".\TEMP" + tbCaminhoBkp.Text.Substring(origemCopiaIndexOf);
             File.Copy(tbCaminhoBkp.Text, destinoCopia);
-
             using (StreamWriter sw = new StreamWriter(@".\TEMP\Descritivo_do_problema.txt"))
             {
                 sw.WriteLine(tbDescricaoDoProblema.Text);
@@ -107,9 +88,7 @@ namespace Assistente_de_Instalação.Forms
             string startPath = @".\TEMP";
             string zipPath = @".\" + tbNomeDoArquivoZip.Text + ".zip";
             ZipFile.CreateFromDirectory(startPath, zipPath);
-
             Directory.Delete(@".\TEMP", true);
-
             MessageBox.Show("Arquivo zip criado.");
         }
     }
