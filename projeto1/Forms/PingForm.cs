@@ -113,7 +113,7 @@ namespace projeto1
             // Inicia o processo
             processo.Start();
             // Executa um comando no CMD
-            processo.StandardInput.WriteLine("arp -a");          
+            processo.StandardInput.WriteLine("arp -a");
             processo.WaitForExit();
             processo.Close();
         }

@@ -14,7 +14,7 @@ namespace projeto1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            PediSenha pediSenha = new();
+            Login pediSenha = new();
             if (pediSenha.ShowDialog() == DialogResult.Continue)
                 Application.Run(new MenuPrincipal());
         }

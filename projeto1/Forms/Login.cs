@@ -10,15 +10,19 @@ using System.Windows.Forms;
 
 namespace Assistente_de_Instalação.Forms
 {
-    public partial class PediSenha : Form
+    public partial class Login : Form
     {
-        public PediSenha()
+        public Login()
         {
             InitializeComponent();
         }
         string senhaDigitada = "";
         string senhaCorreta = "217493220";
         private void btnEntrarSenha_Click(object sender, EventArgs e)
+        {
+            ValidarSenha();
+        }
+        private void ValidarSenha()
         {
             if (senhaDigitada == senhaCorreta)
             {
@@ -30,6 +34,12 @@ namespace Assistente_de_Instalação.Forms
                 senhaDigitada = "";
             }
         }
+        private void tbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ValidarSenha();
+        }
+
         private void tbSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))
