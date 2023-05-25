@@ -31,15 +31,16 @@
             btnEntrarSenha = new Button();
             tbSenha = new TextBox();
             lbSenha = new Label();
+            btnSenhaSair = new Button();
             SuspendLayout();
             // 
             // btnEntrarSenha
             // 
             btnEntrarSenha.BackColor = Color.CornflowerBlue;
             btnEntrarSenha.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEntrarSenha.Location = new Point(13, 75);
+            btnEntrarSenha.Location = new Point(108, 75);
             btnEntrarSenha.Name = "btnEntrarSenha";
-            btnEntrarSenha.Size = new Size(273, 46);
+            btnEntrarSenha.Size = new Size(178, 46);
             btnEntrarSenha.TabIndex = 0;
             btnEntrarSenha.Text = "ENTRAR";
             btnEntrarSenha.UseVisualStyleBackColor = false;
@@ -66,19 +67,31 @@
             lbSenha.TabIndex = 2;
             lbSenha.Text = "Digite a senha";
             // 
+            // btnSenhaSair
+            // 
+            btnSenhaSair.BackColor = Color.CornflowerBlue;
+            btnSenhaSair.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSenhaSair.Location = new Point(13, 75);
+            btnSenhaSair.Name = "btnSenhaSair";
+            btnSenhaSair.Size = new Size(89, 46);
+            btnSenhaSair.TabIndex = 3;
+            btnSenhaSair.Text = "SAIR";
+            btnSenhaSair.UseVisualStyleBackColor = false;
+            btnSenhaSair.Click += btnSenhaSair_Click;
+            // 
             // PediSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Purple;
             ClientSize = new Size(298, 128);
+            Controls.Add(btnSenhaSair);
             Controls.Add(lbSenha);
             Controls.Add(tbSenha);
             Controls.Add(btnEntrarSenha);
             Name = "PediSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PediSenha";
-            FormClosed += PediSenha_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -88,5 +101,6 @@
         private Button btnEntrarSenha;
         private TextBox tbSenha;
         private Label lbSenha;
+        private Button btnSenhaSair;
     }
 }

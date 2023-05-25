@@ -18,16 +18,15 @@ namespace Assistente_de_Instalação.Forms
         }
         string senhaDigitada = "";
         string senhaCorreta = "217493220";
-
         private void btnEntrarSenha_Click(object sender, EventArgs e)
         {
             if (senhaDigitada == senhaCorreta)
             {
-                this.Close();
+                DialogResult = DialogResult.Continue;
             }
             else
             {
-                MessageBox.Show("senha errada");
+                MessageBox.Show("SENHA INCORRETA");
                 senhaDigitada = "";
             }
         }
@@ -39,10 +38,9 @@ namespace Assistente_de_Instalação.Forms
                 e.KeyChar = '•';
             }
         }
-
-        private void PediSenha_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnSenhaSair_Click(object sender, EventArgs e)
         {
-          // Application.Exit();
+            Close();
         }
     }
 }
