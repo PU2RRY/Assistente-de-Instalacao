@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kpmvFloJU12BQLdGz7hg9uNaOlBREtzwVyblN/ESOjN3p+BhmN/5BCnMe1fTMdrnOnC9kAzdJfWqahUz7rhIyA==",
+  "dgSpecHash": "54li2Da/aRLnihc1cInXXIQKQJMdRxJYqbFA/vIwK8Tcy+EfgUMK4ov8e/afg09XamsESRzcKqNkMuL1n4WY7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+  "projectFilePath": "C:\\Users\\rodri\\OneDrive\\Documentos\\Meu projeto\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Micro\\.nuget\\packages\\system.codedom\\8.0.0-preview.3.23174.8\\system.codedom.8.0.0-preview.3.23174.8.nupkg.sha512",
-    "C:\\Users\\Micro\\.nuget\\packages\\system.management\\8.0.0-preview.3.23174.8\\system.management.8.0.0-preview.3.23174.8.nupkg.sha512"
+    "C:\\Users\\rodri\\.nuget\\packages\\system.codedom\\8.0.0-preview.3.23174.8\\system.codedom.8.0.0-preview.3.23174.8.nupkg.sha512",
+    "C:\\Users\\rodri\\.nuget\\packages\\system.management\\8.0.0-preview.3.23174.8\\system.management.8.0.0-preview.3.23174.8.nupkg.sha512"
   ],
   "logs": []
 }
