@@ -16,6 +16,7 @@ namespace Assistente_de_Instalação.Forms
         {
             InitializeComponent();
         }
+        bool autenticado = false;
         string senhaDigitada = "";
         string senhaCorreta = "217493220";
         private void btnEntrarSenha_Click(object sender, EventArgs e)
@@ -26,6 +27,7 @@ namespace Assistente_de_Instalação.Forms
         {
             if (senhaDigitada == senhaCorreta)
             {
+                autenticado = true;
                 DialogResult = DialogResult.Continue;
             }
             else
@@ -51,6 +53,15 @@ namespace Assistente_de_Instalação.Forms
         private void btnSenhaSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!autenticado)
+            {
+                DialogResult dr = MessageBox.Show("Tem certeza que deseja SAIR ?", "Confirmação", MessageBoxButtons.YesNo);
+                if (dr != DialogResult.Yes)
+                    e.Cancel = true;
+            }
         }
     }
 }
