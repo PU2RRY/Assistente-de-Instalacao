@@ -96,8 +96,15 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             FormClosing += Login_FormClosing;
+            KeyPreview = true;
+            KeyDown += Login_KeyDown;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void Login_KeyEventArgs(object sender, KeyPressEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
