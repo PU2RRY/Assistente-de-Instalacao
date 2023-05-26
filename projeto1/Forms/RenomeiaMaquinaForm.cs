@@ -25,7 +25,6 @@ namespace projeto1
         }
         private void Form3_Load(object sender, EventArgs e)
         {
-            // string nomeDaMaquina = Environment.MachineName;
             label3.Text = Environment.MachineName;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -41,8 +40,7 @@ namespace projeto1
 
                     if (success)
                     {
-                        MessageBox.Show("Nome da máquina alterado com sucesso para: " + Newname);
-                        // NativeMethods.ExitWindowsEx(NativeMethods.ExitFlags.EWX_REBOOT, 0);
+                        MessageBox.Show("nome alterado para :" + Newname + "Porfavor reinicia a maquina para concluir." );
                     }
                     else
                     {

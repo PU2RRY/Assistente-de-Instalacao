@@ -65,7 +65,11 @@ namespace Assistente_de_Instalação.Forms
         private void Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
-                Close();                          
+                Close();
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            tbSenha.Select();
         }
     }
 }

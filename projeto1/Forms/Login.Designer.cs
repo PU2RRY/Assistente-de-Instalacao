@@ -92,11 +92,12 @@
             Controls.Add(tbSenha);
             Controls.Add(btnEntrarSenha);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             FormClosing += Login_FormClosing;
-            KeyPreview = true;
+            Load += Login_Load;
             KeyDown += Login_KeyDown;
             ResumeLayout(false);
             PerformLayout();
