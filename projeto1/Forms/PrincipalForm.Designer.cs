@@ -213,6 +213,8 @@
             MasAtivador.Text = "Ativador M.A.S";
             MasAtivador.UseVisualStyleBackColor = false;
             MasAtivador.Click += MasAtivador_Click;
+            MasAtivador.MouseEnter += BTNEnter;
+            MasAtivador.MouseLeave += BTNLeave;
             // 
             // ReiniciaSpooler
             // 
@@ -227,6 +229,8 @@
             ReiniciaSpooler.Text = "Reiniciar Spooler";
             ReiniciaSpooler.UseVisualStyleBackColor = false;
             ReiniciaSpooler.Click += ReiniciaSpooler_Click;
+            ReiniciaSpooler.MouseEnter += BTNEnter;
+            ReiniciaSpooler.MouseLeave += BTNLeave;
             // 
             // Mensagem
             // 

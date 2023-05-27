@@ -16,6 +16,7 @@ namespace Assistente_de_Instalação.Forms
         {
             InitializeComponent();
         }
+        bool autenticado = false;
         string senhaDigitada = "";
         string senhaCorreta = "217493220";
         private void btnEntrarSenha_Click(object sender, EventArgs e)
@@ -26,6 +27,7 @@ namespace Assistente_de_Instalação.Forms
         {
             if (senhaDigitada == senhaCorreta)
             {
+                autenticado = true;
                 DialogResult = DialogResult.Continue;
             }
             else
@@ -39,7 +41,6 @@ namespace Assistente_de_Instalação.Forms
             if (e.KeyCode == Keys.Enter)
                 ValidarSenha();
         }
-
         private void tbSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))
@@ -51,6 +52,24 @@ namespace Assistente_de_Instalação.Forms
         private void btnSenhaSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!autenticado)
+            {
+                DialogResult dr = MessageBox.Show("Tem certeza que deseja SAIR ?", "Confirmação", MessageBoxButtons.YesNo);
+                if (dr != DialogResult.Yes)
+                    e.Cancel = true;
+            }
+        }
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            tbSenha.Select();
         }
     }
 }
