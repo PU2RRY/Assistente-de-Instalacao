@@ -535,3 +535,4 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bi
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.BackupLogsForm.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.obj.Resources.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.Login.resources
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.Login.resources
