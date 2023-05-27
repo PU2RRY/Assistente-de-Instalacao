@@ -91,6 +91,7 @@
             Controls.Add(lbSenha);
             Controls.Add(tbSenha);
             Controls.Add(btnEntrarSenha);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "Login";
