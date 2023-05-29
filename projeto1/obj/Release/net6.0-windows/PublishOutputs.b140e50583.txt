@@ -1,8 +1,0 @@
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\projeto1.exe
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\projeto1.dll
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\projeto1.deps.json
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\projeto1.runtimeconfig.json
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\projeto1.pdb
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.CodeDom.dll
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.Management.dll
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win\lib\net6.0\System.Management.dll
