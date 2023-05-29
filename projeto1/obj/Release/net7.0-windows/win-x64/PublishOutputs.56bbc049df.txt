@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\publish\Assistente de Instalação.pdb
+C:\Users\User\Desktop\publish\D3DCompiler_47_cor3.dll
+C:\Users\User\Desktop\publish\PenImc_cor3.dll
+C:\Users\User\Desktop\publish\PresentationNative_cor3.dll
+C:\Users\User\Desktop\publish\vcruntime140_cor3.dll
+C:\Users\User\Desktop\publish\wpfgfx_cor3.dll
+C:\Users\User\Desktop\publish\Assistente de Instalação.exe

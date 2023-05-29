@@ -1,0 +1,4 @@
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação.pdb
+C:\Users\Micro\Documents\Meu Projeto\obj\MAS.bat
+C:\Users\Micro\Documents\Meu Projeto\obj\Resources.resx
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação.exe
