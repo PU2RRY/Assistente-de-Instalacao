@@ -85,7 +85,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Purple;
             ClientSize = new Size(298, 128);
             Controls.Add(btnSenhaSair);
             Controls.Add(lbSenha);
@@ -94,6 +93,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
