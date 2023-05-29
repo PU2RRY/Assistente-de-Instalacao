@@ -20,13 +20,18 @@
             base.Dispose(disposing);
         }
 
+        private bool GetFocused()
+        {
+            return tbSenha.Focused;
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(bool focused)
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             btnEntrarSenha = new Button();
@@ -54,6 +59,7 @@
             tbSenha.Multiline = true;
             tbSenha.Name = "tbSenha";
             tbSenha.Size = new Size(273, 29);
+            focused = true;
             tbSenha.TabIndex = 1;
             tbSenha.KeyDown += tbSenha_KeyDown;
             tbSenha.KeyPress += tbSenha_KeyPress;
@@ -97,7 +103,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             FormClosing += Login_FormClosing;
-            Load += Login_Load;
             KeyDown += Login_KeyDown;
             ResumeLayout(false);
             PerformLayout();
