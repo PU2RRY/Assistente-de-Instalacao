@@ -71,6 +71,10 @@ namespace Assistente_de_Instalação.Forms
         {
             tbSenha.Select();
         }
+
+        // teste 
+
+
     }
 }
 
