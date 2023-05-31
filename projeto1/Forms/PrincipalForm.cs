@@ -1,10 +1,11 @@
 using System.Diagnostics;
+using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
+
 
 
 namespace projeto1
 {
-
     public partial class MenuPrincipal : Form
     {
         public object ServiceControllerStatus { get; private set; }
@@ -129,6 +130,14 @@ namespace projeto1
         private void Mensagem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void btnMaquinasPDV_Click(object sender, EventArgs e)
+        {
+            MaquinasDCSPDV form = new MaquinasDCSPDV();
+            OcultaExibForm(false);
+            form.ShowDialog();
+            OcultaExibForm(true);
         }
     }
 }

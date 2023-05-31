@@ -42,6 +42,7 @@
             MasAtivador = new Button();
             ReiniciaSpooler = new Button();
             Mensagem = new Button();
+            btnMaquinasPDV = new Button();
             SuspendLayout();
             // 
             // BT1REDE
@@ -246,12 +247,27 @@
             Mensagem.UseVisualStyleBackColor = false;
             Mensagem.Click += Mensagem_Click;
             // 
+            // btnMaquinasPDV
+            // 
+            btnMaquinasPDV.BackColor = Color.DodgerBlue;
+            btnMaquinasPDV.FlatStyle = FlatStyle.Flat;
+            btnMaquinasPDV.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMaquinasPDV.ForeColor = SystemColors.ControlText;
+            btnMaquinasPDV.Location = new Point(270, 162);
+            btnMaquinasPDV.Name = "btnMaquinasPDV";
+            btnMaquinasPDV.Size = new Size(236, 40);
+            btnMaquinasPDV.TabIndex = 13;
+            btnMaquinasPDV.Text = "Maquinas DCS PDV";
+            btnMaquinasPDV.UseVisualStyleBackColor = false;
+            btnMaquinasPDV.Click += btnMaquinasPDV_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(516, 491);
+            Controls.Add(btnMaquinasPDV);
             Controls.Add(Mensagem);
             Controls.Add(ReiniciaSpooler);
             Controls.Add(MasAtivador);
@@ -290,5 +306,6 @@
         private Button MasAtivador;
         private Button ReiniciaSpooler;
         private Button Mensagem;
+        private Button btnMaquinasPDV;
     }
 }

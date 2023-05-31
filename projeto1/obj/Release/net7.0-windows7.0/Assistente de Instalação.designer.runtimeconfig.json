@@ -12,11 +12,12 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\rodri\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\rodri\\.nuget\\packages"
+      "C:\\Users\\Micro\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Micro\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+      "System.Reflection.NullabilityInfoContext.IsSupported": true,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }
