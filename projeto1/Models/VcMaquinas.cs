@@ -258,4 +258,6 @@ public partial class VcMaquinas
     public bool UsaIntegradorDePedidos { get; set; }
 
     public bool AbreApiSat { get; set; }
+
+    public virtual ICollection<VcCupfecha> VcCupfecha { get; set; } = new List<VcCupfecha>();
 }

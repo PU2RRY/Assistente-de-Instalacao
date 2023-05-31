@@ -15,6 +15,10 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
+         "Name": "[dbo].[VC_CUPFECHA]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[VC_MAQUINAS]",
          "ObjectType": 0
       }

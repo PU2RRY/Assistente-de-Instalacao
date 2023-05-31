@@ -17,14 +17,238 @@ public partial class vcContext : DbContext
     {
     }
 
+    public virtual DbSet<VcCupfecha> VcCupfecha { get; set; }
+
     public virtual DbSet<VcMaquinas> VcMaquinas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=vc;Persist Security Info=True;User ID=sqlvirtualnet;Password=n14e5t20; TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=vc;Persist Security Info=True;User ID=sqlvirtualnet;Password=n14e5t20; TrustServerCertificate=true ");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<VcCupfecha>(entity =>
+        {
+            entity.HasKey(e => e.IdCupom);
+
+            entity.ToTable("VC_CUPFECHA", tb => tb.HasTrigger("TRG_CANCELA_ORDER_SHIPAY"));
+
+            entity.HasIndex(e => e.Data, "IX_VC_CUPFECHA");
+
+            entity.HasIndex(e => e.Tatual, "IX_VC_CUPFECHA_2");
+
+            entity.HasIndex(e => e.Posicao, "IX_VC_CUPFECHA_3");
+
+            entity.HasIndex(e => e.IdMaquina, "IX_VC_CUPFECHA_4");
+
+            entity.HasIndex(e => e.Cancelado, "IX_VC_CUPFECHA_5");
+
+            entity.HasIndex(e => e.Turno, "IX_VC_CUPFECHA_6");
+
+            entity.HasIndex(e => e.IdOperador, "IX_VC_CUPFECHA_7");
+
+            entity.HasIndex(e => e.IdCliente, "IX_VC_CUPFECHA_8");
+
+            entity.HasIndex(e => e.Tipovenda, "IX_VC_CUPFECHA_9");
+
+            entity.Property(e => e.IdCupom).HasColumnName("ID_CUPOM");
+            entity.Property(e => e.AltRep)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength();
+            entity.Property(e => e.Atendido)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("atendido");
+            entity.Property(e => e.Auditor)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('I')")
+                .IsFixedLength()
+                .HasColumnName("auditor");
+            entity.Property(e => e.Bonificado)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("bonificado");
+            entity.Property(e => e.CancSist)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("cancSist");
+            entity.Property(e => e.Cancelado)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("CANCELADO");
+            entity.Property(e => e.Ccf)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("ccf");
+            entity.Property(e => e.ChaveCancNfce)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("chaveCancNfce");
+            entity.Property(e => e.ChaveCancSat)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("chaveCancSat");
+            entity.Property(e => e.ChaveDeAcesso)
+                .HasMaxLength(44)
+                .IsUnicode(false);
+            entity.Property(e => e.CodIntegracao)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("codIntegracao");
+            entity.Property(e => e.Consumacao).HasColumnName("consumacao");
+            entity.Property(e => e.Consumacaoserv).HasColumnName("consumacaoserv");
+            entity.Property(e => e.Coo).HasColumnName("coo");
+            entity.Property(e => e.Coocanc).HasColumnName("coocanc");
+            entity.Property(e => e.Cpf)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("cpf");
+            entity.Property(e => e.Cvale).HasColumnName("CVALE");
+            entity.Property(e => e.Data)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("DATA");
+            entity.Property(e => e.Desconto).HasColumnName("DESCONTO");
+            entity.Property(e => e.Diarias).HasDefaultValueSql("(1)");
+            entity.Property(e => e.DtEnvioCont)
+                .HasColumnType("datetime")
+                .HasColumnName("dtEnvioCont");
+            entity.Property(e => e.Dtemite)
+                .HasMaxLength(8)
+                .IsUnicode(false)
+                .HasColumnName("dtemite");
+            entity.Property(e => e.Entrada).HasColumnName("entrada");
+            entity.Property(e => e.Entradaserv).HasColumnName("entradaserv");
+            entity.Property(e => e.Enviaint)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("enviaint");
+            entity.Property(e => e.EviSent)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength();
+            entity.Property(e => e.HoraEntrega)
+                .HasMaxLength(8)
+                .IsUnicode(false);
+            entity.Property(e => e.HoraPedido)
+                .HasMaxLength(8)
+                .IsUnicode(false);
+            entity.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");
+            entity.Property(e => e.IdClienteCn).HasColumnName("id_cliente_cn");
+            entity.Property(e => e.IdEntregador).HasColumnName("ID_ENTREGADOR");
+            entity.Property(e => e.IdGarcom).HasColumnName("ID_GARCOM");
+            entity.Property(e => e.IdMaquina).HasColumnName("ID_MAQUINA");
+            entity.Property(e => e.IdOperador).HasColumnName("ID_OPERADOR");
+            entity.Property(e => e.IdPedidoIntegracao).HasColumnName("idPedidoIntegracao");
+            entity.Property(e => e.IdReserva).HasColumnName("ID_RESERVA");
+            entity.Property(e => e.IdVendedor).HasColumnName("ID_VENDEDOR");
+            entity.Property(e => e.Ifnome)
+                .HasMaxLength(60)
+                .IsUnicode(false)
+                .HasColumnName("IFNome");
+            entity.Property(e => e.Inutilizado)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')");
+            entity.Property(e => e.Liberado)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .HasColumnName("liberado");
+            entity.Property(e => e.LocalCanc).HasColumnName("localCanc");
+            entity.Property(e => e.MotivoCanc)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.NomeCliente)
+                .HasMaxLength(60)
+                .IsUnicode(false)
+                .HasColumnName("nomeCliente");
+            entity.Property(e => e.Notaf)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("NOTAF");
+            entity.Property(e => e.NumNfce).HasColumnName("NumNFCE");
+            entity.Property(e => e.NumNfcecanc).HasColumnName("NumNFCECanc");
+            entity.Property(e => e.Pessoas)
+                .HasDefaultValueSql("(1)")
+                .HasColumnName("PESSOAS");
+            entity.Property(e => e.PosIdent).HasColumnName("posIdent");
+            entity.Property(e => e.Posicao).HasColumnName("POSICAO");
+            entity.Property(e => e.Prodserv).HasColumnName("prodserv");
+            entity.Property(e => e.ProtocoloAutorizacao)
+                .HasMaxLength(15)
+                .IsUnicode(false);
+            entity.Property(e => e.Repique).HasColumnName("REPIQUE");
+            entity.Property(e => e.Respago).HasColumnName("respago");
+            entity.Property(e => e.Seq).HasColumnName("seq");
+            entity.Property(e => e.Servico).HasColumnName("SERVICO");
+            entity.Property(e => e.Tatual)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('S')")
+                .IsFixedLength()
+                .HasColumnName("TATUAL");
+            entity.Property(e => e.Taxa).HasColumnName("TAXA");
+            entity.Property(e => e.Tempo)
+                .HasMaxLength(8)
+                .IsUnicode(false);
+            entity.Property(e => e.TempoPedido)
+                .HasMaxLength(8)
+                .IsUnicode(false);
+            entity.Property(e => e.TipoIntegracao)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("tipoIntegracao");
+            entity.Property(e => e.Tipovenda).HasColumnName("TIPOVENDA");
+            entity.Property(e => e.TotComandas).HasColumnName("totComandas");
+            entity.Property(e => e.Total).HasColumnName("TOTAL");
+            entity.Property(e => e.Troco).HasColumnName("TROCO");
+            entity.Property(e => e.Turno)
+                .HasDefaultValueSql("(1)")
+                .HasColumnName("TURNO");
+            entity.Property(e => e.XmlCancNfce)
+                .IsUnicode(false)
+                .HasColumnName("xmlCancNfce");
+            entity.Property(e => e.XmlCancSat)
+                .IsUnicode(false)
+                .HasColumnName("xmlCancSat");
+            entity.Property(e => e.Xmlnfce)
+                .IsUnicode(false)
+                .HasColumnName("xmlnfce");
+            entity.Property(e => e.Xmlsat)
+                .IsUnicode(false)
+                .HasColumnName("xmlsat");
+
+            entity.HasOne(d => d.IdMaquinaNavigation).WithMany(p => p.VcCupfecha)
+                .HasForeignKey(d => d.IdMaquina)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_VC_CUPFECHA_VC_MAQUINAS");
+        });
+
         modelBuilder.Entity<VcMaquinas>(entity =>
         {
             entity.HasKey(e => e.IdMaquina);

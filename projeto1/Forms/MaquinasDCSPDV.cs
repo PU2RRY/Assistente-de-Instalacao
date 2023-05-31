@@ -22,8 +22,26 @@ namespace Assistente_de_Instalação.Forms
         }
         private void CarregaGrid()
         {
+            dgvMaquinasDCS.Columns.Clear();
+            dgvMaquinasDCS.AutoGenerateColumns = false;
+            string[] colunas =
+            {
+                "NOMECOMP",
+                "TIPOIMP",
+                "TERMINAL",
+                "DataCad",
+                "CHAVE",
+            };
+            foreach (string s in colunas)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = s;
+                col.HeaderText = s;
+                dgvMaquinasDCS.Columns.Add(col);
+            }
             dgvMaquinasDCS.DataSource = vc.VcMaquinas.ToList();
-
+            
+            //dgvMaquinasDCS.DataSource = vc.VcCupfecha.ToList();
         }
         private void MaquinasDCSPDV_Load(object sender, EventArgs e)
         {
