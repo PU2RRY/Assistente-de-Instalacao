@@ -1,7 +1,9 @@
 ﻿using Assistente_de_Instalação.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -40,7 +42,7 @@ namespace Assistente_de_Instalação.Forms
                 dgvMaquinasDCS.Columns.Add(col);
             }
             dgvMaquinasDCS.DataSource = vc.VcMaquinas.ToList();
-            
+
             //dgvMaquinasDCS.DataSource = vc.VcCupfecha.ToList();
         }
         private void MaquinasDCSPDV_Load(object sender, EventArgs e)

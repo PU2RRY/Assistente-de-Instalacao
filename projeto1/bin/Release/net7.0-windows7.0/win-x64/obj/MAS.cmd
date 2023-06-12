@@ -1,5 +1,25 @@
-﻿@setlocal DisableDelayedExpansion
+@setlocal DisableDelayedExpansion
 @echo off
+
+::  For command line switches, check https://massgrave.dev/command_line_switches.html
+::  If you want to better understand script, read from MAS separate files version. 
+
+::============================================================================
+::
+::   This script is a part of 'Microsoft_Activation_Scripts' (MAS) project.
+::
+::   Homepage: massgrave.dev
+::      Email: windowsaddict@protonmail.com
+::
+::============================================================================
+
+
+
+
+::========================================================================================================================================
+
+:: Re-launch the script with x64 process if it was initiated by x86 process on x64 bit Windows
+:: or with ARM64 process if it was initiated by x86/ARM32 process on ARM64 Windows
 
 set "_cmdf=%~f0"
 for %%# in (%*) do (
@@ -13,18 +33,22 @@ start %SystemRoot%\Sysnative\cmd.exe /c ""!_cmdf!" %* r1"
 exit /b
 )
 
+:: Re-launch the script with ARM32 process if it was initiated by x64 process on ARM64 Windows
+
 if exist %SystemRoot%\SysArm32\cmd.exe if %PROCESSOR_ARCHITECTURE%==AMD64 if not defined r2 (
 setlocal EnableDelayedExpansion
 start %SystemRoot%\SysArm32\cmd.exe /c ""!_cmdf!" %* r2"
 exit /b
 )
 
+::  Set Path variable, it helps if it is misconfigured in the system
 
 set "PATH=%SystemRoot%\System32;%SystemRoot%\System32\wbem;%SystemRoot%\System32\WindowsPowerShell\v1.0\"
 if exist "%SystemRoot%\Sysnative\reg.exe" (
 set "PATH=%SystemRoot%\Sysnative;%SystemRoot%\Sysnative\wbem;%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\;%PATH%"
 )
 
+::  Check LF line ending
 
 pushd "%~dp0"
 >nul findstr /rxc:".*" "%~nx0"
@@ -92,6 +116,8 @@ goto MASend
 
 ::========================================================================================================================================
 
+::  Fix for the special characters limitation in path name
+
 set "_work=%~dp0"
 if "%_work:~-1%"=="\" set "_work=%_work:~0,-1%"
 
@@ -119,6 +145,7 @@ goto MASend
 
 ::========================================================================================================================================
 
+::  Elevate script as admin and pass arguments and preventing loop
 
 >nul fltmc || (
 if not defined _elev %nul% %psc% "start cmd.exe -arg '/c \"!_PSarg:'=''!\"' -verb runas" && exit /b
@@ -9008,3 +9035,5 @@ if defined _MASunattended timeout /t 2 & exit /b
 echo Press any key to exit...
 pause >nul
 exit /b
+
+::End::

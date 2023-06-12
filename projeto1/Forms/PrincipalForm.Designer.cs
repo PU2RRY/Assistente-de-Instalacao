@@ -53,7 +53,7 @@
             BT1REDE.ForeColor = SystemColors.ControlText;
             BT1REDE.Location = new Point(12, 70);
             BT1REDE.Name = "BT1REDE";
-            BT1REDE.Size = new Size(252, 40);
+            BT1REDE.Size = new Size(242, 40);
             BT1REDE.TabIndex = 0;
             BT1REDE.Text = "REDE ";
             BT1REDE.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             BT2infsis.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BT2infsis.Location = new Point(12, 116);
             BT2infsis.Name = "BT2infsis";
-            BT2infsis.Size = new Size(252, 40);
+            BT2infsis.Size = new Size(242, 40);
             BT2infsis.TabIndex = 2;
             BT2infsis.Tag = "";
             BT2infsis.Text = "Sistema";
@@ -96,7 +96,7 @@
             BT3PainelControle.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BT3PainelControle.Location = new Point(12, 162);
             BT3PainelControle.Name = "BT3PainelControle";
-            BT3PainelControle.Size = new Size(252, 40);
+            BT3PainelControle.Size = new Size(242, 40);
             BT3PainelControle.TabIndex = 3;
             BT3PainelControle.Tag = "";
             BT3PainelControle.Text = "Painel de Controle";
@@ -113,7 +113,7 @@
             BT4Imp.ForeColor = SystemColors.ControlText;
             BT4Imp.Location = new Point(12, 208);
             BT4Imp.Name = "BT4Imp";
-            BT4Imp.Size = new Size(252, 40);
+            BT4Imp.Size = new Size(242, 40);
             BT4Imp.TabIndex = 4;
             BT4Imp.Text = "Impressoras";
             BT4Imp.UseVisualStyleBackColor = false;
@@ -129,7 +129,7 @@
             BT5OpsEnergia.ForeColor = SystemColors.ControlText;
             BT5OpsEnergia.Location = new Point(12, 254);
             BT5OpsEnergia.Name = "BT5OpsEnergia";
-            BT5OpsEnergia.Size = new Size(252, 40);
+            BT5OpsEnergia.Size = new Size(242, 40);
             BT5OpsEnergia.TabIndex = 5;
             BT5OpsEnergia.Text = "Energia ";
             BT5OpsEnergia.UseVisualStyleBackColor = false;
@@ -145,7 +145,7 @@
             BT6TNMaquina.ForeColor = SystemColors.ControlText;
             BT6TNMaquina.Location = new Point(12, 300);
             BT6TNMaquina.Name = "BT6TNMaquina";
-            BT6TNMaquina.Size = new Size(252, 40);
+            BT6TNMaquina.Size = new Size(242, 40);
             BT6TNMaquina.TabIndex = 6;
             BT6TNMaquina.Text = "Nome de Maquina";
             BT6TNMaquina.UseVisualStyleBackColor = false;
@@ -159,9 +159,9 @@
             tbBackupLogs.FlatStyle = FlatStyle.Flat;
             tbBackupLogs.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             tbBackupLogs.ForeColor = SystemColors.ControlText;
-            tbBackupLogs.Location = new Point(12, 346);
+            tbBackupLogs.Location = new Point(259, 208);
             tbBackupLogs.Name = "tbBackupLogs";
-            tbBackupLogs.Size = new Size(252, 40);
+            tbBackupLogs.Size = new Size(247, 40);
             tbBackupLogs.TabIndex = 7;
             tbBackupLogs.Text = "Fazer Backup e Logs";
             tbBackupLogs.UseVisualStyleBackColor = true;
@@ -175,9 +175,9 @@
             ColocaAppIniciarWin.FlatStyle = FlatStyle.Flat;
             ColocaAppIniciarWin.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ColocaAppIniciarWin.ForeColor = SystemColors.ControlText;
-            ColocaAppIniciarWin.Location = new Point(12, 392);
+            ColocaAppIniciarWin.Location = new Point(12, 346);
             ColocaAppIniciarWin.Name = "ColocaAppIniciarWin";
-            ColocaAppIniciarWin.Size = new Size(252, 40);
+            ColocaAppIniciarWin.Size = new Size(242, 40);
             ColocaAppIniciarWin.TabIndex = 8;
             ColocaAppIniciarWin.Text = "Inicializar do Windows";
             ColocaAppIniciarWin.UseVisualStyleBackColor = false;
@@ -191,9 +191,9 @@
             AtivaRecursos.FlatStyle = FlatStyle.Flat;
             AtivaRecursos.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             AtivaRecursos.ForeColor = SystemColors.ControlText;
-            AtivaRecursos.Location = new Point(13, 438);
+            AtivaRecursos.Location = new Point(12, 392);
             AtivaRecursos.Name = "AtivaRecursos";
-            AtivaRecursos.Size = new Size(251, 40);
+            AtivaRecursos.Size = new Size(242, 40);
             AtivaRecursos.TabIndex = 9;
             AtivaRecursos.Text = "Recursos Windows";
             AtivaRecursos.UseVisualStyleBackColor = false;
@@ -207,9 +207,9 @@
             MasAtivador.FlatStyle = FlatStyle.Flat;
             MasAtivador.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             MasAtivador.ForeColor = SystemColors.ControlText;
-            MasAtivador.Location = new Point(270, 70);
+            MasAtivador.Location = new Point(260, 70);
             MasAtivador.Name = "MasAtivador";
-            MasAtivador.Size = new Size(235, 40);
+            MasAtivador.Size = new Size(245, 40);
             MasAtivador.TabIndex = 10;
             MasAtivador.Text = "Ativador M.A.S";
             MasAtivador.UseVisualStyleBackColor = false;
@@ -223,9 +223,9 @@
             ReiniciaSpooler.FlatStyle = FlatStyle.Flat;
             ReiniciaSpooler.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ReiniciaSpooler.ForeColor = SystemColors.ControlText;
-            ReiniciaSpooler.Location = new Point(269, 116);
+            ReiniciaSpooler.Location = new Point(259, 116);
             ReiniciaSpooler.Name = "ReiniciaSpooler";
-            ReiniciaSpooler.Size = new Size(236, 40);
+            ReiniciaSpooler.Size = new Size(246, 40);
             ReiniciaSpooler.TabIndex = 11;
             ReiniciaSpooler.Text = "Reiniciar Spooler";
             ReiniciaSpooler.UseVisualStyleBackColor = false;
@@ -239,13 +239,15 @@
             Mensagem.FlatStyle = FlatStyle.Flat;
             Mensagem.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             Mensagem.ForeColor = SystemColors.ControlText;
-            Mensagem.Location = new Point(270, 438);
+            Mensagem.Location = new Point(411, 438);
             Mensagem.Name = "Mensagem";
-            Mensagem.Size = new Size(236, 40);
+            Mensagem.Size = new Size(95, 40);
             Mensagem.TabIndex = 12;
-            Mensagem.Text = "Mensagem ";
+            Mensagem.Text = "TESTE";
             Mensagem.UseVisualStyleBackColor = false;
             Mensagem.Click += Mensagem_Click;
+            Mensagem.MouseEnter += BTNEnter;
+            Mensagem.MouseLeave += BTNLeave;
             // 
             // btnMaquinasPDV
             // 
@@ -253,13 +255,15 @@
             btnMaquinasPDV.FlatStyle = FlatStyle.Flat;
             btnMaquinasPDV.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnMaquinasPDV.ForeColor = SystemColors.ControlText;
-            btnMaquinasPDV.Location = new Point(270, 162);
+            btnMaquinasPDV.Location = new Point(260, 162);
             btnMaquinasPDV.Name = "btnMaquinasPDV";
-            btnMaquinasPDV.Size = new Size(236, 40);
+            btnMaquinasPDV.Size = new Size(246, 40);
             btnMaquinasPDV.TabIndex = 13;
             btnMaquinasPDV.Text = "Maquinas DCS PDV";
             btnMaquinasPDV.UseVisualStyleBackColor = false;
             btnMaquinasPDV.Click += btnMaquinasPDV_Click;
+            btnMaquinasPDV.MouseEnter += BTNEnter;
+            btnMaquinasPDV.MouseLeave += BTNLeave;
             // 
             // MenuPrincipal
             // 

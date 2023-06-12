@@ -37,7 +37,7 @@
             // 
             lbMaquiansDCS.AutoSize = true;
             lbMaquiansDCS.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lbMaquiansDCS.Location = new Point(266, 9);
+            lbMaquiansDCS.Location = new Point(206, 9);
             lbMaquiansDCS.Name = "lbMaquiansDCS";
             lbMaquiansDCS.Size = new Size(263, 37);
             lbMaquiansDCS.TabIndex = 0;
@@ -49,7 +49,7 @@
             dgvMaquinasDCS.Location = new Point(12, 57);
             dgvMaquinasDCS.Name = "dgvMaquinasDCS";
             dgvMaquinasDCS.RowTemplate.Height = 25;
-            dgvMaquinasDCS.Size = new Size(776, 247);
+            dgvMaquinasDCS.Size = new Size(656, 247);
             dgvMaquinasDCS.TabIndex = 1;
             // 
             // MaquinasDCSPDV
@@ -57,7 +57,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(800, 321);
+            ClientSize = new Size(681, 321);
             Controls.Add(dgvMaquinasDCS);
             Controls.Add(lbMaquiansDCS);
             FormBorderStyle = FormBorderStyle.FixedSingle;

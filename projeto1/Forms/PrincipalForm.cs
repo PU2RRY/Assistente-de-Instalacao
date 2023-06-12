@@ -2,8 +2,6 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
 
-
-
 namespace projeto1
 {
     public partial class MenuPrincipal : Form
@@ -95,7 +93,7 @@ namespace projeto1
         }
         private void MasAtivador_Click(object sender, EventArgs e)
         {
-            string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.bat");
+            string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.cmd");
             Process.Start(mas);
         }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
@@ -129,7 +127,11 @@ namespace projeto1
         }
         private void Mensagem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult.Yes == result)
+                MessageBox.Show("teste");
+            else
+                Application.Restart();
         }
 
         private void btnMaquinasPDV_Click(object sender, EventArgs e)
