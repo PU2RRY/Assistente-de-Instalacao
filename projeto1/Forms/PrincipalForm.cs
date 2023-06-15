@@ -23,48 +23,9 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void BT2_Click(object sender, EventArgs e)
-        {
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "msinfo32.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-        }
-        private void BT3_Click(object sender, EventArgs e)
-        {
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "control.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            // Abre painel de impressoras do Windows 
-            string impWin = "control printers";
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe", $"/C {impWin}");
-            process.StartInfo = startInfo;
-            startInfo.CreateNoWindow = true;
-            process.Start();
-            process.WaitForExit();
-        }
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            process.StartInfo = startInfo;
-            Process.Start("control.exe", "powercfg.cpl");
-        }
         private void BT6_Click(object sender, EventArgs e)
         {
-            RenomeiaMaquinaForm form3 = new RenomeiaMaquinaForm();
-            OcultaExibForm(false);
-            form3.ShowDialog();
-            OcultaExibForm(true);
+
         }
         private void BTNEnter(object sender, EventArgs e)
         {
@@ -83,25 +44,63 @@ namespace projeto1
             form.ShowDialog();
             OcultaExibForm(true);
         }
-        private void ColocaAppIniciarWin_Click(object sender, EventArgs e)
-        {
-            Process.Start("explorer.exe", "shell:Startup");
-        }
-        private void AtivaRecursos_Click(object sender, EventArgs e)
-        {
-            Process.Start("optionalfeatures");
-        }
-        private void MasAtivador_Click(object sender, EventArgs e)
-        {
-            string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.cmd");
-            Process.Start(mas);
-        }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
             DirectoryInfo diSource = new(dir);
             return diSource.GetFiles().Where(w => w.Extension.Equals(ext, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-        private void ReiniciaSpooler_Click(object sender, EventArgs e)
+        private void Mensagem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult.Yes == result)
+                MessageBox.Show("teste");
+            else
+                Application.Restart();
+        }
+        private void btnMaquinasPDV_Click(object sender, EventArgs e)
+        {
+            MaquinasDCSPDV form = new MaquinasDCSPDV();
+            OcultaExibForm(false);
+            form.ShowDialog();
+            OcultaExibForm(true);
+        }
+        private void impressorasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Abre painel de impressoras do Windows 
+            string impWin = "control printers";
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe", $"/C {impWin}");
+            process.StartInfo = startInfo;
+            startInfo.CreateNoWindow = true;
+            process.Start();
+            process.WaitForExit();
+        }
+        private void painelDeControleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "control.exe";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+        }
+        private void energiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            process.StartInfo = startInfo;
+            Process.Start("control.exe", "powercfg.cpl");
+        }
+        private void descriçãoDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "msinfo32.exe";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+        }
+        private void reiniciaSpoolerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string serviço = "spooler";
             Spooler("net stop " + serviço);
@@ -125,21 +124,25 @@ namespace projeto1
                 process.WaitForExit();
             }
         }
-        private void Mensagem_Click(object sender, EventArgs e)
+        private void recursosDoWindowsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult.Yes == result)
-                MessageBox.Show("teste");
-            else
-                Application.Restart();
+            Process.Start("optionalfeatures");
         }
-
-        private void btnMaquinasPDV_Click(object sender, EventArgs e)
+        private void pastaInicializarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MaquinasDCSPDV form = new MaquinasDCSPDV();
+            Process.Start("explorer.exe", "shell:Startup");
+        }
+        private void renomeiaNomeMaquinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RenomeiaMaquinaForm form3 = new RenomeiaMaquinaForm();
             OcultaExibForm(false);
-            form.ShowDialog();
+            form3.ShowDialog();
             OcultaExibForm(true);
+        }
+        private void ativadorMASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.cmd");
+            Process.Start(mas);
         }
     }
 }

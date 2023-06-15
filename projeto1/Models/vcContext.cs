@@ -8,10 +8,6 @@ namespace Assistente_de_Instalação.Models;
 
 public partial class vcContext : DbContext
 {
-    public vcContext()
-    {
-    }
-
     public vcContext(DbContextOptions<vcContext> options)
         : base(options)
     {
@@ -20,10 +16,6 @@ public partial class vcContext : DbContext
     public virtual DbSet<VcCupfecha> VcCupfecha { get; set; }
 
     public virtual DbSet<VcMaquinas> VcMaquinas { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=vc;Persist Security Info=True;User ID=sqlvirtualnet;Password=n14e5t20; TrustServerCertificate=true ");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -72,6 +64,7 @@ public partial class vcContext : DbContext
                 .HasDefaultValueSql("('I')")
                 .IsFixedLength()
                 .HasColumnName("auditor");
+            entity.Property(e => e.AutoDivideConta).HasColumnName("autoDivideConta");
             entity.Property(e => e.Bonificado)
                 .IsRequired()
                 .HasMaxLength(1)

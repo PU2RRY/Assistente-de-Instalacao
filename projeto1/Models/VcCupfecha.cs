@@ -161,5 +161,7 @@ public partial class VcCupfecha
 
     public string EviSent { get; set; }
 
+    public bool AutoDivideConta { get; set; }
+
     public virtual VcMaquinas IdMaquinaNavigation { get; set; }
 }

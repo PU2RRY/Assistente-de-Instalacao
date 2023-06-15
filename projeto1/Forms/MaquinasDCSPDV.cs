@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,13 @@ namespace Assistente_de_Instalação.Forms
 {
     public partial class MaquinasDCSPDV : Form
     {
+        string conexãoVC = "vc";
         private readonly vcContext vc;
         public MaquinasDCSPDV()
         {
             InitializeComponent();
             vc = new vcContext();
+            
         }
         private void CarregaGrid()
         {
@@ -42,8 +45,6 @@ namespace Assistente_de_Instalação.Forms
                 dgvMaquinasDCS.Columns.Add(col);
             }
             dgvMaquinasDCS.DataSource = vc.VcMaquinas.ToList();
-
-            //dgvMaquinasDCS.DataSource = vc.VcCupfecha.ToList();
         }
         private void MaquinasDCSPDV_Load(object sender, EventArgs e)
         {
