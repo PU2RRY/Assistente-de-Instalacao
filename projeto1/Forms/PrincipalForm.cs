@@ -100,9 +100,6 @@ namespace projeto1
         {
             string serviço = "spooler";
             Spooler("net stop " + serviço);
-            var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
-            txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
-            txtFiles.ForEach(f => { File.Delete(f.FullName); });
             Spooler("net start " + serviço);
             MessageBox.Show("Serviço reiniciado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -143,14 +140,14 @@ namespace projeto1
         private void apagaTXTVicommerceimpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
-            //txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
             txtFiles.ForEach(f => { File.Delete(f.FullName); });
+            MessageBox.Show("Arquivos apagados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void apagaTXTTempSATimpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt");
-            //txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
             txtFiles.ForEach(f => { File.Delete(f.FullName); });
+            MessageBox.Show("Arquivos apagados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
