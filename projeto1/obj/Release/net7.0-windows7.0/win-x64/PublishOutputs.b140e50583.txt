@@ -1,4 +1,6 @@
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.pdb
-C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\MAS.bat
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\MAS.cmd
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\Resources.resx
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.dll.config
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.exe

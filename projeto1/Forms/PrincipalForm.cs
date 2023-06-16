@@ -23,10 +23,6 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void BT6_Click(object sender, EventArgs e)
-        {
-
-        }
         private void BTNEnter(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -144,10 +140,17 @@ namespace projeto1
             string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.cmd");
             Process.Start(mas);
         }
-
-        private void btnReinicia_Click(object sender, EventArgs e)
+        private void apagaTXTVicommerceimpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("shutdown", "/r /t 0");
+            var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
+            //txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
+            txtFiles.ForEach(f => { File.Delete(f.FullName); });
+        }
+        private void apagaTXTTempSATimpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt");
+            //txtFiles.AddRange(ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt"));
+            txtFiles.ForEach(f => { File.Delete(f.FullName); });
         }
     }
 }

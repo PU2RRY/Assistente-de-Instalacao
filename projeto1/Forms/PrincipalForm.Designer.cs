@@ -45,8 +45,10 @@
             pastaInicializarToolStripMenuItem = new ToolStripMenuItem();
             renomeiaNomeMaquinaToolStripMenuItem = new ToolStripMenuItem();
             ativadorMASToolStripMenuItem = new ToolStripMenuItem();
+            pDVToolStripMenuItem = new ToolStripMenuItem();
+            apagaTXTVicommerceimpToolStripMenuItem = new ToolStripMenuItem();
+            apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            btnReinicia = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,7 +130,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, pDVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(538, 24);
@@ -205,6 +207,27 @@
             ativadorMASToolStripMenuItem.Text = "Ativador M.A.S";
             ativadorMASToolStripMenuItem.Click += ativadorMASToolStripMenuItem_Click;
             // 
+            // pDVToolStripMenuItem
+            // 
+            pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem });
+            pDVToolStripMenuItem.Name = "pDVToolStripMenuItem";
+            pDVToolStripMenuItem.Size = new Size(41, 20);
+            pDVToolStripMenuItem.Text = "PDV";
+            // 
+            // apagaTXTVicommerceimpToolStripMenuItem
+            // 
+            apagaTXTVicommerceimpToolStripMenuItem.Name = "apagaTXTVicommerceimpToolStripMenuItem";
+            apagaTXTVicommerceimpToolStripMenuItem.Size = new Size(225, 22);
+            apagaTXTVicommerceimpToolStripMenuItem.Text = "Apaga TXT vicommerce/imp";
+            apagaTXTVicommerceimpToolStripMenuItem.Click += apagaTXTVicommerceimpToolStripMenuItem_Click;
+            // 
+            // apagaTXTTempSATimpToolStripMenuItem
+            // 
+            apagaTXTTempSATimpToolStripMenuItem.Name = "apagaTXTTempSATimpToolStripMenuItem";
+            apagaTXTTempSATimpToolStripMenuItem.Size = new Size(225, 22);
+            apagaTXTTempSATimpToolStripMenuItem.Text = "Apaga TXT TempSAT/imp";
+            apagaTXTTempSATimpToolStripMenuItem.Click += apagaTXTTempSATimpToolStripMenuItem_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.MintCream;
@@ -213,27 +236,12 @@
             panel1.Size = new Size(282, 153);
             panel1.TabIndex = 15;
             // 
-            // btnReinicia
-            // 
-            btnReinicia.BackColor = Color.DodgerBlue;
-            btnReinicia.FlatStyle = FlatStyle.Flat;
-            btnReinicia.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReinicia.ForeColor = SystemColors.ControlText;
-            btnReinicia.Location = new Point(162, 315);
-            btnReinicia.Name = "btnReinicia";
-            btnReinicia.Size = new Size(133, 31);
-            btnReinicia.TabIndex = 16;
-            btnReinicia.Text = "REINICIA";
-            btnReinicia.UseVisualStyleBackColor = false;
-            btnReinicia.Click += btnReinicia_Click;
-            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(538, 491);
-            Controls.Add(btnReinicia);
             Controls.Add(panel1);
             Controls.Add(btnMaquinasPDV);
             Controls.Add(Mensagem);
@@ -274,6 +282,8 @@
         private ToolStripMenuItem renomeiaNomeMaquinaToolStripMenuItem;
         private ToolStripMenuItem ativadorMASToolStripMenuItem;
         private Panel panel1;
-        private Button btnReinicia;
+        private ToolStripMenuItem pDVToolStripMenuItem;
+        private ToolStripMenuItem apagaTXTVicommerceimpToolStripMenuItem;
+        private ToolStripMenuItem apagaTXTTempSATimpToolStripMenuItem;
     }
 }

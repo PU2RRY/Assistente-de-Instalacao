@@ -572,3 +572,67 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bi
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.MaquinasDCSPDV.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.dll.config
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\MAS.cmd
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.exe
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\MAS.cmd
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\Resources.resx
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.dll.config
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.deps.json
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.runtimeconfig.json
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.pdb
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Azure.Core.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Azure.Identity.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Humanizer.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Data.SqlClient.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.EntityFrameworkCore.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.DependencyModel.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Logging.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Options.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Extensions.Primitives.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Identity.Client.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.SqlServer.Server.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Mono.TextTemplating.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.CodeDom.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.Management.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.Memory.Data.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.Runtime.Caching.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.csproj.AssemblyReference.cache
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.BackupLogsForm.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.Login.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.MaquinasDCSPDV.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\projeto1.PingForm.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\projeto1.MenuPrincipal.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\projeto1.RenomeiaMaquinaForm.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Properties.Resources.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.obj.Resources.resources
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.csproj.GenerateResource.cache
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.AssemblyInfoInputs.cache
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.AssemblyInfo.cs
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.csproj.CopyComplete
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\refint\Assistente de Instalação.dll
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.pdb
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.genruntimeconfig.cache
+C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\ref\Assistente de Instalação.dll
