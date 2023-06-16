@@ -37,10 +37,16 @@ namespace projeto1
                 {
                     // Altera o nome da máquina:
                     bool success = NativeMethods.SetComputerName(Newname);
-
                     if (success)
                     {
-                        MessageBox.Show("nome alterado para :" + Newname + "Porfavor reinicia a maquina para concluir." );
+                        // MessageBox.Show("nome alterado para :" + Newname + "Porfavor reinicia a maquina para concluir.");
+                        DialogResult dr = MessageBox.Show(@"Nome alterado para :" + Newname + " Você deve reiniciar o computador para validar", "Confirmação", MessageBoxButtons.YesNo);
+                        if (dr == DialogResult.Yes)
+                        {
+                            Process.Start("shutdown", "/r /t 0");
+                        }
+                        else
+                            this.Close();
                     }
                     else
                     {

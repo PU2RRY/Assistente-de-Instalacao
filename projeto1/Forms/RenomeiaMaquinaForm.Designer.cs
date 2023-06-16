@@ -42,7 +42,7 @@
             textBox1.Location = new Point(12, 35);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(373, 38);
+            textBox1.Size = new Size(342, 38);
             textBox1.TabIndex = 0;
             // 
             // button1
@@ -50,7 +50,7 @@
             button1.BackColor = SystemColors.InactiveCaptionText;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.DarkOrange;
-            button1.Location = new Point(281, 79);
+            button1.Location = new Point(250, 79);
             button1.Name = "button1";
             button1.Size = new Size(104, 32);
             button1.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(13, 87);
+            label2.Location = new Point(13, 81);
             label2.Name = "label2";
             label2.Size = new Size(88, 17);
             label2.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(107, 87);
+            label3.Location = new Point(107, 81);
             label3.Name = "label3";
             label3.Size = new Size(16, 17);
             label3.TabIndex = 4;
@@ -93,7 +93,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkCyan;
-            ClientSize = new Size(397, 123);
+            ClientSize = new Size(366, 117);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -101,6 +101,8 @@
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "RenomeiaMaquinaForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Troca Nome da Maquina ";

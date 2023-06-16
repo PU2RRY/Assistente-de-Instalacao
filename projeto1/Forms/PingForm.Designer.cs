@@ -144,6 +144,8 @@
             Controls.Add(startping);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "PingForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ping";

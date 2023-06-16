@@ -144,5 +144,10 @@ namespace projeto1
             string mas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "obj", "MAS.cmd");
             Process.Start(mas);
         }
+
+        private void btnReinicia_Click(object sender, EventArgs e)
+        {
+            Process.Start("shutdown", "/r /t 0");
+        }
     }
 }

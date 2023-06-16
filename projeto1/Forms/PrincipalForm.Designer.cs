@@ -46,6 +46,7 @@
             renomeiaNomeMaquinaToolStripMenuItem = new ToolStripMenuItem();
             ativadorMASToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            btnReinicia = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             label1.BackColor = SystemColors.ActiveBorder;
             label1.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(200, 34);
+            label1.Location = new Point(30, 34);
             label1.Name = "label1";
             label1.Size = new Size(482, 37);
             label1.TabIndex = 1;
@@ -99,7 +100,7 @@
             Mensagem.FlatStyle = FlatStyle.Flat;
             Mensagem.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             Mensagem.ForeColor = SystemColors.ControlText;
-            Mensagem.Location = new Point(183, 448);
+            Mensagem.Location = new Point(431, 448);
             Mensagem.Name = "Mensagem";
             Mensagem.Size = new Size(95, 31);
             Mensagem.TabIndex = 12;
@@ -130,7 +131,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(923, 24);
+            menuStrip1.Size = new Size(538, 24);
             menuStrip1.TabIndex = 14;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -207,17 +208,32 @@
             // panel1
             // 
             panel1.BackColor = Color.MintCream;
-            panel1.Location = new Point(629, 92);
+            panel1.Location = new Point(244, 92);
             panel1.Name = "panel1";
             panel1.Size = new Size(282, 153);
             panel1.TabIndex = 15;
+            // 
+            // btnReinicia
+            // 
+            btnReinicia.BackColor = Color.DodgerBlue;
+            btnReinicia.FlatStyle = FlatStyle.Flat;
+            btnReinicia.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReinicia.ForeColor = SystemColors.ControlText;
+            btnReinicia.Location = new Point(162, 315);
+            btnReinicia.Name = "btnReinicia";
+            btnReinicia.Size = new Size(133, 31);
+            btnReinicia.TabIndex = 16;
+            btnReinicia.Text = "REINICIA";
+            btnReinicia.UseVisualStyleBackColor = false;
+            btnReinicia.Click += btnReinicia_Click;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(923, 491);
+            ClientSize = new Size(538, 491);
+            Controls.Add(btnReinicia);
             Controls.Add(panel1);
             Controls.Add(btnMaquinasPDV);
             Controls.Add(Mensagem);
@@ -229,6 +245,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
@@ -257,5 +274,6 @@
         private ToolStripMenuItem renomeiaNomeMaquinaToolStripMenuItem;
         private ToolStripMenuItem ativadorMASToolStripMenuItem;
         private Panel panel1;
+        private Button btnReinicia;
     }
 }
