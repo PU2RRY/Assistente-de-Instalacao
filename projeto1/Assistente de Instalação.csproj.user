@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\Properties\PublishProfiles\FolderProfile12.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\Properties\PublishProfiles\FolderProfile13.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Forms\BackupLogsForm.cs">
