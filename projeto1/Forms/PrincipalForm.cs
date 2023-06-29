@@ -196,9 +196,7 @@ namespace projeto1
             lbOS.Text = RetornaOsVersaoAmigavel();
             try
             {
-                //await Task.Delay(3000);
-                tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
-
+                piscaimagemconexao();
             }
             catch (Exception ex)
             {
@@ -215,7 +213,14 @@ namespace projeto1
         {
 
         }
-
+        private async void piscaimagemconexao()
+        {
+            await Task.Delay(1000);
+            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            await Task.Delay(1000);
+            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
+            piscaimagemconexao();
+        }
         private void bgwTestaConexaoEvicommerce_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             bgwTestaConexaoEvicommerce.ReportProgress(0);
