@@ -49,12 +49,15 @@
             // 
             // tbSenha
             // 
-            tbSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSenha.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSenha.ForeColor = Color.LightGray;
             tbSenha.Location = new Point(13, 40);
             tbSenha.Multiline = true;
             tbSenha.Name = "tbSenha";
             tbSenha.Size = new Size(273, 29);
             tbSenha.TabIndex = 1;
+            tbSenha.Text = "Senha";
+            tbSenha.TextAlign = HorizontalAlignment.Center;
             tbSenha.KeyDown += tbSenha_KeyDown;
             tbSenha.KeyPress += tbSenha_KeyPress;
             // 

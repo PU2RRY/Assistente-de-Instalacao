@@ -34,10 +34,16 @@ namespace Assistente_de_Instalação.Forms
             {
                 MessageBox.Show("SENHA INCORRETA");
                 senhaDigitada = "";
+                tbSenha.Clear();
             }
         }
         private void tbSenha_KeyDown(object sender, KeyEventArgs e)
         {
+            if (tbSenha.Text == "Senha")
+            {
+                tbSenha.Clear();
+                tbSenha.ForeColor = Color.FromKnownColor(KnownColor.ControlDark);
+            }
             if (e.KeyCode == Keys.Enter)
                 ValidarSenha();
         }
