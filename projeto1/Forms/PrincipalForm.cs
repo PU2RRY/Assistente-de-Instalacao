@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Management;
@@ -5,6 +6,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
+using Assistente_de_Instalação.Properties;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -31,8 +33,6 @@ namespace projeto1
             ODBC_CONFIG_SYS_DSN = 5,
             ODBC_REMOVE_SYS_DSN = 6
         }
-        //public object ServiceControllerStatus { get; private set; }
-        //public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -190,18 +190,11 @@ namespace projeto1
                 MessageBox.Show("Erro não foi possivel gravar o ODBC" + ex.Message);
             }
         }
-        private async void MenuPrincipal_Load(object sender, EventArgs e)
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
             lbHostName.Text = Environment.MachineName;
             lbOS.Text = RetornaOsVersaoAmigavel();
-            try
-            {
-                piscaimagemconexao();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("teste" + ex.Message);
-            }
         }
         public static string RetornaOsVersaoAmigavel()
         {
@@ -212,48 +205,6 @@ namespace projeto1
         private void btTeste_Click(object sender, EventArgs e)
         {
 
-        }
-        private async void piscaimagemconexao()
-        {
-            await Task.Delay(1000);
-            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
-            await Task.Delay(1000);
-            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
-            piscaimagemconexao();
-        }
-        private void bgwTestaConexaoEvicommerce_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            bgwTestaConexaoEvicommerce.ReportProgress(0);
-            if (strConnEViCommerce != "")
-            {
-                bgwTestaConexaoEvicommerce.ReportProgress(1);
-                if (TestaConexaoEViCommerce(strConnEViCommerce))
-                {
-                    bgwTestaConexaoEvicommerce.ReportProgress(2);
-                }
-            }
-        }
-        public static bool TestaConexaoEViCommerce(string strConn)
-        {
-            using (SqlConnection sqlConn = new SqlConnection(strConn))
-            {
-                try
-                {
-                    sqlConn.Open();
-                    return true;
-                }
-                catch (Exception sqlEx)
-                {
-                    throw new Exception(sqlEx.Message);
-                }
-                finally
-                {
-                    if (sqlConn.State != ConnectionState.Closed)
-                    {
-                        sqlConn.Close();
-                    }
-                }
-            }
         }
     }
 }

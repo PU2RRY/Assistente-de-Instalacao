@@ -57,7 +57,6 @@
             label2 = new Label();
             label1 = new Label();
             btTeste = new Button();
-            bgwTestaConexaoEvicommerce = new System.ComponentModel.BackgroundWorker();
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
             tsslEvicommerce = new ToolStripStatusLabel();
@@ -315,10 +314,6 @@
             btTeste.MouseEnter += BTNEnter;
             btTeste.MouseLeave += BTNLeave;
             // 
-            // bgwTestaConexaoEvicommerce
-            // 
-            bgwTestaConexaoEvicommerce.DoWork += bgwTestaConexaoEvicommerce_DoWork;
-            // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
@@ -405,7 +400,6 @@
         private Label label4;
         private Label lbOS;
         private Button btTeste;
-        private System.ComponentModel.BackgroundWorker bgwTestaConexaoEvicommerce;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tssLabel;
         private ToolStripStatusLabel tsslEvicommerce;
