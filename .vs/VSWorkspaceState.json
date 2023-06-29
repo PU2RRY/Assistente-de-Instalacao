@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\projeto1",
+    "\\projeto1\\Forms"
   ],
-  "SelectedNode": "\\ASSISTENTE DE INTALAÇÃO.sln",
+  "SelectedNode": "\\projeto1\\Forms\\PrincipalForm.cs",
   "PreviewInSolutionExplorer": false
 }

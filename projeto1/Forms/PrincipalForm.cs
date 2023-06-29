@@ -1,7 +1,13 @@
+using System.Data;
 using System.Diagnostics;
+using System.Management;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic.Logging;
 using Microsoft.Win32;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -11,9 +17,10 @@ namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
+        String hostName, strConn, strConnTrusted, strConnEViCommerce;
+
         [DllImport("ODBCCP32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern bool SQLConfigDataSource(IntPtr parent, OdbcConfigDsnFlags request, string driver, string attributes);
-
         [Flags]
         enum OdbcConfigDsnFlags : int
         {
@@ -24,8 +31,8 @@ namespace projeto1
             ODBC_CONFIG_SYS_DSN = 5,
             ODBC_REMOVE_SYS_DSN = 6
         }
-        public object ServiceControllerStatus { get; private set; }
-        public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
+        //public object ServiceControllerStatus { get; private set; }
+        //public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -165,9 +172,83 @@ namespace projeto1
         }
         private void registraOdbc()
         {
+            try
+            {
+                if (string.IsNullOrEmpty(tbNomehost.Text))
+                {
+                    MessageBox.Show("Host não informado!", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                string servidor = tbNomehost.Text;
+                Microsoft.Win32.Registry.SetValue(@"HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\vc", "Server", servidor);
+                MessageBox.Show("Host apontado com sucesso");
+                tbNomehost.Clear();
+                tbNomehost.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro não foi possivel gravar o ODBC" + ex.Message);
+            }
+        }
+        private async void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            lbHostName.Text = Environment.MachineName;
+            lbOS.Text = RetornaOsVersaoAmigavel();
+            try
+            {
+                //await Task.Delay(3000);
+                tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
 
-        //3213213213216546547987987654651
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("teste" + ex.Message);
+            }
+        }
+        public static string RetornaOsVersaoAmigavel()
+        {
+            var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                        select x.GetPropertyValue("Caption")).FirstOrDefault();
+            return name != null ? name.ToString() : "Desconhecido";
+        }
+        private void btTeste_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void bgwTestaConexaoEvicommerce_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            bgwTestaConexaoEvicommerce.ReportProgress(0);
+            if (strConnEViCommerce != "")
+            {
+                bgwTestaConexaoEvicommerce.ReportProgress(1);
+                if (TestaConexaoEViCommerce(strConnEViCommerce))
+                {
+                    bgwTestaConexaoEvicommerce.ReportProgress(2);
+                }
+            }
+        }
+        public static bool TestaConexaoEViCommerce(string strConn)
+        {
+            using (SqlConnection sqlConn = new SqlConnection(strConn))
+            {
+                try
+                {
+                    sqlConn.Open();
+                    return true;
+                }
+                catch (Exception sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+                finally
+                {
+                    if (sqlConn.State != ConnectionState.Closed)
+                    {
+                        sqlConn.Close();
+                    }
+                }
+            }
         }
     }
 }
