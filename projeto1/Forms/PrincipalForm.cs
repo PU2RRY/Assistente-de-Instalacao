@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Management;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic.Logging;
 using Microsoft.Win32;
+using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -19,6 +21,9 @@ namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
+        public string url = "";
+        public string destino = "";
+        private WebClient webClient;
         String hostName, strConn, strConnTrusted, strConnEViCommerce;
 
         [DllImport("ODBCCP32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
@@ -143,13 +148,13 @@ namespace projeto1
         private void apagaTXTVicommerceimpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\Imp\", ".txt");
-            txtFiles.ForEach(f => { File.Delete(f.FullName); });
+            txtFiles.ForEach(f => { System.IO.File.Delete(f.FullName); });
             MessageBox.Show("Arquivos apagados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void apagaTXTTempSATimpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt");
-            txtFiles.ForEach(f => { File.Delete(f.FullName); });
+            txtFiles.ForEach(f => { System.IO.File.Delete(f.FullName); });
             MessageBox.Show("Arquivos apagados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void maquinasDCSPDVToolStripMenuItem_Click(object sender, EventArgs e)
@@ -202,9 +207,69 @@ namespace projeto1
                         select x.GetPropertyValue("Caption")).FirstOrDefault();
             return name != null ? name.ToString() : "Desconhecido";
         }
-        private void btTeste_Click(object sender, EventArgs e)
-        {
 
+        private void DownloadSistema()
+        {
+            webClient = new WebClient();
+            webClient.DownloadProgressChanged += WebClient_DownloadProgressChanged;
+            webClient.DownloadFileCompleted += WebClient_DownloadFileCompleted;
+            try
+            {
+                webClient.DownloadFileAsync(new Uri(url), destino);
+                lbStatusDownload.Text = "Iniciando o download...";
+            }
+            catch (Exception ex)
+            {
+                lbStatusDownload.Text = "Erro durante o download:" + ex.Message;
+            }
+        }
+        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            double bytesInMegabytes = e.BytesReceived / (1024.0 * 1024.0);
+            lbStatusDownload.Text = $"Progresso: {e.ProgressPercentage}% - {bytesInMegabytes:F2} MB de {e.TotalBytesToReceive / (1024.0 * 1024.0):F2} MB";
+        }
+        private void WebClient_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                lbStatusDownload.Text = "Download concluído com sucesso.";
+                btDownloadPDV.Enabled = true;
+                btDownloadAtualizador.Enabled = true;
+                url = "";
+                FimDownload();
+            }
+            else
+                lbStatusDownload.Text = "Erro durante o download: " + e.Error.Message;
+
+            webClient.Dispose();
+            webClient = null;
+        }
+        private void btDownloadPDV_Click(object sender, EventArgs e)
+        {
+            btDownloadPDV.Enabled = false;
+            btDownloadAtualizador.Enabled = false;
+            destino = "C:\\InstaladorDcsPDV_x86_x64.exe";
+            url = "https://p-def8.pcloud.com/cBZseVnedZxndhqcZZZYpovo7Z2ZZryLZkZQViOC7ZTHZULZQHZazZz0Zp7Zt5Z15ZvpZ2XZwJZb0ZMRZ2FZyHvAkZrEfh6pcz1s0yjcD2pJ604khJkLCk/InstaladorDcsPDV_x86_x64.exe";
+            DownloadSistema();
+        }
+        private void btDownloadAtualizador_Click(object sender, EventArgs e)
+        {
+            btDownloadPDV.Enabled = false;
+            btDownloadAtualizador.Enabled = false;
+            destino = "C:\\AtualizadorDcsPDV_x86_x64.exe";
+            url = "https://p-def1.pcloud.com/cBZ7tveedZbf2hqcZZZsrovo7Z2ZZryLZkZKwUXuZRZzFZcLZm5ZJRZz0ZFLZgpZGzZl4ZvRZY7ZQVZH4ZyHvAkZhsJXg3hj7QmbyrzEKMz2VjQaU3Jk/AtualizadorDcsPDV_x86_x64.exe";
+            DownloadSistema();
+        }
+        private void FimDownload()
+        {
+            DialogResult result = MessageBox.Show("Deseja abrir o aplicativo baixado ?", "Confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Process.Start(destino);
+                destino = "";
+            }
+            destino = "";
+            return;
         }
     }
 }
