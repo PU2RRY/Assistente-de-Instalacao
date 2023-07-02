@@ -47,6 +47,11 @@
             maquinasDCSPDVToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            panel5 = new Panel();
+            btDownloadAtualizador = new Button();
+            lbStatusDownload = new Label();
+            btDownloadPDV = new Button();
+            panel3 = new Panel();
             lbOS = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -56,12 +61,13 @@
             tbNomehost = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btTeste = new Button();
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
             tsslEvicommerce = new ToolStripStatusLabel();
+            panel4 = new Panel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             panel2.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -72,7 +78,7 @@
             BT1REDE.FlatStyle = FlatStyle.Flat;
             BT1REDE.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BT1REDE.ForeColor = SystemColors.ControlText;
-            BT1REDE.Location = new Point(10, 142);
+            BT1REDE.Location = new Point(10, 131);
             BT1REDE.Name = "BT1REDE";
             BT1REDE.Size = new Size(165, 31);
             BT1REDE.TabIndex = 1;
@@ -88,7 +94,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, pDVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(501, 24);
+            menuStrip1.Size = new Size(883, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -200,21 +206,79 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(lbOS);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lbHostName);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(10, 57);
+            panel1.Location = new Point(181, 131);
             panel1.Name = "panel1";
-            panel1.Size = new Size(482, 79);
+            panel1.Size = new Size(690, 389);
             panel1.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(btDownloadAtualizador);
+            panel5.Controls.Add(lbStatusDownload);
+            panel5.Controls.Add(btDownloadPDV);
+            panel5.Location = new Point(6, 524);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(865, 37);
+            panel5.TabIndex = 5;
+            // 
+            // btDownloadAtualizador
+            // 
+            btDownloadAtualizador.BackColor = Color.Azure;
+            btDownloadAtualizador.FlatStyle = FlatStyle.Flat;
+            btDownloadAtualizador.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btDownloadAtualizador.ForeColor = SystemColors.ControlText;
+            btDownloadAtualizador.Location = new Point(125, 8);
+            btDownloadAtualizador.Name = "btDownloadAtualizador";
+            btDownloadAtualizador.Size = new Size(148, 23);
+            btDownloadAtualizador.TabIndex = 4;
+            btDownloadAtualizador.Text = "Download Atualizador";
+            btDownloadAtualizador.UseVisualStyleBackColor = false;
+            btDownloadAtualizador.Click += btDownloadAtualizador_Click;
+            // 
+            // lbStatusDownload
+            // 
+            lbStatusDownload.AutoSize = true;
+            lbStatusDownload.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbStatusDownload.Location = new Point(279, 11);
+            lbStatusDownload.Name = "lbStatusDownload";
+            lbStatusDownload.Size = new Size(18, 20);
+            lbStatusDownload.TabIndex = 3;
+            lbStatusDownload.Text = "...";
+            // 
+            // btDownloadPDV
+            // 
+            btDownloadPDV.BackColor = Color.Azure;
+            btDownloadPDV.FlatStyle = FlatStyle.Flat;
+            btDownloadPDV.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btDownloadPDV.ForeColor = SystemColors.ControlText;
+            btDownloadPDV.Location = new Point(6, 8);
+            btDownloadPDV.Name = "btDownloadPDV";
+            btDownloadPDV.Size = new Size(113, 23);
+            btDownloadPDV.TabIndex = 2;
+            btDownloadPDV.Text = "Download PDV";
+            btDownloadPDV.UseVisualStyleBackColor = false;
+            btDownloadPDV.Click += btDownloadPDV_Click;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Gray;
+            panel3.Location = new Point(264, 7);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(174, 66);
+            panel3.TabIndex = 4;
             // 
             // lbOS
             // 
             lbOS.AutoSize = true;
             lbOS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbOS.Location = new Point(297, 56);
+            lbOS.Location = new Point(444, 57);
             lbOS.Name = "lbOS";
             lbOS.Size = new Size(20, 17);
             lbOS.TabIndex = 0;
@@ -223,7 +287,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(297, 41);
+            label4.Location = new Point(444, 42);
             label4.Name = "label4";
             label4.Size = new Size(65, 15);
             label4.TabIndex = 1;
@@ -232,7 +296,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(297, 7);
+            label3.Location = new Point(444, 8);
             label3.Name = "label3";
             label3.Size = new Size(108, 15);
             label3.TabIndex = 3;
@@ -242,7 +306,7 @@
             // 
             lbHostName.AutoSize = true;
             lbHostName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbHostName.Location = new Point(297, 22);
+            lbHostName.Location = new Point(444, 23);
             lbHostName.Name = "lbHostName";
             lbHostName.Size = new Size(20, 17);
             lbHostName.TabIndex = 2;
@@ -256,12 +320,12 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(6, 7);
             panel2.Name = "panel2";
-            panel2.Size = new Size(285, 66);
+            panel2.Size = new Size(252, 66);
             panel2.TabIndex = 0;
             // 
             // btnGravarApontamento
             // 
-            btnGravarApontamento.Location = new Point(205, 26);
+            btnGravarApontamento.Location = new Point(166, 31);
             btnGravarApontamento.Name = "btnGravarApontamento";
             btnGravarApontamento.Size = new Size(76, 23);
             btnGravarApontamento.TabIndex = 2;
@@ -271,9 +335,9 @@
             // 
             // tbNomehost
             // 
-            tbNomehost.Location = new Point(3, 26);
+            tbNomehost.Location = new Point(3, 32);
             tbNomehost.Name = "tbNomehost";
-            tbNomehost.Size = new Size(196, 23);
+            tbNomehost.Size = new Size(157, 23);
             tbNomehost.TabIndex = 0;
             // 
             // label2
@@ -292,34 +356,18 @@
             label1.BackColor = SystemColors.ActiveBorder;
             label1.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(97, 30);
+            label1.Location = new Point(285, 33);
             label1.Name = "label1";
             label1.Size = new Size(298, 24);
             label1.TabIndex = 3;
             label1.Text = "ASSISTENTE DE INSTALAÇÃO";
             // 
-            // btTeste
-            // 
-            btTeste.BackColor = Color.DodgerBlue;
-            btTeste.FlatStyle = FlatStyle.Flat;
-            btTeste.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btTeste.ForeColor = SystemColors.ControlText;
-            btTeste.Location = new Point(10, 179);
-            btTeste.Name = "btTeste";
-            btTeste.Size = new Size(165, 31);
-            btTeste.TabIndex = 2;
-            btTeste.Text = "teste";
-            btTeste.UseVisualStyleBackColor = false;
-            btTeste.Click += btTeste_Click;
-            btTeste.MouseEnter += BTNEnter;
-            btTeste.MouseLeave += BTNLeave;
-            // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
-            statusStrip1.Location = new Point(0, 341);
+            statusStrip1.Location = new Point(0, 566);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(501, 22);
+            statusStrip1.Size = new Size(883, 22);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -337,16 +385,25 @@
             tsslEvicommerce.Name = "tsslEvicommerce";
             tsslEvicommerce.Size = new Size(16, 17);
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Silver;
+            panel4.Location = new Point(10, 62);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(861, 63);
+            panel4.TabIndex = 6;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(501, 363);
-            Controls.Add(statusStrip1);
-            Controls.Add(btTeste);
-            Controls.Add(panel1);
+            ClientSize = new Size(883, 588);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
             Controls.Add(BT1REDE);
+            Controls.Add(statusStrip1);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlText;
@@ -362,6 +419,8 @@
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -399,9 +458,14 @@
         private Label label3;
         private Label label4;
         private Label lbOS;
-        private Button btTeste;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tssLabel;
         private ToolStripStatusLabel tsslEvicommerce;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Label lbStatusDownload;
+        private Button btDownloadPDV;
+        private Button btDownloadAtualizador;
     }
 }
