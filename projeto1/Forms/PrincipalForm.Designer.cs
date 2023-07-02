@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             BT1REDE = new Button();
-            label1 = new Label();
-            tbBackupLogs = new Button();
-            Mensagem = new Button();
-            btnMaquinasPDV = new Button();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             impressorasToolStripMenuItem = new ToolStripMenuItem();
@@ -48,8 +44,26 @@
             pDVToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTVicommerceimpToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
+            maquinasDCSPDVToolStripMenuItem = new ToolStripMenuItem();
+            fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            lbOS = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            lbHostName = new Label();
+            panel2 = new Panel();
+            btnGravarApontamento = new Button();
+            tbNomehost = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            btTeste = new Button();
+            statusStrip1 = new StatusStrip();
+            tssLabel = new ToolStripStatusLabel();
+            tsslEvicommerce = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // BT1REDE
@@ -58,83 +72,24 @@
             BT1REDE.FlatStyle = FlatStyle.Flat;
             BT1REDE.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BT1REDE.ForeColor = SystemColors.ControlText;
-            BT1REDE.Location = new Point(12, 92);
+            BT1REDE.Location = new Point(10, 142);
             BT1REDE.Name = "BT1REDE";
-            BT1REDE.Size = new Size(226, 31);
-            BT1REDE.TabIndex = 0;
-            BT1REDE.Text = "REDES";
+            BT1REDE.Size = new Size(165, 31);
+            BT1REDE.TabIndex = 1;
+            BT1REDE.Text = "Redes";
             BT1REDE.UseVisualStyleBackColor = false;
             BT1REDE.Click += button1_Click;
             BT1REDE.MouseEnter += BTNEnter;
             BT1REDE.MouseLeave += BTNLeave;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveBorder;
-            label1.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(30, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(482, 37);
-            label1.TabIndex = 1;
-            label1.Text = "ASSISTENTE DE INSTALAÇÃO";
-            // 
-            // tbBackupLogs
-            // 
-            tbBackupLogs.BackColor = Color.DodgerBlue;
-            tbBackupLogs.FlatStyle = FlatStyle.Flat;
-            tbBackupLogs.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            tbBackupLogs.ForeColor = SystemColors.ControlText;
-            tbBackupLogs.Location = new Point(12, 166);
-            tbBackupLogs.Name = "tbBackupLogs";
-            tbBackupLogs.Size = new Size(226, 31);
-            tbBackupLogs.TabIndex = 7;
-            tbBackupLogs.Text = "Fazer Backup e Logs";
-            tbBackupLogs.UseVisualStyleBackColor = true;
-            tbBackupLogs.Click += tbBackupLogs_Click;
-            tbBackupLogs.MouseEnter += BTNEnter;
-            tbBackupLogs.MouseLeave += BTNLeave;
-            // 
-            // Mensagem
-            // 
-            Mensagem.BackColor = Color.DodgerBlue;
-            Mensagem.FlatStyle = FlatStyle.Flat;
-            Mensagem.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            Mensagem.ForeColor = SystemColors.ControlText;
-            Mensagem.Location = new Point(431, 448);
-            Mensagem.Name = "Mensagem";
-            Mensagem.Size = new Size(95, 31);
-            Mensagem.TabIndex = 12;
-            Mensagem.Text = "TESTE";
-            Mensagem.UseVisualStyleBackColor = false;
-            Mensagem.Click += Mensagem_Click;
-            Mensagem.MouseEnter += BTNEnter;
-            Mensagem.MouseLeave += BTNLeave;
-            // 
-            // btnMaquinasPDV
-            // 
-            btnMaquinasPDV.BackColor = Color.DodgerBlue;
-            btnMaquinasPDV.FlatStyle = FlatStyle.Flat;
-            btnMaquinasPDV.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMaquinasPDV.ForeColor = SystemColors.ControlText;
-            btnMaquinasPDV.Location = new Point(12, 129);
-            btnMaquinasPDV.Name = "btnMaquinasPDV";
-            btnMaquinasPDV.Size = new Size(226, 31);
-            btnMaquinasPDV.TabIndex = 13;
-            btnMaquinasPDV.Text = "Maquinas DCS PDV";
-            btnMaquinasPDV.UseVisualStyleBackColor = false;
-            btnMaquinasPDV.Click += btnMaquinasPDV_Click;
-            btnMaquinasPDV.MouseEnter += BTNEnter;
-            btnMaquinasPDV.MouseLeave += BTNLeave;
-            // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.WhiteSmoke;
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, pDVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(538, 24);
-            menuStrip1.TabIndex = 14;
+            menuStrip1.Size = new Size(501, 24);
+            menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
@@ -209,7 +164,7 @@
             // 
             // pDVToolStripMenuItem
             // 
-            pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem });
+            pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem, maquinasDCSPDVToolStripMenuItem, fazerBackupELogsToolStripMenuItem });
             pDVToolStripMenuItem.Name = "pDVToolStripMenuItem";
             pDVToolStripMenuItem.Size = new Size(41, 20);
             pDVToolStripMenuItem.Text = "PDV";
@@ -228,26 +183,171 @@
             apagaTXTTempSATimpToolStripMenuItem.Text = "Apaga TXT TempSAT/imp";
             apagaTXTTempSATimpToolStripMenuItem.Click += apagaTXTTempSATimpToolStripMenuItem_Click;
             // 
+            // maquinasDCSPDVToolStripMenuItem
+            // 
+            maquinasDCSPDVToolStripMenuItem.Name = "maquinasDCSPDVToolStripMenuItem";
+            maquinasDCSPDVToolStripMenuItem.Size = new Size(225, 22);
+            maquinasDCSPDVToolStripMenuItem.Text = "Maquinas DCS PDV";
+            maquinasDCSPDVToolStripMenuItem.Click += maquinasDCSPDVToolStripMenuItem_Click;
+            // 
+            // fazerBackupELogsToolStripMenuItem
+            // 
+            fazerBackupELogsToolStripMenuItem.Name = "fazerBackupELogsToolStripMenuItem";
+            fazerBackupELogsToolStripMenuItem.Size = new Size(225, 22);
+            fazerBackupELogsToolStripMenuItem.Text = "Fazer Backup e Logs";
+            fazerBackupELogsToolStripMenuItem.Click += fazerBackupELogsToolStripMenuItem_Click;
+            // 
             // panel1
             // 
-            panel1.BackColor = Color.MintCream;
-            panel1.Location = new Point(244, 92);
+            panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(lbOS);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(lbHostName);
+            panel1.Controls.Add(panel2);
+            panel1.Location = new Point(10, 57);
             panel1.Name = "panel1";
-            panel1.Size = new Size(282, 153);
-            panel1.TabIndex = 15;
+            panel1.Size = new Size(482, 79);
+            panel1.TabIndex = 4;
+            // 
+            // lbOS
+            // 
+            lbOS.AutoSize = true;
+            lbOS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbOS.Location = new Point(297, 56);
+            lbOS.Name = "lbOS";
+            lbOS.Size = new Size(20, 17);
+            lbOS.TabIndex = 0;
+            lbOS.Text = "...";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(297, 41);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 15);
+            label4.TabIndex = 1;
+            label4.Text = "Windows : ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(297, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(108, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Nome Host Local : ";
+            // 
+            // lbHostName
+            // 
+            lbHostName.AutoSize = true;
+            lbHostName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbHostName.Location = new Point(297, 22);
+            lbHostName.Name = "lbHostName";
+            lbHostName.Size = new Size(20, 17);
+            lbHostName.TabIndex = 2;
+            lbHostName.Text = "...";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Gray;
+            panel2.Controls.Add(btnGravarApontamento);
+            panel2.Controls.Add(tbNomehost);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(6, 7);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(285, 66);
+            panel2.TabIndex = 0;
+            // 
+            // btnGravarApontamento
+            // 
+            btnGravarApontamento.Location = new Point(205, 26);
+            btnGravarApontamento.Name = "btnGravarApontamento";
+            btnGravarApontamento.Size = new Size(76, 23);
+            btnGravarApontamento.TabIndex = 2;
+            btnGravarApontamento.Text = "Gravar";
+            btnGravarApontamento.UseVisualStyleBackColor = true;
+            btnGravarApontamento.Click += btnGravarApontamento_Click;
+            // 
+            // tbNomehost
+            // 
+            tbNomehost.Location = new Point(3, 26);
+            tbNomehost.Name = "tbNomehost";
+            tbNomehost.Size = new Size(196, 23);
+            tbNomehost.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(3, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(176, 17);
+            label2.TabIndex = 2;
+            label2.Text = "Apontamento de Servidor :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ActiveBorder;
+            label1.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Desktop;
+            label1.Location = new Point(97, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(298, 24);
+            label1.TabIndex = 3;
+            label1.Text = "ASSISTENTE DE INSTALAÇÃO";
+            // 
+            // btTeste
+            // 
+            btTeste.BackColor = Color.DodgerBlue;
+            btTeste.FlatStyle = FlatStyle.Flat;
+            btTeste.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btTeste.ForeColor = SystemColors.ControlText;
+            btTeste.Location = new Point(10, 179);
+            btTeste.Name = "btTeste";
+            btTeste.Size = new Size(165, 31);
+            btTeste.TabIndex = 2;
+            btTeste.Text = "teste";
+            btTeste.UseVisualStyleBackColor = false;
+            btTeste.Click += btTeste_Click;
+            btTeste.MouseEnter += BTNEnter;
+            btTeste.MouseLeave += BTNLeave;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
+            statusStrip1.Location = new Point(0, 341);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(501, 22);
+            statusStrip1.TabIndex = 5;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // tssLabel
+            // 
+            tssLabel.BackColor = Color.White;
+            tssLabel.Name = "tssLabel";
+            tssLabel.Size = new Size(90, 17);
+            tssLabel.Text = "EviCommerce : ";
+            // 
+            // tsslEvicommerce
+            // 
+            tsslEvicommerce.BackColor = SystemColors.ButtonFace;
+            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            tsslEvicommerce.Name = "tsslEvicommerce";
+            tsslEvicommerce.Size = new Size(16, 17);
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(538, 491);
+            ClientSize = new Size(501, 363);
+            Controls.Add(statusStrip1);
+            Controls.Add(btTeste);
             Controls.Add(panel1);
-            Controls.Add(btnMaquinasPDV);
-            Controls.Add(Mensagem);
-            Controls.Add(tbBackupLogs);
-            Controls.Add(label1);
             Controls.Add(BT1REDE);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -257,8 +357,15 @@
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
+            Load += MenuPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,10 +373,6 @@
         #endregion
 
         private Button BT1REDE;
-        private Label label1;
-        private Button tbBackupLogs;
-        private Button Mensagem;
-        private Button btnMaquinasPDV;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem impressorasToolStripMenuItem;
@@ -285,5 +388,20 @@
         private ToolStripMenuItem pDVToolStripMenuItem;
         private ToolStripMenuItem apagaTXTVicommerceimpToolStripMenuItem;
         private ToolStripMenuItem apagaTXTTempSATimpToolStripMenuItem;
+        private ToolStripMenuItem maquinasDCSPDVToolStripMenuItem;
+        private ToolStripMenuItem fazerBackupELogsToolStripMenuItem;
+        private Panel panel2;
+        private Label label2;
+        private Button btnGravarApontamento;
+        private TextBox tbNomehost;
+        private Label label1;
+        private Label lbHostName;
+        private Label label3;
+        private Label label4;
+        private Label lbOS;
+        private Button btTeste;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel tssLabel;
+        private ToolStripStatusLabel tsslEvicommerce;
     }
 }

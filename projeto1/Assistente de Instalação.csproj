@@ -34,6 +34,13 @@
     <EmbeddedResource Include="obj\MAS.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\on_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\off_24x24.png" />
   </ItemGroup>
 
   <ItemGroup>

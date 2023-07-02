@@ -1,13 +1,38 @@
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Management;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
+using Assistente_de_Instalação.Properties;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualBasic.Logging;
+using Microsoft.Win32;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
-        public object ServiceControllerStatus { get; private set; }
-        public FormClosedEventHandler PediSenha_FormClosed { get; private set; }
+        String hostName, strConn, strConnTrusted, strConnEViCommerce;
+
+        [DllImport("ODBCCP32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        private static extern bool SQLConfigDataSource(IntPtr parent, OdbcConfigDsnFlags request, string driver, string attributes);
+        [Flags]
+        enum OdbcConfigDsnFlags : int
+        {
+            ODBC_ADD_DSN = 1,
+            ODBC_CONFIG_DSN = 2,
+            ODBC_REMOVE_DSN = 3,
+            ODBC_ADD_SYS_DSN = 4,
+            ODBC_CONFIG_SYS_DSN = 5,
+            ODBC_REMOVE_SYS_DSN = 6
+        }
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -33,32 +58,10 @@ namespace projeto1
             if (sender is Button btn)
                 btn.BackColor = Color.DodgerBlue;
         }
-        private void tbBackupLogs_Click(object sender, EventArgs e)
-        {
-            BackupLogsForm form = new BackupLogsForm();
-            OcultaExibForm(false);
-            form.ShowDialog();
-            OcultaExibForm(true);
-        }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
             DirectoryInfo diSource = new(dir);
             return diSource.GetFiles().Where(w => w.Extension.Equals(ext, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-        private void Mensagem_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Seja Feliz", "BOLETO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult.Yes == result)
-                MessageBox.Show("teste");
-            else
-                Application.Restart();
-        }
-        private void btnMaquinasPDV_Click(object sender, EventArgs e)
-        {
-            MaquinasDCSPDV form = new MaquinasDCSPDV();
-            OcultaExibForm(false);
-            form.ShowDialog();
-            OcultaExibForm(true);
         }
         private void impressorasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -148,6 +151,60 @@ namespace projeto1
             var txtFiles = ListaArquivoPorExt(@"C:\Vicommerce\TempSAT\Imp\", ".txt");
             txtFiles.ForEach(f => { File.Delete(f.FullName); });
             MessageBox.Show("Arquivos apagados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void maquinasDCSPDVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaquinasDCSPDV form = new MaquinasDCSPDV();
+            OcultaExibForm(false);
+            form.ShowDialog();
+            OcultaExibForm(true);
+        }
+        private void fazerBackupELogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackupLogsForm form = new BackupLogsForm();
+            OcultaExibForm(false);
+            form.ShowDialog();
+            OcultaExibForm(true);
+        }
+        private void btnGravarApontamento_Click(object sender, EventArgs e)
+        {
+            registraOdbc();
+        }
+        private void registraOdbc()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(tbNomehost.Text))
+                {
+                    MessageBox.Show("Host não informado!", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                string servidor = tbNomehost.Text;
+                Microsoft.Win32.Registry.SetValue(@"HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\vc", "Server", servidor);
+                MessageBox.Show("Host apontado com sucesso");
+                tbNomehost.Clear();
+                tbNomehost.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro não foi possivel gravar o ODBC" + ex.Message);
+            }
+        }
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            lbHostName.Text = Environment.MachineName;
+            lbOS.Text = RetornaOsVersaoAmigavel();
+        }
+        public static string RetornaOsVersaoAmigavel()
+        {
+            var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                        select x.GetPropertyValue("Caption")).FirstOrDefault();
+            return name != null ? name.ToString() : "Desconhecido";
+        }
+        private void btTeste_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
