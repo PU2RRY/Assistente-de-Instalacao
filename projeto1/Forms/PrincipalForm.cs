@@ -194,9 +194,9 @@ namespace projeto1
         {
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
             lbHostName.Text = Environment.MachineName;
-            lbOS.Text = RetornaOsVersaoAmigavel();
+            lbOS.Text = RetornaOsVersao();
         }
-        public static string RetornaOsVersaoAmigavel()
+        public static string RetornaOsVersao()
         {
             var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
                         select x.GetPropertyValue("Caption")).FirstOrDefault();
