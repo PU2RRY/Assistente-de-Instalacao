@@ -239,8 +239,11 @@ namespace projeto1
                 FimDownload();
             }
             else
+            {
                 lbStatusDownload.Text = "Erro durante o download: " + e.Error.Message;
-
+                btDownloadPDV.Enabled = true;
+                btDownloadAtualizador.Enabled = true;
+            }
             webClient.Dispose();
             webClient = null;
         }
