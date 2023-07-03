@@ -199,9 +199,9 @@ namespace projeto1
         {
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
             lbHostName.Text = Environment.MachineName;
-            lbOS.Text = RetornaOsVersaoAmigavel();
+            lbOS.Text = RetornaOsVersao();
         }
-        public static string RetornaOsVersaoAmigavel()
+        public static string RetornaOsVersao()
         {
             var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
                         select x.GetPropertyValue("Caption")).FirstOrDefault();
@@ -239,8 +239,11 @@ namespace projeto1
                 FimDownload();
             }
             else
+            {
                 lbStatusDownload.Text = "Erro durante o download: " + e.Error.Message;
-
+                btDownloadPDV.Enabled = true;
+                btDownloadAtualizador.Enabled = true;
+            }
             webClient.Dispose();
             webClient = null;
         }
@@ -249,7 +252,7 @@ namespace projeto1
             btDownloadPDV.Enabled = false;
             btDownloadAtualizador.Enabled = false;
             destino = "C:\\InstaladorDcsPDV_x86_x64.exe";
-            url = "https://p-def8.pcloud.com/cBZseVnedZxndhqcZZZYpovo7Z2ZZryLZkZQViOC7ZTHZULZQHZazZz0Zp7Zt5Z15ZvpZ2XZwJZb0ZMRZ2FZyHvAkZrEfh6pcz1s0yjcD2pJ604khJkLCk/InstaladorDcsPDV_x86_x64.exe";
+            url = "https://filedn.com/llHAOgAJ3vNzjybV42spbG8/Instaladores/PDV/InstaladorDcsPDV_x86_x64.exe";
             DownloadSistema();
         }
         private void btDownloadAtualizador_Click(object sender, EventArgs e)
@@ -257,7 +260,7 @@ namespace projeto1
             btDownloadPDV.Enabled = false;
             btDownloadAtualizador.Enabled = false;
             destino = "C:\\AtualizadorDcsPDV_x86_x64.exe";
-            url = "https://p-def1.pcloud.com/cBZ7tveedZbf2hqcZZZsrovo7Z2ZZryLZkZKwUXuZRZzFZcLZm5ZJRZz0ZFLZgpZGzZl4ZvRZY7ZQVZH4ZyHvAkZhsJXg3hj7QmbyrzEKMz2VjQaU3Jk/AtualizadorDcsPDV_x86_x64.exe";
+            url = "https://filedn.com/llHAOgAJ3vNzjybV42spbG8/Instaladores/PDV/AtualizadorDcsPDV_x86_x64.exe";
             DownloadSistema();
         }
         private void FimDownload()
