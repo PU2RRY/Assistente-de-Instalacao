@@ -47,10 +47,6 @@
             maquinasDCSPDVToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            panel5 = new Panel();
-            btDownloadAtualizador = new Button();
-            lbStatusDownload = new Label();
-            btDownloadPDV = new Button();
             panel3 = new Panel();
             lbOS = new Label();
             label4 = new Label();
@@ -60,6 +56,10 @@
             btnGravarApontamento = new Button();
             tbNomehost = new TextBox();
             label2 = new Label();
+            panel5 = new Panel();
+            btDownloadAtualizador = new Button();
+            lbStatusDownload = new Label();
+            btDownloadPDV = new Button();
             label1 = new Label();
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
@@ -67,8 +67,8 @@
             panel4 = new Panel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -217,55 +217,6 @@
             panel1.Size = new Size(690, 389);
             panel1.TabIndex = 4;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.White;
-            panel5.Controls.Add(btDownloadAtualizador);
-            panel5.Controls.Add(lbStatusDownload);
-            panel5.Controls.Add(btDownloadPDV);
-            panel5.Location = new Point(6, 524);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(865, 37);
-            panel5.TabIndex = 5;
-            // 
-            // btDownloadAtualizador
-            // 
-            btDownloadAtualizador.BackColor = Color.Azure;
-            btDownloadAtualizador.FlatStyle = FlatStyle.Flat;
-            btDownloadAtualizador.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btDownloadAtualizador.ForeColor = SystemColors.ControlText;
-            btDownloadAtualizador.Location = new Point(125, 8);
-            btDownloadAtualizador.Name = "btDownloadAtualizador";
-            btDownloadAtualizador.Size = new Size(148, 23);
-            btDownloadAtualizador.TabIndex = 4;
-            btDownloadAtualizador.Text = "Download Atualizador";
-            btDownloadAtualizador.UseVisualStyleBackColor = false;
-            btDownloadAtualizador.Click += btDownloadAtualizador_Click;
-            // 
-            // lbStatusDownload
-            // 
-            lbStatusDownload.AutoSize = true;
-            lbStatusDownload.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbStatusDownload.Location = new Point(279, 11);
-            lbStatusDownload.Name = "lbStatusDownload";
-            lbStatusDownload.Size = new Size(18, 20);
-            lbStatusDownload.TabIndex = 3;
-            lbStatusDownload.Text = "...";
-            // 
-            // btDownloadPDV
-            // 
-            btDownloadPDV.BackColor = Color.Azure;
-            btDownloadPDV.FlatStyle = FlatStyle.Flat;
-            btDownloadPDV.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btDownloadPDV.ForeColor = SystemColors.ControlText;
-            btDownloadPDV.Location = new Point(6, 8);
-            btDownloadPDV.Name = "btDownloadPDV";
-            btDownloadPDV.Size = new Size(113, 23);
-            btDownloadPDV.TabIndex = 2;
-            btDownloadPDV.Text = "Download PDV";
-            btDownloadPDV.UseVisualStyleBackColor = false;
-            btDownloadPDV.Click += btDownloadPDV_Click;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.Gray;
@@ -350,6 +301,55 @@
             label2.TabIndex = 2;
             label2.Text = "Apontamento de Servidor :";
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(btDownloadAtualizador);
+            panel5.Controls.Add(lbStatusDownload);
+            panel5.Controls.Add(btDownloadPDV);
+            panel5.Location = new Point(6, 524);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(865, 37);
+            panel5.TabIndex = 5;
+            // 
+            // btDownloadAtualizador
+            // 
+            btDownloadAtualizador.BackColor = Color.Azure;
+            btDownloadAtualizador.FlatStyle = FlatStyle.Flat;
+            btDownloadAtualizador.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btDownloadAtualizador.ForeColor = SystemColors.ControlText;
+            btDownloadAtualizador.Location = new Point(125, 8);
+            btDownloadAtualizador.Name = "btDownloadAtualizador";
+            btDownloadAtualizador.Size = new Size(148, 23);
+            btDownloadAtualizador.TabIndex = 4;
+            btDownloadAtualizador.Text = "Download Atualizador";
+            btDownloadAtualizador.UseVisualStyleBackColor = false;
+            btDownloadAtualizador.Click += btDownloadAtualizador_Click;
+            // 
+            // lbStatusDownload
+            // 
+            lbStatusDownload.AutoSize = true;
+            lbStatusDownload.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbStatusDownload.Location = new Point(279, 11);
+            lbStatusDownload.Name = "lbStatusDownload";
+            lbStatusDownload.Size = new Size(18, 20);
+            lbStatusDownload.TabIndex = 3;
+            lbStatusDownload.Text = "...";
+            // 
+            // btDownloadPDV
+            // 
+            btDownloadPDV.BackColor = Color.Azure;
+            btDownloadPDV.FlatStyle = FlatStyle.Flat;
+            btDownloadPDV.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btDownloadPDV.ForeColor = SystemColors.ControlText;
+            btDownloadPDV.Location = new Point(6, 8);
+            btDownloadPDV.Name = "btDownloadPDV";
+            btDownloadPDV.Size = new Size(113, 23);
+            btDownloadPDV.TabIndex = 2;
+            btDownloadPDV.Text = "Download PDV";
+            btDownloadPDV.UseVisualStyleBackColor = false;
+            btDownloadPDV.Click += btDownloadPDV_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -419,10 +419,10 @@
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             ResumeLayout(false);
