@@ -4914,19 +4914,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Micro\\.nuget\\packages\\": {}
+    "C:\\Users\\rodri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "projectUniqueName": "C:\\Users\\rodri\\Source\\Repos\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
       "projectName": "Assistente de Instalação",
-      "projectPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
-      "packagesPath": "C:\\Users\\Micro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Micro\\Documents\\Meu Projeto\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\obj\\publish\\win-x64\\",
+      "projectPath": "C:\\Users\\rodri\\Source\\Repos\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\Assistente de Instalação.csproj",
+      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rodri\\Source\\Repos\\PU2RRY\\Assistente-de-Instalacao\\projeto1\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4996,7 +4996,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
