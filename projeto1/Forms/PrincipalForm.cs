@@ -1,21 +1,21 @@
-using System.ComponentModel;
+//using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Management;
 using System.Net;
-using System.Reflection;
+//using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
-using Assistente_de_Instalação.Properties;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.VisualBasic.Logging;
-using Microsoft.Win32;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+//using Assistente_de_Instalação.Properties;
+//using Microsoft.Data.SqlClient;
+//using Microsoft.EntityFrameworkCore.Metadata.Builders;
+//using Microsoft.EntityFrameworkCore.Metadata.Internal;
+//using Microsoft.VisualBasic.Logging;
+//using Microsoft.Win32;
+//using static System.Net.WebRequestMethods;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+//using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace projeto1
 {
@@ -207,7 +207,6 @@ namespace projeto1
                         select x.GetPropertyValue("Caption")).FirstOrDefault();
             return name != null ? name.ToString() : "Desconhecido";
         }
-
         private void DownloadSistema()
         {
             webClient = new WebClient();
