@@ -65,7 +65,7 @@ namespace Assistente_de_Instalação.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ico_Engrena {
             get {
-                object obj = ResourceManager.GetObject("ico Engrena", resourceCulture);
+                object obj = ResourceManager.GetObject("ico_Engrena", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
