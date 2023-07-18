@@ -46,13 +46,6 @@ namespace projeto1
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PingForm form2 = new PingForm();
-            OcultaExibForm(false);
-            form2.ShowDialog();
-            OcultaExibForm(true);
-        }
         private void BTNEnter(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -269,9 +262,26 @@ namespace projeto1
             {
                 Process.Start(destino);
                 destino = "";
+                webClient.Dispose();
+                webClient = null;
             }
             destino = "";
             return;
+        }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker bw = new BackgroundWorker();
+            //PingForm form2 = new PingForm();
+            //form2.Show();
+        }
+
+        private void redesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PingForm form2 = new PingForm();
+            OcultaExibForm(false);
+            form2.ShowDialog();
+            OcultaExibForm(true);
         }
     }
 }

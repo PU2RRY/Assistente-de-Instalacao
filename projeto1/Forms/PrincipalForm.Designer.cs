@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            BT1REDE = new Button();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             impressorasToolStripMenuItem = new ToolStripMenuItem();
@@ -46,20 +45,22 @@
             apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
             maquinasDCSPDVToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
+            redesToolStripMenuItem = new ToolStripMenuItem();
+            configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            panel5 = new Panel();
-            btDownloadAtualizador = new Button();
-            lbStatusDownload = new Label();
-            btDownloadPDV = new Button();
-            panel3 = new Panel();
-            lbOS = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            lbHostName = new Label();
+            panel6 = new Panel();
             panel2 = new Panel();
             btnGravarApontamento = new Button();
             tbNomehost = new TextBox();
             label2 = new Label();
+            lbOS = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            lbHostName = new Label();
+            panel5 = new Panel();
+            btDownloadAtualizador = new Button();
+            lbStatusDownload = new Label();
+            btDownloadPDV = new Button();
             label1 = new Label();
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
@@ -67,31 +68,16 @@
             panel4 = new Panel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             statusStrip1.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
-            // 
-            // BT1REDE
-            // 
-            BT1REDE.BackColor = Color.DodgerBlue;
-            BT1REDE.FlatStyle = FlatStyle.Flat;
-            BT1REDE.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BT1REDE.ForeColor = SystemColors.ControlText;
-            BT1REDE.Location = new Point(10, 131);
-            BT1REDE.Name = "BT1REDE";
-            BT1REDE.Size = new Size(165, 31);
-            BT1REDE.TabIndex = 1;
-            BT1REDE.Text = "Redes";
-            BT1REDE.UseVisualStyleBackColor = false;
-            BT1REDE.Click += button1_Click;
-            BT1REDE.MouseEnter += BTNEnter;
-            BT1REDE.MouseLeave += BTNLeave;
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.WhiteSmoke;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, pDVToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, pDVToolStripMenuItem, redesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(883, 24);
@@ -203,19 +189,114 @@
             fazerBackupELogsToolStripMenuItem.Text = "Fazer Backup e Logs";
             fazerBackupELogsToolStripMenuItem.Click += fazerBackupELogsToolStripMenuItem_Click;
             // 
+            // redesToolStripMenuItem
+            // 
+            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
+            redesToolStripMenuItem.Size = new Size(50, 20);
+            redesToolStripMenuItem.Text = "Redes";
+            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            configuraçõesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.ico_Engrena;
+            configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            configuraçõesToolStripMenuItem.Size = new Size(112, 20);
+            configuraçõesToolStripMenuItem.Text = "Configurações";
+            configuraçõesToolStripMenuItem.Click += configuraçõesToolStripMenuItem_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(lbOS);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(lbHostName);
+            panel1.Controls.Add(panel6);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(181, 131);
+            panel1.Location = new Point(181, 122);
             panel1.Name = "panel1";
-            panel1.Size = new Size(690, 389);
+            panel1.Size = new Size(690, 396);
             panel1.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gray;
+            panel6.Location = new Point(264, 7);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(252, 75);
+            panel6.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Gray;
+            panel2.Controls.Add(btnGravarApontamento);
+            panel2.Controls.Add(tbNomehost);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(6, 7);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(252, 75);
+            panel2.TabIndex = 0;
+            // 
+            // btnGravarApontamento
+            // 
+            btnGravarApontamento.Location = new Point(166, 40);
+            btnGravarApontamento.Name = "btnGravarApontamento";
+            btnGravarApontamento.Size = new Size(76, 24);
+            btnGravarApontamento.TabIndex = 2;
+            btnGravarApontamento.Text = "Gravar";
+            btnGravarApontamento.UseVisualStyleBackColor = true;
+            btnGravarApontamento.Click += btnGravarApontamento_Click;
+            // 
+            // tbNomehost
+            // 
+            tbNomehost.Location = new Point(5, 40);
+            tbNomehost.Name = "tbNomehost";
+            tbNomehost.Size = new Size(157, 23);
+            tbNomehost.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(3, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(176, 17);
+            label2.TabIndex = 2;
+            label2.Text = "Apontamento de Servidor :";
+            // 
+            // lbOS
+            // 
+            lbOS.AutoSize = true;
+            lbOS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbOS.Location = new Point(74, 28);
+            lbOS.Name = "lbOS";
+            lbOS.Size = new Size(20, 17);
+            lbOS.TabIndex = 0;
+            lbOS.Text = "...";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(7, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 15);
+            label4.TabIndex = 1;
+            label4.Text = "Windows : ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(7, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(108, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Nome Host Local : ";
+            // 
+            // lbHostName
+            // 
+            lbHostName.AutoSize = true;
+            lbHostName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbHostName.Location = new Point(121, 11);
+            lbHostName.Name = "lbHostName";
+            lbHostName.Size = new Size(20, 17);
+            lbHostName.TabIndex = 2;
+            lbHostName.Text = "...";
             // 
             // panel5
             // 
@@ -266,90 +347,6 @@
             btDownloadPDV.UseVisualStyleBackColor = false;
             btDownloadPDV.Click += btDownloadPDV_Click;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Gray;
-            panel3.Location = new Point(264, 7);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(174, 66);
-            panel3.TabIndex = 4;
-            // 
-            // lbOS
-            // 
-            lbOS.AutoSize = true;
-            lbOS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbOS.Location = new Point(444, 57);
-            lbOS.Name = "lbOS";
-            lbOS.Size = new Size(20, 17);
-            lbOS.TabIndex = 0;
-            lbOS.Text = "...";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(444, 42);
-            label4.Name = "label4";
-            label4.Size = new Size(65, 15);
-            label4.TabIndex = 1;
-            label4.Text = "Windows : ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(444, 8);
-            label3.Name = "label3";
-            label3.Size = new Size(108, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Nome Host Local : ";
-            // 
-            // lbHostName
-            // 
-            lbHostName.AutoSize = true;
-            lbHostName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbHostName.Location = new Point(444, 23);
-            lbHostName.Name = "lbHostName";
-            lbHostName.Size = new Size(20, 17);
-            lbHostName.TabIndex = 2;
-            lbHostName.Text = "...";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Gray;
-            panel2.Controls.Add(btnGravarApontamento);
-            panel2.Controls.Add(tbNomehost);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(6, 7);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(252, 66);
-            panel2.TabIndex = 0;
-            // 
-            // btnGravarApontamento
-            // 
-            btnGravarApontamento.Location = new Point(166, 31);
-            btnGravarApontamento.Name = "btnGravarApontamento";
-            btnGravarApontamento.Size = new Size(76, 23);
-            btnGravarApontamento.TabIndex = 2;
-            btnGravarApontamento.Text = "Gravar";
-            btnGravarApontamento.UseVisualStyleBackColor = true;
-            btnGravarApontamento.Click += btnGravarApontamento_Click;
-            // 
-            // tbNomehost
-            // 
-            tbNomehost.Location = new Point(3, 32);
-            tbNomehost.Name = "tbNomehost";
-            tbNomehost.Size = new Size(157, 23);
-            tbNomehost.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(3, 6);
-            label2.Name = "label2";
-            label2.Size = new Size(176, 17);
-            label2.TabIndex = 2;
-            label2.Text = "Apontamento de Servidor :";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -388,9 +385,13 @@
             // panel4
             // 
             panel4.BackColor = Color.Silver;
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(lbHostName);
+            panel4.Controls.Add(lbOS);
+            panel4.Controls.Add(label4);
             panel4.Location = new Point(10, 62);
             panel4.Name = "panel4";
-            panel4.Size = new Size(861, 63);
+            panel4.Size = new Size(861, 54);
             panel4.TabIndex = 6;
             // 
             // MenuPrincipal
@@ -401,7 +402,6 @@
             ClientSize = new Size(883, 588);
             Controls.Add(panel5);
             Controls.Add(panel4);
-            Controls.Add(BT1REDE);
             Controls.Add(statusStrip1);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -418,20 +418,19 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button BT1REDE;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem impressorasToolStripMenuItem;
@@ -461,11 +460,13 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tssLabel;
         private ToolStripStatusLabel tsslEvicommerce;
-        private Panel panel3;
         private Panel panel4;
         private Panel panel5;
         private Label lbStatusDownload;
         private Button btDownloadPDV;
         private Button btDownloadAtualizador;
+        private Panel panel6;
+        private ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private ToolStripMenuItem redesToolStripMenuItem;
     }
 }
