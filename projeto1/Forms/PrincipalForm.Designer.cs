@@ -198,6 +198,7 @@
             // 
             // configuraçõesToolStripMenuItem
             // 
+            configuraçõesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.ico_Engrena;
             configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
             configuraçõesToolStripMenuItem.Size = new Size(112, 20);
             configuraçõesToolStripMenuItem.Text = "Configurações";
