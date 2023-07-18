@@ -194,6 +194,8 @@ namespace projeto1
             lbHostName.Text = Environment.MachineName;
             lbOS.Text = RetornaOsVersao();
         }
+
+        //1231231321
         public static string RetornaOsVersao()
         {
             var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
