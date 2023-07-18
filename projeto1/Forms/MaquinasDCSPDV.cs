@@ -23,25 +23,25 @@ namespace Assistente_de_Instalação.Forms
         {
             InitializeComponent();
             vc = new vcContext();
-            
         }
         private void CarregaGrid()
         {
             dgvMaquinasDCS.Columns.Clear();
             dgvMaquinasDCS.AutoGenerateColumns = false;
-            string[] colunas =
+
+            var lista = new List<KeyValuePair<string, string>>
             {
-                "NOMECOMP",
-                "TIPOIMP",
-                "TERMINAL",
-                "DataCad",
-                "CHAVE",
+                new KeyValuePair<string, string>(nameof(VcMaquinas.Nomecomp), "Nome Maquina"),
+                new KeyValuePair<string, string>(nameof(VcMaquinas.Tipoimp), "Tipo SAT"),
+                new KeyValuePair<string, string>(nameof(VcMaquinas.Terminal), "Terminal"),
+                new KeyValuePair<string, string>(nameof(VcMaquinas.DataCad), "Data de Cadastro"),
+                new KeyValuePair<string, string>(nameof(VcMaquinas.Chave), "Chave")
             };
-            foreach (string s in colunas)
+            foreach (var s in lista)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-                col.DataPropertyName = s;
-                col.HeaderText = s;
+                col.DataPropertyName = s.Key;
+                col.HeaderText = s.Value;
                 dgvMaquinasDCS.Columns.Add(col);
             }
             dgvMaquinasDCS.DataSource = vc.VcMaquinas.ToList();

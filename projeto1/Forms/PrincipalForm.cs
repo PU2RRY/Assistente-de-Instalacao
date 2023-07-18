@@ -1,21 +1,23 @@
-//using System.ComponentModel;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Management;
 using System.Net;
-//using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
-//using System.Windows.Forms;
+using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
-//using Assistente_de_Instalação.Properties;
-//using Microsoft.Data.SqlClient;
-//using Microsoft.EntityFrameworkCore.Metadata.Builders;
-//using Microsoft.EntityFrameworkCore.Metadata.Internal;
-//using Microsoft.VisualBasic.Logging;
-//using Microsoft.Win32;
-//using static System.Net.WebRequestMethods;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-//using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Assistente_de_Instalação.Models;
+using Assistente_de_Instalação.Properties;
+using Assistente_de_Instalação.SqlConexao;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualBasic.Logging;
+using Microsoft.Win32;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace projeto1
 {
@@ -190,12 +192,37 @@ namespace projeto1
         }
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            CarregaDgvCleintes();
             lbHostName.Text = Environment.MachineName;
             lbOS.Text = RetornaOsVersao();
         }
+        private void CarregaDgvCleintes()
+        {
+            Consulta c = new Consulta("Clientes");
+            dgvClientes.Columns.Clear();
+            dgvClientes.AutoGenerateColumns = false;
 
-        //1231231321
+            var lista = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("ID_CLIENTE", "ID"),
+                new KeyValuePair<string, string>("NOME", "Cliente"),
+                new KeyValuePair<string, string>("CPF", "Cpf"),
+                new KeyValuePair<string, string>("TEL", "Telefone"),
+                new KeyValuePair<string, string>("ATIVO", "Ativo"),
+            };
+            foreach (var s in lista)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.DataPropertyName = s.Key;
+                col.HeaderText = s.Value;
+                dgvClientes.Columns.Add(col);
+            }
+            dgvClientes.DataSource = c.dt;
+            dgvClientes.Columns[0].Visible = false;
+
+        }
         public static string RetornaOsVersao()
         {
             var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
@@ -273,7 +300,9 @@ namespace projeto1
 
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BackgroundWorker bw = new BackgroundWorker();
+
+
+            //BackgroundWorker bw = new BackgroundWorker();
             //PingForm form2 = new PingForm();
             //form2.Show();
         }
@@ -284,6 +313,28 @@ namespace projeto1
             OcultaExibForm(false);
             form2.ShowDialog();
             OcultaExibForm(true);
+        }
+        private void btnGravar_Click_1(object sender, EventArgs e)
+        {
+            Cadastro cad = new Cadastro(txbNome.Text, txbCpf.Text, txbTell.Text, rbSim.Checked);
+            CarregaDgvCleintes();
+            MessageBox.Show(cad.mensagem);
+        }
+
+        private void btnVerificar_Click(object sender, EventArgs e)
+        {
+            CarregaDgvCleintes();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.RowCount > 0)
+            {
+                var id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
+                Delete del = new Delete(id);
+                CarregaDgvCleintes();
+
+            }
         }
     }
 }
