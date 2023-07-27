@@ -1,0 +1,5 @@
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação\Assistente de Instalação.pdb
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação\obj\MAS.cmd
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação\obj\on_24x24.png
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Micro\Documents\Meu Projeto\Assistente de Instalação\Assistente de Instalação.exe

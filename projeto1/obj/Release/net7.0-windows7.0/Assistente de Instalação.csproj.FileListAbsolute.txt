@@ -127,8 +127,6 @@ C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.exe
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\obj\MAS.cmd
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\obj\on_24x24.png
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\obj\Resources.resx
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.dll.config
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.deps.json
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.runtimeconfig.json
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\Assistente de Instalação.dll
@@ -184,7 +182,6 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\ob
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.MenuPrincipal.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\projeto1.RenomeiaMaquinaForm.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.Properties.Resources.resources
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente_de_Instalação.obj.Resources.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.csproj.GenerateResource.cache
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\Assistente de Instalação.AssemblyInfoInputs.cache
