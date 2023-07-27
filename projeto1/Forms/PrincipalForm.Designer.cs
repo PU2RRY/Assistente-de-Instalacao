@@ -50,6 +50,7 @@
             panel1 = new Panel();
             dgvClientes = new DataGridView();
             panel6 = new Panel();
+            btnApagar = new Button();
             btnGravar = new Button();
             rbNao = new RadioButton();
             rbSim = new RadioButton();
@@ -78,7 +79,6 @@
             tssLabel = new ToolStripStatusLabel();
             tsslEvicommerce = new ToolStripStatusLabel();
             panel4 = new Panel();
-            btnApagar = new Button();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
@@ -235,6 +235,7 @@
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Location = new Point(6, 142);
             dgvClientes.Name = "dgvClientes";
+            dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.Size = new Size(681, 251);
             dgvClientes.TabIndex = 6;
@@ -258,6 +259,16 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(423, 129);
             panel6.TabIndex = 5;
+            // 
+            // btnApagar
+            // 
+            btnApagar.Location = new Point(285, 78);
+            btnApagar.Name = "btnApagar";
+            btnApagar.Size = new Size(126, 23);
+            btnApagar.TabIndex = 13;
+            btnApagar.Text = "APAGAR";
+            btnApagar.UseVisualStyleBackColor = true;
+            btnApagar.Click += btnApagar_Click;
             // 
             // btnGravar
             // 
@@ -533,16 +544,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(861, 54);
             panel4.TabIndex = 6;
-            // 
-            // btnApagar
-            // 
-            btnApagar.Location = new Point(285, 78);
-            btnApagar.Name = "btnApagar";
-            btnApagar.Size = new Size(126, 23);
-            btnApagar.TabIndex = 13;
-            btnApagar.Text = "APAGAR";
-            btnApagar.UseVisualStyleBackColor = true;
-            btnApagar.Click += btnApagar_Click;
             // 
             // MenuPrincipal
             // 

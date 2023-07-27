@@ -39,9 +39,10 @@
             // 
             btnEntrarSenha.BackColor = Color.CornflowerBlue;
             btnEntrarSenha.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEntrarSenha.Location = new Point(108, 75);
+            btnEntrarSenha.Location = new Point(109, 75);
+            btnEntrarSenha.Margin = new Padding(3, 2, 3, 2);
             btnEntrarSenha.Name = "btnEntrarSenha";
-            btnEntrarSenha.Size = new Size(178, 46);
+            btnEntrarSenha.Size = new Size(179, 46);
             btnEntrarSenha.TabIndex = 0;
             btnEntrarSenha.Text = "ENTRAR";
             btnEntrarSenha.UseVisualStyleBackColor = false;
@@ -52,6 +53,7 @@
             tbSenha.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbSenha.ForeColor = Color.LightGray;
             tbSenha.Location = new Point(13, 40);
+            tbSenha.Margin = new Padding(3, 2, 3, 2);
             tbSenha.Multiline = true;
             tbSenha.Name = "tbSenha";
             tbSenha.Size = new Size(273, 29);
@@ -77,8 +79,9 @@
             btnSenhaSair.BackColor = Color.CornflowerBlue;
             btnSenhaSair.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             btnSenhaSair.Location = new Point(13, 75);
+            btnSenhaSair.Margin = new Padding(3, 2, 3, 2);
             btnSenhaSair.Name = "btnSenhaSair";
-            btnSenhaSair.Size = new Size(89, 46);
+            btnSenhaSair.Size = new Size(90, 46);
             btnSenhaSair.TabIndex = 3;
             btnSenhaSair.Text = "SAIR";
             btnSenhaSair.UseVisualStyleBackColor = false;
@@ -88,14 +91,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(298, 128);
+            ClientSize = new Size(297, 128);
             Controls.Add(btnSenhaSair);
             Controls.Add(lbSenha);
             Controls.Add(tbSenha);
             Controls.Add(btnEntrarSenha);
+            Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Login";

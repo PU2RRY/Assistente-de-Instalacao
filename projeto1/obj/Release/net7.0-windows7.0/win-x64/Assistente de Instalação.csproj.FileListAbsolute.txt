@@ -530,9 +530,7 @@ C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\MAS.bat
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\Resources.resx
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.obj.Resources.resources
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\Resources.resx
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.BackupLogsForm.resources
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.obj.Resources.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.Login.resources
 C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.Login.resources
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Azure.Core.dll
@@ -570,7 +568,6 @@ C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bi
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\System.Runtime.Caching.dll
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\obj\Release\net7.0-windows7.0\win-x64\Assistente_de_Instalação.Forms.MaquinasDCSPDV.resources
-C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.dll.config
 C:\Users\Micro\Documents\Meu Projeto\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\MAS.cmd
 C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\Assistente de Instalação.exe
 C:\Users\rodri\Source\Repos\PU2RRY\Assistente-de-Instalacao\projeto1\bin\Release\net7.0-windows7.0\win-x64\obj\MAS.cmd
