@@ -9,10 +9,12 @@ using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
 using Assistente_de_Instalação.Models;
 using Assistente_de_Instalação.Properties;
-using Assistente_de_Instalação.SqlConexao;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Logging;
 using Microsoft.Win32;
 using static System.Net.WebRequestMethods;
@@ -23,10 +25,11 @@ namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
+        public string dirbkp = "";
         public string url = "";
         public string destino = "";
         private WebClient webClient;
-        String hostName, strConn, strConnTrusted, strConnEViCommerce;
+        
 
         [DllImport("ODBCCP32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern bool SQLConfigDataSource(IntPtr parent, OdbcConfigDsnFlags request, string driver, string attributes);
@@ -192,36 +195,9 @@ namespace projeto1
         }
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
-            CarregaDgvCleintes();
             lbHostName.Text = Environment.MachineName;
             lbOS.Text = RetornaOsVersao();
-        }
-        private void CarregaDgvCleintes()
-        {
-            Consulta c = new Consulta("Clientes");
-            dgvClientes.Columns.Clear();
-            dgvClientes.AutoGenerateColumns = false;
-
-            var lista = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("ID_CLIENTE", "ID"),
-                new KeyValuePair<string, string>("NOME", "Cliente"),
-                new KeyValuePair<string, string>("CPF", "Cpf"),
-                new KeyValuePair<string, string>("TEL", "Telefone"),
-                new KeyValuePair<string, string>("ATIVO", "Ativo"),
-            };
-            foreach (var s in lista)
-            {
-                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-                col.DataPropertyName = s.Key;
-                col.HeaderText = s.Value;
-                dgvClientes.Columns.Add(col);
-            }
-            dgvClientes.DataSource = c.dt;
-            dgvClientes.Columns[0].Visible = false;
-
         }
         public static string RetornaOsVersao()
         {
@@ -297,7 +273,6 @@ namespace projeto1
             destino = "";
             return;
         }
-
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -306,7 +281,6 @@ namespace projeto1
             //PingForm form2 = new PingForm();
             //form2.Show();
         }
-
         private void redesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
@@ -314,26 +288,34 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void btnGravar_Click_1(object sender, EventArgs e)
+        private void fazerBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cadastro cad = new Cadastro(txbNome.Text, txbCpf.Text, txbTell.Text, rbSim.Checked);
-            CarregaDgvCleintes();
-            MessageBox.Show(cad.mensagem);
-        }
-
-        private void btnVerificar_Click(object sender, EventArgs e)
-        {
-            CarregaDgvCleintes();
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            if (dgvClientes.RowCount > 0)
+            using (SaveFileDialog dialog = new SaveFileDialog())
             {
-                var id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
-                Delete del = new Delete(id);
-                CarregaDgvCleintes();
+                DialogResult res = dialog.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    ExecutarBackup(dialog.FileName + ".bak");
+                }
+            }
+        }
 
+        public void ExecutarBackup(string backupPath)
+        {
+            SqlConnectionManager connectionManager = new SqlConnectionManager();
+
+            if (connectionManager.OpenConnection())
+            {
+                if (connectionManager.BackupDatabase(backupPath))
+                {
+                    MessageBox.Show("Backup concluído com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro ao fazer o backup.");
+                }
+
+                connectionManager.CloseConnection();
             }
         }
     }

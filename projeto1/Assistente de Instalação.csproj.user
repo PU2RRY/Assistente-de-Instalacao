@@ -22,8 +22,5 @@
     <Compile Update="Forms\RenomeiaMaquinaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\CustomTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
