@@ -73,6 +73,16 @@ namespace Assistente_de_Instalação.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Loading_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Loading_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap off_24x24 {
             get {
                 object obj = ResourceManager.GetObject("off_24x24", resourceCulture);

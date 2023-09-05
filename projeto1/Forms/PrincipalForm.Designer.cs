@@ -50,6 +50,9 @@
             restaToolStripMenuItem = new ToolStripMenuItem();
             redesToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            pBackupload = new Panel();
+            lbBackupLoad = new Label();
+            pbBackupLoad = new PictureBox();
             panel2 = new Panel();
             btnGravarApontamento = new Button();
             tbNomehost = new TextBox();
@@ -69,6 +72,8 @@
             panel4 = new Panel();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            pBackupload.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbBackupLoad).BeginInit();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -81,7 +86,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, pDVToolStripMenuItem, redesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(558, 24);
+            menuStrip1.Size = new Size(669, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -210,6 +215,7 @@
             restaToolStripMenuItem.Name = "restaToolStripMenuItem";
             restaToolStripMenuItem.Size = new Size(225, 22);
             restaToolStripMenuItem.Text = "Restaurar Backup";
+            restaToolStripMenuItem.Click += restaToolStripMenuItem_Click;
             // 
             // redesToolStripMenuItem
             // 
@@ -221,11 +227,41 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(9, 122);
+            panel1.Location = new Point(4, 121);
             panel1.Name = "panel1";
-            panel1.Size = new Size(540, 90);
+            panel1.Size = new Size(660, 299);
             panel1.TabIndex = 4;
+            // 
+            // pBackupload
+            // 
+            pBackupload.BackColor = Color.White;
+            pBackupload.Controls.Add(lbBackupLoad);
+            pBackupload.Controls.Add(pbBackupLoad);
+            pBackupload.Location = new Point(244, 101);
+            pBackupload.Name = "pBackupload";
+            pBackupload.Size = new Size(173, 96);
+            pBackupload.TabIndex = 2;
+            // 
+            // lbBackupLoad
+            // 
+            lbBackupLoad.AutoSize = true;
+            lbBackupLoad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbBackupLoad.Location = new Point(12, 9);
+            lbBackupLoad.Name = "lbBackupLoad";
+            lbBackupLoad.Size = new Size(125, 20);
+            lbBackupLoad.TabIndex = 2;
+            lbBackupLoad.Text = "Fazendo Backup...";
+            // 
+            // pbBackupLoad
+            // 
+            pbBackupLoad.Image = Assistente_de_Instalação.Properties.Resources.Loading_icon__1_;
+            pbBackupLoad.Location = new Point(27, 32);
+            pbBackupLoad.Name = "pbBackupLoad";
+            pbBackupLoad.Size = new Size(118, 58);
+            pbBackupLoad.TabIndex = 1;
+            pbBackupLoad.TabStop = false;
             // 
             // panel2
             // 
@@ -309,9 +345,9 @@
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
             panel5.Controls.Add(btDownloadPDV);
-            panel5.Location = new Point(9, 369);
+            panel5.Location = new Point(5, 426);
             panel5.Name = "panel5";
-            panel5.Size = new Size(540, 37);
+            panel5.Size = new Size(660, 40);
             panel5.TabIndex = 5;
             // 
             // btDownloadAtualizador
@@ -358,7 +394,7 @@
             label1.BackColor = SystemColors.ActiveBorder;
             label1.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(130, 30);
+            label1.Location = new Point(185, 30);
             label1.Name = "label1";
             label1.Size = new Size(298, 24);
             label1.TabIndex = 3;
@@ -367,9 +403,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
-            statusStrip1.Location = new Point(0, 412);
+            statusStrip1.Location = new Point(0, 470);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(558, 22);
+            statusStrip1.Size = new Size(669, 22);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -394,9 +430,9 @@
             panel4.Controls.Add(lbHostName);
             panel4.Controls.Add(lbOS);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(9, 62);
+            panel4.Location = new Point(4, 58);
             panel4.Name = "panel4";
-            panel4.Size = new Size(540, 54);
+            panel4.Size = new Size(660, 60);
             panel4.TabIndex = 6;
             // 
             // MenuPrincipal
@@ -404,7 +440,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(558, 434);
+            ClientSize = new Size(669, 492);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(statusStrip1);
@@ -423,6 +459,9 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            pBackupload.ResumeLayout(false);
+            pBackupload.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel5.ResumeLayout(false);
@@ -474,5 +513,8 @@
         private ToolStripMenuItem redesToolStripMenuItem;
         private ToolStripMenuItem fazerBackupToolStripMenuItem;
         private ToolStripMenuItem restaToolStripMenuItem;
+        private Panel pBackupload;
+        private Label lbBackupLoad;
+        private PictureBox pbBackupLoad;
     }
 }
