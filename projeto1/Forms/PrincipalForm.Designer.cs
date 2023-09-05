@@ -41,6 +41,7 @@
             pastaInicializarToolStripMenuItem = new ToolStripMenuItem();
             renomeiaNomeMaquinaToolStripMenuItem = new ToolStripMenuItem();
             ativadorMASToolStripMenuItem = new ToolStripMenuItem();
+            redesToolStripMenuItem = new ToolStripMenuItem();
             pDVToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTVicommerceimpToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
@@ -48,8 +49,8 @@
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupToolStripMenuItem = new ToolStripMenuItem();
             restaToolStripMenuItem = new ToolStripMenuItem();
-            redesToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            lbProcessandoMsn = new Label();
             pBackupload = new Panel();
             lbBackupLoad = new Label();
             pbBackupLoad = new PictureBox();
@@ -69,7 +70,11 @@
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
             tsslEvicommerce = new ToolStripStatusLabel();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            tsslVicommerce = new ToolStripStatusLabel();
             panel4 = new Panel();
+            bgwTestaConexao = new System.ComponentModel.BackgroundWorker();
+            recarregarToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             pBackupload.SuspendLayout();
@@ -83,7 +88,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.WhiteSmoke;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, pDVToolStripMenuItem, redesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, redesToolStripMenuItem, pDVToolStripMenuItem, recarregarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(669, 24);
@@ -101,8 +106,9 @@
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { impressorasToolStripMenuItem, painelDeControleToolStripMenuItem, energiaToolStripMenuItem, descriçãoDoSistemaToolStripMenuItem, reiniciaSpoolerToolStripMenuItem, recursosDoWindowsToolStripMenuItem, pastaInicializarToolStripMenuItem, renomeiaNomeMaquinaToolStripMenuItem, ativadorMASToolStripMenuItem });
+            toolStripMenuItem1.Image = Assistente_de_Instalação.Properties.Resources.janelas;
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(68, 20);
+            toolStripMenuItem1.Size = new Size(84, 20);
             toolStripMenuItem1.Text = "Windows";
             // 
             // impressorasToolStripMenuItem
@@ -168,11 +174,20 @@
             ativadorMASToolStripMenuItem.Text = "Ativador M.A.S";
             ativadorMASToolStripMenuItem.Click += ativadorMASToolStripMenuItem_Click;
             // 
+            // redesToolStripMenuItem
+            // 
+            redesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.Redes;
+            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
+            redesToolStripMenuItem.Size = new Size(66, 20);
+            redesToolStripMenuItem.Text = "Redes";
+            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
+            // 
             // pDVToolStripMenuItem
             // 
             pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem, maquinasDCSPDVToolStripMenuItem, fazerBackupELogsToolStripMenuItem, fazerBackupToolStripMenuItem, restaToolStripMenuItem });
+            pDVToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.logo;
             pDVToolStripMenuItem.Name = "pDVToolStripMenuItem";
-            pDVToolStripMenuItem.Size = new Size(41, 20);
+            pDVToolStripMenuItem.Size = new Size(57, 20);
             pDVToolStripMenuItem.Text = "PDV";
             // 
             // apagaTXTVicommerceimpToolStripMenuItem
@@ -217,22 +232,25 @@
             restaToolStripMenuItem.Text = "Restaurar Backup";
             restaToolStripMenuItem.Click += restaToolStripMenuItem_Click;
             // 
-            // redesToolStripMenuItem
-            // 
-            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
-            redesToolStripMenuItem.Size = new Size(50, 20);
-            redesToolStripMenuItem.Text = "Redes";
-            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(lbProcessandoMsn);
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(4, 121);
             panel1.Name = "panel1";
-            panel1.Size = new Size(660, 299);
+            panel1.Size = new Size(660, 307);
             panel1.TabIndex = 4;
+            // 
+            // lbProcessandoMsn
+            // 
+            lbProcessandoMsn.AutoSize = true;
+            lbProcessandoMsn.Location = new Point(519, 283);
+            lbProcessandoMsn.Name = "lbProcessandoMsn";
+            lbProcessandoMsn.Size = new Size(16, 15);
+            lbProcessandoMsn.TabIndex = 5;
+            lbProcessandoMsn.Text = "...";
             // 
             // pBackupload
             // 
@@ -269,14 +287,14 @@
             panel2.Controls.Add(btnGravarApontamento);
             panel2.Controls.Add(tbNomehost);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(6, 7);
+            panel2.Location = new Point(6, 6);
             panel2.Name = "panel2";
-            panel2.Size = new Size(252, 75);
+            panel2.Size = new Size(252, 51);
             panel2.TabIndex = 0;
             // 
             // btnGravarApontamento
             // 
-            btnGravarApontamento.Location = new Point(166, 40);
+            btnGravarApontamento.Location = new Point(168, 21);
             btnGravarApontamento.Name = "btnGravarApontamento";
             btnGravarApontamento.Size = new Size(76, 24);
             btnGravarApontamento.TabIndex = 2;
@@ -286,7 +304,7 @@
             // 
             // tbNomehost
             // 
-            tbNomehost.Location = new Point(5, 40);
+            tbNomehost.Location = new Point(5, 22);
             tbNomehost.Name = "tbNomehost";
             tbNomehost.Size = new Size(157, 23);
             tbNomehost.TabIndex = 0;
@@ -295,7 +313,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(3, 6);
+            label2.Location = new Point(3, 1);
             label2.Name = "label2";
             label2.Size = new Size(176, 17);
             label2.TabIndex = 2;
@@ -345,9 +363,9 @@
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
             panel5.Controls.Add(btDownloadPDV);
-            panel5.Location = new Point(5, 426);
+            panel5.Location = new Point(5, 432);
             panel5.Name = "panel5";
-            panel5.Size = new Size(660, 40);
+            panel5.Size = new Size(660, 34);
             panel5.TabIndex = 5;
             // 
             // btDownloadAtualizador
@@ -356,7 +374,7 @@
             btDownloadAtualizador.FlatStyle = FlatStyle.Flat;
             btDownloadAtualizador.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btDownloadAtualizador.ForeColor = SystemColors.ControlText;
-            btDownloadAtualizador.Location = new Point(91, 8);
+            btDownloadAtualizador.Location = new Point(91, 5);
             btDownloadAtualizador.Name = "btDownloadAtualizador";
             btDownloadAtualizador.Size = new Size(88, 23);
             btDownloadAtualizador.TabIndex = 4;
@@ -368,7 +386,7 @@
             // 
             lbStatusDownload.AutoSize = true;
             lbStatusDownload.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbStatusDownload.Location = new Point(185, 11);
+            lbStatusDownload.Location = new Point(185, 8);
             lbStatusDownload.Name = "lbStatusDownload";
             lbStatusDownload.Size = new Size(18, 20);
             lbStatusDownload.TabIndex = 3;
@@ -380,7 +398,7 @@
             btDownloadPDV.FlatStyle = FlatStyle.Flat;
             btDownloadPDV.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btDownloadPDV.ForeColor = SystemColors.ControlText;
-            btDownloadPDV.Location = new Point(6, 8);
+            btDownloadPDV.Location = new Point(6, 5);
             btDownloadPDV.Name = "btDownloadPDV";
             btDownloadPDV.Size = new Size(79, 23);
             btDownloadPDV.TabIndex = 2;
@@ -402,7 +420,7 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce, toolStripStatusLabel1, tsslVicommerce });
             statusStrip1.Location = new Point(0, 470);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(669, 22);
@@ -413,15 +431,32 @@
             // 
             tssLabel.BackColor = Color.White;
             tssLabel.Name = "tssLabel";
-            tssLabel.Size = new Size(90, 17);
-            tssLabel.Text = "EviCommerce : ";
+            tssLabel.Size = new Size(87, 17);
+            tssLabel.Text = "EviCommerce :";
             // 
             // tsslEvicommerce
             // 
-            tsslEvicommerce.BackColor = SystemColors.ButtonFace;
+            tsslEvicommerce.BackColor = Color.White;
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
             tsslEvicommerce.Name = "tsslEvicommerce";
-            tsslEvicommerce.Size = new Size(16, 17);
+            tsslEvicommerce.Size = new Size(35, 17);
+            tsslEvicommerce.Text = "    ";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.ActiveLinkColor = Color.White;
+            toolStripStatusLabel1.BackColor = Color.White;
+            toolStripStatusLabel1.LinkColor = Color.White;
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(74, 17);
+            toolStripStatusLabel1.Text = "Viommerce :";
+            // 
+            // tsslVicommerce
+            // 
+            tsslVicommerce.BackColor = Color.White;
+            tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            tsslVicommerce.Name = "tsslVicommerce";
+            tsslVicommerce.Size = new Size(16, 17);
             // 
             // panel4
             // 
@@ -434,6 +469,23 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(660, 60);
             panel4.TabIndex = 6;
+            // 
+            // bgwTestaConexao
+            // 
+            bgwTestaConexao.WorkerReportsProgress = true;
+            bgwTestaConexao.WorkerSupportsCancellation = true;
+            bgwTestaConexao.DoWork += bgwTestaConexao_DoWork;
+            bgwTestaConexao.ProgressChanged += bgwTestaConexao_ProgressChanged;
+            bgwTestaConexao.RunWorkerCompleted += bgwTestaConexao_RunWorkerCompleted;
+            // 
+            // recarregarToolStripMenuItem
+            // 
+            recarregarToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            recarregarToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.recarregar_30_x_30_;
+            recarregarToolStripMenuItem.Name = "recarregarToolStripMenuItem";
+            recarregarToolStripMenuItem.Size = new Size(71, 20);
+            recarregarToolStripMenuItem.Text = "Reload";
+            recarregarToolStripMenuItem.Click += recarregarToolStripMenuItem_Click;
             // 
             // MenuPrincipal
             // 
@@ -456,9 +508,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             Load += MenuPrincipal_Load;
+            Shown += MenuPrincipal_Shown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             pBackupload.ResumeLayout(false);
             pBackupload.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
@@ -516,5 +570,10 @@
         private Panel pBackupload;
         private Label lbBackupLoad;
         private PictureBox pbBackupLoad;
+        private System.ComponentModel.BackgroundWorker bgwTestaConexao;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel tsslVicommerce;
+        private Label lbProcessandoMsn;
+        private ToolStripMenuItem recarregarToolStripMenuItem;
     }
 }

@@ -28,13 +28,14 @@ namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
+        //String hostName, strConn, strConnTrusted, strConnEViCommerce;
+        public static bool reiniciar { get; set; }
         private BackgroundWorker backgroundWorkerBackup;
         private BackgroundWorker backgroundWorkerRestore;
         public string dirbkp = "";
         public string url = "";
         public string destino = "";
         private WebClient webClient;
-
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -42,7 +43,6 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
-
             backgroundWorkerRestore = new BackgroundWorker();
             backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
             backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
@@ -50,7 +50,6 @@ namespace projeto1
             backgroundWorkerBackup = new BackgroundWorker();
             backgroundWorkerBackup.DoWork += new DoWorkEventHandler(BackgroundWorkerBackup_DoWork);
             backgroundWorkerBackup.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerBackup_RunWorkerCompleted);
-
         }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
@@ -59,7 +58,6 @@ namespace projeto1
         }
         private void impressorasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Abre painel de impressoras do Windows 
             string impWin = "control printers";
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe", $"/C {impWin}");
@@ -184,12 +182,34 @@ namespace projeto1
                 MessageBox.Show("Erro não foi possivel gravar o ODBC" + ex.Message);
             }
         }
+        private void MenuPrincipal_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                lbProcessandoMsn.Text = "";
+                tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+                tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+                lbHostName.Text = Environment.MachineName;
+                lbOS.Text = RetornaOsVersao();
+                pBackupload.Visible = false;
+
+                if (!bgwTestaConexao.IsBusy)
+                {
+                    bgwTestaConexao.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Sistema ocupado executando outros operações em backGroud, por favor aguarde o termino do processamento e tente novamente.", "Processo em execução!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
-            lbHostName.Text = Environment.MachineName;
-            lbOS.Text = RetornaOsVersao();
-            pBackupload.Visible = false;
+            LigaDesliga(false);
         }
         public static string RetornaOsVersao()
         {
@@ -307,7 +327,7 @@ namespace projeto1
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao fazer o backup.");
 
-            else if (e.Cancelled);
+            else if (e.Cancelled) ;
 
             else
             {
@@ -316,11 +336,11 @@ namespace projeto1
             }
         }
         private void BackgroundWorkerRestore_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {            
+        {
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao restaurar o backup.");
 
-            else if (e.Cancelled);
+            else if (e.Cancelled) ;
 
             else
             {
@@ -336,7 +356,6 @@ namespace projeto1
             {
                 if (!connectionManager.BackupDatabase(backupPath))
                 {
-                    // Reporte um erro se o backup falhar
                     throw new Exception("Erro ao fazer o backup.");
                 }
                 connectionManager.CloseConnection();
@@ -371,9 +390,56 @@ namespace projeto1
                 {
                     throw new Exception("Erro ao restaurar o backup.");
                 }
-                
+
                 connectionManager.CloseConnection();
             }
+        }
+        private void bgwTestaConexao_DoWork(object sender, DoWorkEventArgs e)
+        {
+            bgwTestaConexao.ReportProgress(0);
+            SqlConnectionManager connectionManager = new SqlConnectionManager();
+            if (connectionManager.TestaConexaoLocal())
+            {
+                bgwTestaConexao.ReportProgress(1);
+            }
+        }
+        private void bgwTestaConexao_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage == 0)
+            {
+                lbProcessandoMsn.Text = "Testando Conexão...";
+                return;
+            }
+
+            if (e.ProgressPercentage == 1)
+            {
+                tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
+                LigaDesliga(true);
+                lbProcessandoMsn.Text = "";
+                return;
+            }
+
+        }
+
+        private void LigaDesliga(bool chave)
+        {
+            maquinasDCSPDVToolStripMenuItem.Enabled = chave;
+            fazerBackupELogsToolStripMenuItem.Enabled = chave;
+            fazerBackupToolStripMenuItem.Enabled = chave;
+            restaToolStripMenuItem.Enabled = chave;
+        }
+        private void bgwTestaConexao_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show("" + e.Error.Message);
+            }
+            lbProcessandoMsn.Text = "";
+        }
+        private void recarregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reiniciar = true;
+            this.Close();
         }
     }
 }

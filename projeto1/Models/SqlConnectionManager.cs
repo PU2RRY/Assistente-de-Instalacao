@@ -17,6 +17,26 @@ namespace Assistente_de_Instalação.Models
             string connectionString = $"Server=(local);Database=master;TrustServerCertificate=True;Trusted_Connection=True";
             this.connection = new SqlConnection(connectionString);
         }
+
+        public bool TestaConexaoLocal()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (Exception sqlex)
+            {
+                throw new Exception(sqlex.Message);
+            }
+            finally
+            {
+                if (connection.State != ConnectionState.Closed)
+                {
+                    connection.Close();
+                }
+            }
+        }
         public bool OpenConnection()
         {
             try
@@ -96,7 +116,7 @@ namespace Assistente_de_Instalação.Models
         }
         public bool CriaUsuarioSql()
         {
-             try
+            try
             {
                 var sb = new StringBuilder();
                 sb.AppendLine("USE master;");
