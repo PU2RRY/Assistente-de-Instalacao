@@ -233,7 +233,7 @@
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(6, 142);
+            dgvClientes.Location = new Point(5, 142);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
@@ -255,7 +255,7 @@
             panel6.Controls.Add(label7);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(label5);
-            panel6.Location = new Point(264, 7);
+            panel6.Location = new Point(263, 7);
             panel6.Name = "panel6";
             panel6.Size = new Size(423, 129);
             panel6.TabIndex = 5;
