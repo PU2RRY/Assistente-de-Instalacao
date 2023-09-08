@@ -36,6 +36,7 @@ namespace Assistente_de_Instalação.Forms
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
+                dialog.InitialDirectory = @"C:\Vicommerce\Backup";
                 DialogResult res = dialog.ShowDialog();
                 if (res == DialogResult.OK)
                 {
@@ -91,5 +92,6 @@ namespace Assistente_de_Instalação.Forms
             Directory.Delete(@".\TEMP", true);
             MessageBox.Show("Arquivo zip criado.");
         }
+
     }
 }

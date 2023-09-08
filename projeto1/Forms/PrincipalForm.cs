@@ -5,17 +5,22 @@ using System.Management;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using Assistente_de_Instalação.Forms;
 using Assistente_de_Instalação.Models;
 using Assistente_de_Instalação.Properties;
-using Assistente_de_Instalação.SqlConexao;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.Identity.Client;
+using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Logging;
 using Microsoft.Win32;
 using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -23,23 +28,14 @@ namespace projeto1
 {
     public partial class MenuPrincipal : Form
     {
+        //String hostName, strConn, strConnTrusted, strConnEViCommerce;
+        public static bool reiniciar { get; set; }
+        private BackgroundWorker backgroundWorkerBackup;
+        private BackgroundWorker backgroundWorkerRestore;
+        public string dirbkp = "";
         public string url = "";
         public string destino = "";
         private WebClient webClient;
-        String hostName, strConn, strConnTrusted, strConnEViCommerce;
-
-        [DllImport("ODBCCP32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        private static extern bool SQLConfigDataSource(IntPtr parent, OdbcConfigDsnFlags request, string driver, string attributes);
-        [Flags]
-        enum OdbcConfigDsnFlags : int
-        {
-            ODBC_ADD_DSN = 1,
-            ODBC_CONFIG_DSN = 2,
-            ODBC_REMOVE_DSN = 3,
-            ODBC_ADD_SYS_DSN = 4,
-            ODBC_CONFIG_SYS_DSN = 5,
-            ODBC_REMOVE_SYS_DSN = 6
-        }
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -47,16 +43,13 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
-        }
-        private void BTNEnter(object sender, EventArgs e)
-        {
-            if (sender is Button btn)
-                btn.BackColor = Color.Red;
-        }
-        private void BTNLeave(object sender, EventArgs e)
-        {
-            if (sender is Button btn)
-                btn.BackColor = Color.DodgerBlue;
+            backgroundWorkerRestore = new BackgroundWorker();
+            backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
+            backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
+
+            backgroundWorkerBackup = new BackgroundWorker();
+            backgroundWorkerBackup.DoWork += new DoWorkEventHandler(BackgroundWorkerBackup_DoWork);
+            backgroundWorkerBackup.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerBackup_RunWorkerCompleted);
         }
         private List<FileInfo> ListaArquivoPorExt(string dir, string ext)
         {
@@ -65,7 +58,6 @@ namespace projeto1
         }
         private void impressorasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Abre painel de impressoras do Windows 
             string impWin = "control printers";
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe", $"/C {impWin}");
@@ -190,38 +182,34 @@ namespace projeto1
                 MessageBox.Show("Erro não foi possivel gravar o ODBC" + ex.Message);
             }
         }
+        private void MenuPrincipal_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                lbProcessandoMsn.Text = "";
+                tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+                tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+                lbHostName.Text = Environment.MachineName;
+                lbOS.Text = RetornaOsVersao();
+                pBackupload.Visible = false;
+
+                if (!bgwTestaConexao.IsBusy)
+                {
+                    bgwTestaConexao.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Sistema ocupado executando outros operações em backGroud, por favor aguarde o termino do processamento e tente novamente.", "Processo em execução!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
-            tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
-            CarregaDgvCleintes();
-            lbHostName.Text = Environment.MachineName;
-            lbOS.Text = RetornaOsVersao();
-        }
-        private void CarregaDgvCleintes()
-        {
-            Consulta c = new Consulta("Clientes");
-            dgvClientes.Columns.Clear();
-            dgvClientes.AutoGenerateColumns = false;
-
-            var lista = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("ID_CLIENTE", "ID"),
-                new KeyValuePair<string, string>("NOME", "Cliente"),
-                new KeyValuePair<string, string>("CPF", "Cpf"),
-                new KeyValuePair<string, string>("TEL", "Telefone"),
-                new KeyValuePair<string, string>("ATIVO", "Ativo"),
-            };
-            foreach (var s in lista)
-            {
-                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-                col.DataPropertyName = s.Key;
-                col.HeaderText = s.Value;
-                dgvClientes.Columns.Add(col);
-            }
-            dgvClientes.DataSource = c.dt;
-            dgvClientes.Columns[0].Visible = false;
-
+            LigaDesliga(false);
         }
         public static string RetornaOsVersao()
         {
@@ -297,16 +285,10 @@ namespace projeto1
             destino = "";
             return;
         }
-
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-
-            //BackgroundWorker bw = new BackgroundWorker();
-            //PingForm form2 = new PingForm();
-            //form2.Show();
         }
-
         private void redesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
@@ -314,27 +296,150 @@ namespace projeto1
             form2.ShowDialog();
             OcultaExibForm(true);
         }
-        private void btnGravar_Click_1(object sender, EventArgs e)
+        private void fazerBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cadastro cad = new Cadastro(txbNome.Text, txbCpf.Text, txbTell.Text, rbSim.Checked);
-            CarregaDgvCleintes();
-            MessageBox.Show(cad.mensagem);
-        }
-
-        private void btnVerificar_Click(object sender, EventArgs e)
-        {
-            CarregaDgvCleintes();
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            if (dgvClientes.RowCount > 0)
+            using (SaveFileDialog dialog = new SaveFileDialog())
             {
-                var id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
-                Delete del = new Delete(id);
-                CarregaDgvCleintes();
-
+                dialog.InitialDirectory = @"C:\Vicommerce\Backup";
+                DialogResult res = dialog.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    pBackupload.Visible = true;
+                    backgroundWorkerBackup.RunWorkerAsync(dialog.FileName + ".bak");
+                }
             }
+        }
+        private void BackgroundWorkerBackup_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Este método é executado em segundo plano
+            string backupPath = e.Argument as string;
+            ExecutarBackup(backupPath);
+        }
+        private void BackgroundWorkerRestore_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string backupFilePath = e.Argument as string;
+            // Execute a restauração do banco de dados em segundo plano
+            RestauraBackup(backupFilePath);
+        }
+        private void BackgroundWorkerBackup_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // Este método é executado na thread da interface do usuário após a conclusão do trabalho em segundo plano
+            if (e.Error != null)
+                MessageBox.Show("Ocorreu um erro ao fazer o backup.");
+
+            else if (e.Cancelled) ;
+
+            else
+            {
+                MessageBox.Show("Backup concluído com sucesso.");
+                pBackupload.Visible = false;
+            }
+        }
+        private void BackgroundWorkerRestore_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+                MessageBox.Show("Ocorreu um erro ao restaurar o backup.");
+
+            else if (e.Cancelled) ;
+
+            else
+            {
+                MessageBox.Show("Restauração concluída com sucesso.");
+                pBackupload.Visible = false;
+                lbBackupLoad.Text = "Fazendo Backup...";
+            }
+        }
+        public void ExecutarBackup(string backupPath)
+        {
+            SqlConnectionManager connectionManager = new SqlConnectionManager();
+            if (connectionManager.OpenConnection())
+            {
+                if (!connectionManager.BackupDatabase(backupPath))
+                {
+                    throw new Exception("Erro ao fazer o backup.");
+                }
+                connectionManager.CloseConnection();
+            }
+        }
+        private void restaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.InitialDirectory = @"C:\Vicommerce\Backup";
+                DialogResult res = dialog.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    lbBackupLoad.Text = "Restaurando Backup...";
+                    pBackupload.Visible = true;
+                    backgroundWorkerRestore.RunWorkerAsync(dialog.FileName);
+                }
+            }
+        }
+        public void RestauraBackup(string backupFilePath)
+        {
+            SqlConnectionManager connectionManager = new SqlConnectionManager();
+            if (connectionManager.OpenConnection())
+            {
+                if (connectionManager.RestoreDatabase(backupFilePath))
+                {
+                    connectionManager.killConection();
+                    connectionManager.CriaUsuarioSql();
+                    connectionManager.DefinirPermissoes();
+                }
+                else
+                {
+                    throw new Exception("Erro ao restaurar o backup.");
+                }
+
+                connectionManager.CloseConnection();
+            }
+        }
+        private void bgwTestaConexao_DoWork(object sender, DoWorkEventArgs e)
+        {
+            bgwTestaConexao.ReportProgress(0);
+            SqlConnectionManager connectionManager = new SqlConnectionManager();
+            if (connectionManager.TestaConexaoLocal())
+            {
+                bgwTestaConexao.ReportProgress(1);
+            }
+        }
+        private void bgwTestaConexao_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage == 0)
+            {
+                lbProcessandoMsn.Text = "Testando Conexão...";
+                return;
+            }
+
+            if (e.ProgressPercentage == 1)
+            {
+                tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
+                LigaDesliga(true);
+                lbProcessandoMsn.Text = "";
+                return;
+            }
+
+        }
+
+        private void LigaDesliga(bool chave)
+        {
+            maquinasDCSPDVToolStripMenuItem.Enabled = chave;
+            fazerBackupELogsToolStripMenuItem.Enabled = chave;
+            fazerBackupToolStripMenuItem.Enabled = chave;
+            restaToolStripMenuItem.Enabled = chave;
+        }
+        private void bgwTestaConexao_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show("" + e.Error.Message);
+            }
+            lbProcessandoMsn.Text = "";
+        }
+        private void recarregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reiniciar = true;
+            this.Close();
         }
     }
 }

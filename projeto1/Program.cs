@@ -16,7 +16,14 @@ namespace projeto1
 
             Login pediSenha = new();
             if (pediSenha.ShowDialog() == DialogResult.Continue)
-                Application.Run(new MenuPrincipal());
+            {
+                MenuPrincipal.reiniciar = true;
+                while(MenuPrincipal.reiniciar)
+                {
+                    MenuPrincipal.reiniciar = false;
+                    Application.Run(new MenuPrincipal());
+                }
+            }
         }
     }
 }

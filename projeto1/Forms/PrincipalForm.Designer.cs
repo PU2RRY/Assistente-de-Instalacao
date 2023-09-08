@@ -41,27 +41,20 @@
             pastaInicializarToolStripMenuItem = new ToolStripMenuItem();
             renomeiaNomeMaquinaToolStripMenuItem = new ToolStripMenuItem();
             ativadorMASToolStripMenuItem = new ToolStripMenuItem();
+            redesToolStripMenuItem = new ToolStripMenuItem();
             pDVToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTVicommerceimpToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
             maquinasDCSPDVToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
-            redesToolStripMenuItem = new ToolStripMenuItem();
+            fazerBackupToolStripMenuItem = new ToolStripMenuItem();
+            restaToolStripMenuItem = new ToolStripMenuItem();
+            recarregarToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            dgvClientes = new DataGridView();
-            panel6 = new Panel();
-            btnApagar = new Button();
-            btnGravar = new Button();
-            rbNao = new RadioButton();
-            rbSim = new RadioButton();
-            btnVerificar = new Button();
-            txbTell = new TextBox();
-            txbCpf = new TextBox();
-            txbNome = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
+            lbProcessandoMsn = new Label();
+            pBackupload = new Panel();
+            lbBackupLoad = new Label();
+            pbBackupLoad = new PictureBox();
             panel2 = new Panel();
             btnGravarApontamento = new Button();
             tbNomehost = new TextBox();
@@ -78,11 +71,14 @@
             statusStrip1 = new StatusStrip();
             tssLabel = new ToolStripStatusLabel();
             tsslEvicommerce = new ToolStripStatusLabel();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            tsslVicommerce = new ToolStripStatusLabel();
             panel4 = new Panel();
+            bgwTestaConexao = new System.ComponentModel.BackgroundWorker();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
-            panel6.SuspendLayout();
+            pBackupload.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbBackupLoad).BeginInit();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -92,10 +88,10 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.WhiteSmoke;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, pDVToolStripMenuItem, redesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, redesToolStripMenuItem, pDVToolStripMenuItem, recarregarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(883, 24);
+            menuStrip1.Size = new Size(669, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -110,8 +106,9 @@
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { impressorasToolStripMenuItem, painelDeControleToolStripMenuItem, energiaToolStripMenuItem, descriçãoDoSistemaToolStripMenuItem, reiniciaSpoolerToolStripMenuItem, recursosDoWindowsToolStripMenuItem, pastaInicializarToolStripMenuItem, renomeiaNomeMaquinaToolStripMenuItem, ativadorMASToolStripMenuItem });
+            toolStripMenuItem1.Image = Assistente_de_Instalação.Properties.Resources.janelas;
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(68, 20);
+            toolStripMenuItem1.Size = new Size(84, 20);
             toolStripMenuItem1.Text = "Windows";
             // 
             // impressorasToolStripMenuItem
@@ -177,18 +174,29 @@
             ativadorMASToolStripMenuItem.Text = "Ativador M.A.S";
             ativadorMASToolStripMenuItem.Click += ativadorMASToolStripMenuItem_Click;
             // 
+            // redesToolStripMenuItem
+            // 
+            redesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.Redes;
+            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
+            redesToolStripMenuItem.Size = new Size(66, 20);
+            redesToolStripMenuItem.Text = "Redes";
+            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
+            // 
             // pDVToolStripMenuItem
             // 
-            pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem, maquinasDCSPDVToolStripMenuItem, fazerBackupELogsToolStripMenuItem });
+            pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem, maquinasDCSPDVToolStripMenuItem, fazerBackupELogsToolStripMenuItem, fazerBackupToolStripMenuItem, restaToolStripMenuItem });
+            pDVToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.logo;
             pDVToolStripMenuItem.Name = "pDVToolStripMenuItem";
-            pDVToolStripMenuItem.Size = new Size(41, 20);
+            pDVToolStripMenuItem.Size = new Size(57, 20);
             pDVToolStripMenuItem.Text = "PDV";
             // 
             // apagaTXTVicommerceimpToolStripMenuItem
             // 
             apagaTXTVicommerceimpToolStripMenuItem.Name = "apagaTXTVicommerceimpToolStripMenuItem";
+            apagaTXTVicommerceimpToolStripMenuItem.ShortcutKeyDisplayString = "";
             apagaTXTVicommerceimpToolStripMenuItem.Size = new Size(225, 22);
             apagaTXTVicommerceimpToolStripMenuItem.Text = "Apaga TXT vicommerce/imp";
+            apagaTXTVicommerceimpToolStripMenuItem.ToolTipText = "Esta função apaga todos os arquivos TXT da pasta imp do DCS PDV";
             apagaTXTVicommerceimpToolStripMenuItem.Click += apagaTXTVicommerceimpToolStripMenuItem_Click;
             // 
             // apagaTXTTempSATimpToolStripMenuItem
@@ -209,29 +217,46 @@
             // 
             fazerBackupELogsToolStripMenuItem.Name = "fazerBackupELogsToolStripMenuItem";
             fazerBackupELogsToolStripMenuItem.Size = new Size(225, 22);
-            fazerBackupELogsToolStripMenuItem.Text = "Fazer Backup e Logs";
+            fazerBackupELogsToolStripMenuItem.Text = "Coletar Backup e Logs";
             fazerBackupELogsToolStripMenuItem.Click += fazerBackupELogsToolStripMenuItem_Click;
             // 
-            // redesToolStripMenuItem
+            // fazerBackupToolStripMenuItem
             // 
-            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
-            redesToolStripMenuItem.Size = new Size(50, 20);
-            redesToolStripMenuItem.Text = "Redes";
-            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
+            fazerBackupToolStripMenuItem.Name = "fazerBackupToolStripMenuItem";
+            fazerBackupToolStripMenuItem.Size = new Size(225, 22);
+            fazerBackupToolStripMenuItem.Text = "Fazer Backup";
+            fazerBackupToolStripMenuItem.Click += fazerBackupToolStripMenuItem_Click;
+            // 
+            // restaToolStripMenuItem
+            // 
+            restaToolStripMenuItem.Name = "restaToolStripMenuItem";
+            restaToolStripMenuItem.Size = new Size(225, 22);
+            restaToolStripMenuItem.Text = "Restaurar Backup";
+            restaToolStripMenuItem.Click += restaToolStripMenuItem_Click;
+            // 
+            // recarregarToolStripMenuItem
+            // 
+            recarregarToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            recarregarToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.recarregar_30_x_30_;
+            recarregarToolStripMenuItem.Name = "recarregarToolStripMenuItem";
+            recarregarToolStripMenuItem.Size = new Size(71, 20);
+            recarregarToolStripMenuItem.Text = "Reload";
+            recarregarToolStripMenuItem.Click += recarregarToolStripMenuItem_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(dgvClientes);
-            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(lbProcessandoMsn);
+            panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(181, 122);
+            panel1.Location = new Point(4, 121);
             panel1.Name = "panel1";
-            panel1.Size = new Size(690, 396);
+            panel1.Size = new Size(660, 307);
             panel1.TabIndex = 4;
             // 
-            // dgvClientes
+            // lbProcessandoMsn
             // 
+<<<<<<< HEAD
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Location = new Point(5, 142);
             dgvClientes.Name = "dgvClientes";
@@ -239,9 +264,18 @@
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.Size = new Size(681, 251);
             dgvClientes.TabIndex = 6;
+=======
+            lbProcessandoMsn.AutoSize = true;
+            lbProcessandoMsn.Location = new Point(519, 283);
+            lbProcessandoMsn.Name = "lbProcessandoMsn";
+            lbProcessandoMsn.Size = new Size(16, 15);
+            lbProcessandoMsn.TabIndex = 5;
+            lbProcessandoMsn.Text = "...";
+>>>>>>> cfaf070e251cb2b6e394cbc385702d92d2d38385
             // 
-            // panel6
+            // pBackupload
             // 
+<<<<<<< HEAD
             panel6.BackColor = Color.Gray;
             panel6.Controls.Add(btnApagar);
             panel6.Controls.Add(btnGravar);
@@ -259,119 +293,34 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(423, 129);
             panel6.TabIndex = 5;
+=======
+            pBackupload.BackColor = Color.White;
+            pBackupload.Controls.Add(lbBackupLoad);
+            pBackupload.Controls.Add(pbBackupLoad);
+            pBackupload.Location = new Point(244, 101);
+            pBackupload.Name = "pBackupload";
+            pBackupload.Size = new Size(173, 96);
+            pBackupload.TabIndex = 2;
+>>>>>>> cfaf070e251cb2b6e394cbc385702d92d2d38385
             // 
-            // btnApagar
+            // lbBackupLoad
             // 
-            btnApagar.Location = new Point(285, 78);
-            btnApagar.Name = "btnApagar";
-            btnApagar.Size = new Size(126, 23);
-            btnApagar.TabIndex = 13;
-            btnApagar.Text = "APAGAR";
-            btnApagar.UseVisualStyleBackColor = true;
-            btnApagar.Click += btnApagar_Click;
+            lbBackupLoad.AutoSize = true;
+            lbBackupLoad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbBackupLoad.Location = new Point(12, 9);
+            lbBackupLoad.Name = "lbBackupLoad";
+            lbBackupLoad.Size = new Size(125, 20);
+            lbBackupLoad.TabIndex = 2;
+            lbBackupLoad.Text = "Fazendo Backup...";
             // 
-            // btnGravar
+            // pbBackupLoad
             // 
-            btnGravar.Location = new Point(285, 50);
-            btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(126, 22);
-            btnGravar.TabIndex = 12;
-            btnGravar.Text = "GRAVAR";
-            btnGravar.UseVisualStyleBackColor = true;
-            btnGravar.Click += btnGravar_Click_1;
-            // 
-            // rbNao
-            // 
-            rbNao.AutoSize = true;
-            rbNao.Location = new Point(132, 96);
-            rbNao.Name = "rbNao";
-            rbNao.Size = new Size(47, 19);
-            rbNao.TabIndex = 11;
-            rbNao.TabStop = true;
-            rbNao.Text = "Não";
-            rbNao.UseVisualStyleBackColor = true;
-            // 
-            // rbSim
-            // 
-            rbSim.AutoSize = true;
-            rbSim.Location = new Point(80, 96);
-            rbSim.Name = "rbSim";
-            rbSim.Size = new Size(45, 19);
-            rbSim.TabIndex = 10;
-            rbSim.TabStop = true;
-            rbSim.Text = "Sim";
-            rbSim.UseVisualStyleBackColor = true;
-            // 
-            // btnVerificar
-            // 
-            btnVerificar.Location = new Point(285, 22);
-            btnVerificar.Name = "btnVerificar";
-            btnVerificar.Size = new Size(126, 22);
-            btnVerificar.TabIndex = 9;
-            btnVerificar.Text = "VERIFICAR";
-            btnVerificar.UseVisualStyleBackColor = true;
-            btnVerificar.Click += btnVerificar_Click;
-            // 
-            // txbTell
-            // 
-            txbTell.Location = new Point(80, 66);
-            txbTell.Name = "txbTell";
-            txbTell.Size = new Size(169, 23);
-            txbTell.TabIndex = 6;
-            // 
-            // txbCpf
-            // 
-            txbCpf.Location = new Point(80, 39);
-            txbCpf.Name = "txbCpf";
-            txbCpf.Size = new Size(169, 23);
-            txbCpf.TabIndex = 5;
-            // 
-            // txbNome
-            // 
-            txbNome.Location = new Point(80, 10);
-            txbNome.Name = "txbNome";
-            txbNome.Size = new Size(169, 23);
-            txbNome.TabIndex = 4;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(3, 95);
-            label8.Name = "label8";
-            label8.Size = new Size(44, 20);
-            label8.TabIndex = 3;
-            label8.Text = "Ativo";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(3, 67);
-            label7.Name = "label7";
-            label7.Size = new Size(66, 20);
-            label7.TabIndex = 2;
-            label7.Text = "Telefone";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(3, 38);
-            label6.Name = "label6";
-            label6.Size = new Size(32, 20);
-            label6.TabIndex = 1;
-            label6.Text = "Cpf";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(3, 11);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Nome";
+            pbBackupLoad.Image = Assistente_de_Instalação.Properties.Resources.Loading_icon__1_;
+            pbBackupLoad.Location = new Point(27, 32);
+            pbBackupLoad.Name = "pbBackupLoad";
+            pbBackupLoad.Size = new Size(118, 58);
+            pbBackupLoad.TabIndex = 1;
+            pbBackupLoad.TabStop = false;
             // 
             // panel2
             // 
@@ -379,14 +328,14 @@
             panel2.Controls.Add(btnGravarApontamento);
             panel2.Controls.Add(tbNomehost);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(6, 7);
+            panel2.Location = new Point(6, 6);
             panel2.Name = "panel2";
-            panel2.Size = new Size(252, 75);
+            panel2.Size = new Size(252, 51);
             panel2.TabIndex = 0;
             // 
             // btnGravarApontamento
             // 
-            btnGravarApontamento.Location = new Point(166, 40);
+            btnGravarApontamento.Location = new Point(168, 21);
             btnGravarApontamento.Name = "btnGravarApontamento";
             btnGravarApontamento.Size = new Size(76, 24);
             btnGravarApontamento.TabIndex = 2;
@@ -396,7 +345,7 @@
             // 
             // tbNomehost
             // 
-            tbNomehost.Location = new Point(5, 40);
+            tbNomehost.Location = new Point(5, 22);
             tbNomehost.Name = "tbNomehost";
             tbNomehost.Size = new Size(157, 23);
             tbNomehost.TabIndex = 0;
@@ -405,7 +354,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(3, 6);
+            label2.Location = new Point(3, 1);
             label2.Name = "label2";
             label2.Size = new Size(176, 17);
             label2.TabIndex = 2;
@@ -455,9 +404,9 @@
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
             panel5.Controls.Add(btDownloadPDV);
-            panel5.Location = new Point(6, 524);
+            panel5.Location = new Point(5, 432);
             panel5.Name = "panel5";
-            panel5.Size = new Size(865, 37);
+            panel5.Size = new Size(660, 34);
             panel5.TabIndex = 5;
             // 
             // btDownloadAtualizador
@@ -466,11 +415,11 @@
             btDownloadAtualizador.FlatStyle = FlatStyle.Flat;
             btDownloadAtualizador.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btDownloadAtualizador.ForeColor = SystemColors.ControlText;
-            btDownloadAtualizador.Location = new Point(125, 8);
+            btDownloadAtualizador.Location = new Point(91, 5);
             btDownloadAtualizador.Name = "btDownloadAtualizador";
-            btDownloadAtualizador.Size = new Size(148, 23);
+            btDownloadAtualizador.Size = new Size(88, 23);
             btDownloadAtualizador.TabIndex = 4;
-            btDownloadAtualizador.Text = "Download Atualizador";
+            btDownloadAtualizador.Text = "Atualizador";
             btDownloadAtualizador.UseVisualStyleBackColor = false;
             btDownloadAtualizador.Click += btDownloadAtualizador_Click;
             // 
@@ -478,7 +427,7 @@
             // 
             lbStatusDownload.AutoSize = true;
             lbStatusDownload.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbStatusDownload.Location = new Point(279, 11);
+            lbStatusDownload.Location = new Point(185, 8);
             lbStatusDownload.Name = "lbStatusDownload";
             lbStatusDownload.Size = new Size(18, 20);
             lbStatusDownload.TabIndex = 3;
@@ -490,11 +439,11 @@
             btDownloadPDV.FlatStyle = FlatStyle.Flat;
             btDownloadPDV.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btDownloadPDV.ForeColor = SystemColors.ControlText;
-            btDownloadPDV.Location = new Point(6, 8);
+            btDownloadPDV.Location = new Point(6, 5);
             btDownloadPDV.Name = "btDownloadPDV";
-            btDownloadPDV.Size = new Size(113, 23);
+            btDownloadPDV.Size = new Size(79, 23);
             btDownloadPDV.TabIndex = 2;
-            btDownloadPDV.Text = "Download PDV";
+            btDownloadPDV.Text = "DCS PDV";
             btDownloadPDV.UseVisualStyleBackColor = false;
             btDownloadPDV.Click += btDownloadPDV_Click;
             // 
@@ -504,7 +453,7 @@
             label1.BackColor = SystemColors.ActiveBorder;
             label1.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(285, 33);
+            label1.Location = new Point(185, 30);
             label1.Name = "label1";
             label1.Size = new Size(298, 24);
             label1.TabIndex = 3;
@@ -512,10 +461,10 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce });
-            statusStrip1.Location = new Point(0, 566);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce, toolStripStatusLabel1, tsslVicommerce });
+            statusStrip1.Location = new Point(0, 470);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(883, 22);
+            statusStrip1.Size = new Size(669, 22);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -523,15 +472,32 @@
             // 
             tssLabel.BackColor = Color.White;
             tssLabel.Name = "tssLabel";
-            tssLabel.Size = new Size(90, 17);
-            tssLabel.Text = "EviCommerce : ";
+            tssLabel.Size = new Size(87, 17);
+            tssLabel.Text = "EviCommerce :";
             // 
             // tsslEvicommerce
             // 
-            tsslEvicommerce.BackColor = SystemColors.ButtonFace;
+            tsslEvicommerce.BackColor = Color.White;
             tsslEvicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
             tsslEvicommerce.Name = "tsslEvicommerce";
-            tsslEvicommerce.Size = new Size(16, 17);
+            tsslEvicommerce.Size = new Size(35, 17);
+            tsslEvicommerce.Text = "    ";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.ActiveLinkColor = Color.White;
+            toolStripStatusLabel1.BackColor = Color.White;
+            toolStripStatusLabel1.LinkColor = Color.White;
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(74, 17);
+            toolStripStatusLabel1.Text = "Viommerce :";
+            // 
+            // tsslVicommerce
+            // 
+            tsslVicommerce.BackColor = Color.White;
+            tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.off_24x24;
+            tsslVicommerce.Name = "tsslVicommerce";
+            tsslVicommerce.Size = new Size(16, 17);
             // 
             // panel4
             // 
@@ -540,17 +506,25 @@
             panel4.Controls.Add(lbHostName);
             panel4.Controls.Add(lbOS);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(10, 62);
+            panel4.Location = new Point(4, 58);
             panel4.Name = "panel4";
-            panel4.Size = new Size(861, 54);
+            panel4.Size = new Size(660, 60);
             panel4.TabIndex = 6;
+            // 
+            // bgwTestaConexao
+            // 
+            bgwTestaConexao.WorkerReportsProgress = true;
+            bgwTestaConexao.WorkerSupportsCancellation = true;
+            bgwTestaConexao.DoWork += bgwTestaConexao_DoWork;
+            bgwTestaConexao.ProgressChanged += bgwTestaConexao_ProgressChanged;
+            bgwTestaConexao.RunWorkerCompleted += bgwTestaConexao_RunWorkerCompleted;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(883, 588);
+            ClientSize = new Size(669, 492);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(statusStrip1);
@@ -566,12 +540,14 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             Load += MenuPrincipal_Load;
+            Shown += MenuPrincipal_Shown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panel1.PerformLayout();
+            pBackupload.ResumeLayout(false);
+            pBackupload.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel5.ResumeLayout(false);
@@ -619,21 +595,17 @@
         private Label lbStatusDownload;
         private Button btDownloadPDV;
         private Button btDownloadAtualizador;
-        private Panel panel6;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem redesToolStripMenuItem;
-        private DataGridView dgvClientes;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Button btnVerificar;
-        private TextBox txbTell;
-        private TextBox txbCpf;
-        private TextBox txbNome;
-        private Label label8;
-        private RadioButton rbNao;
-        private RadioButton rbSim;
-        private Button btnGravar;
-        private Button btnApagar;
+        private ToolStripMenuItem fazerBackupToolStripMenuItem;
+        private ToolStripMenuItem restaToolStripMenuItem;
+        private Panel pBackupload;
+        private Label lbBackupLoad;
+        private PictureBox pbBackupLoad;
+        private System.ComponentModel.BackgroundWorker bgwTestaConexao;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel tsslVicommerce;
+        private Label lbProcessandoMsn;
+        private ToolStripMenuItem recarregarToolStripMenuItem;
     }
 }

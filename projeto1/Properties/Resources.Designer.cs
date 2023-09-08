@@ -63,9 +63,49 @@ namespace Assistente_de_Instalação.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dcsLogo {
+            get {
+                object obj = ResourceManager.GetObject("dcsLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ico_Engrena {
             get {
                 object obj = ResourceManager.GetObject("ico_Engrena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap janelas {
+            get {
+                object obj = ResourceManager.GetObject("janelas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loading_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Loading_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +126,26 @@ namespace Assistente_de_Instalação.Properties {
         internal static System.Drawing.Bitmap on_24x24 {
             get {
                 object obj = ResourceManager.GetObject("on_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recarregar_30_x_30_ {
+            get {
+                object obj = ResourceManager.GetObject("recarregar 30 x 30 ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Redes {
+            get {
+                object obj = ResourceManager.GetObject("Redes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
