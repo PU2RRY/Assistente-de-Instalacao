@@ -49,6 +49,7 @@
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupToolStripMenuItem = new ToolStripMenuItem();
             restaToolStripMenuItem = new ToolStripMenuItem();
+            recarregarToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             lbProcessandoMsn = new Label();
             pBackupload = new Panel();
@@ -74,7 +75,6 @@
             tsslVicommerce = new ToolStripStatusLabel();
             panel4 = new Panel();
             bgwTestaConexao = new System.ComponentModel.BackgroundWorker();
-            recarregarToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             pBackupload.SuspendLayout();
@@ -193,8 +193,10 @@
             // apagaTXTVicommerceimpToolStripMenuItem
             // 
             apagaTXTVicommerceimpToolStripMenuItem.Name = "apagaTXTVicommerceimpToolStripMenuItem";
+            apagaTXTVicommerceimpToolStripMenuItem.ShortcutKeyDisplayString = "";
             apagaTXTVicommerceimpToolStripMenuItem.Size = new Size(225, 22);
             apagaTXTVicommerceimpToolStripMenuItem.Text = "Apaga TXT vicommerce/imp";
+            apagaTXTVicommerceimpToolStripMenuItem.ToolTipText = "Esta função apaga todos os arquivos TXT da pasta imp do DCS PDV";
             apagaTXTVicommerceimpToolStripMenuItem.Click += apagaTXTVicommerceimpToolStripMenuItem_Click;
             // 
             // apagaTXTTempSATimpToolStripMenuItem
@@ -215,7 +217,7 @@
             // 
             fazerBackupELogsToolStripMenuItem.Name = "fazerBackupELogsToolStripMenuItem";
             fazerBackupELogsToolStripMenuItem.Size = new Size(225, 22);
-            fazerBackupELogsToolStripMenuItem.Text = "Fazer Backup e Logs";
+            fazerBackupELogsToolStripMenuItem.Text = "Coletar Backup e Logs";
             fazerBackupELogsToolStripMenuItem.Click += fazerBackupELogsToolStripMenuItem_Click;
             // 
             // fazerBackupToolStripMenuItem
@@ -231,6 +233,15 @@
             restaToolStripMenuItem.Size = new Size(225, 22);
             restaToolStripMenuItem.Text = "Restaurar Backup";
             restaToolStripMenuItem.Click += restaToolStripMenuItem_Click;
+            // 
+            // recarregarToolStripMenuItem
+            // 
+            recarregarToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            recarregarToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.recarregar_30_x_30_;
+            recarregarToolStripMenuItem.Name = "recarregarToolStripMenuItem";
+            recarregarToolStripMenuItem.Size = new Size(71, 20);
+            recarregarToolStripMenuItem.Text = "Reload";
+            recarregarToolStripMenuItem.Click += recarregarToolStripMenuItem_Click;
             // 
             // panel1
             // 
@@ -477,15 +488,6 @@
             bgwTestaConexao.DoWork += bgwTestaConexao_DoWork;
             bgwTestaConexao.ProgressChanged += bgwTestaConexao_ProgressChanged;
             bgwTestaConexao.RunWorkerCompleted += bgwTestaConexao_RunWorkerCompleted;
-            // 
-            // recarregarToolStripMenuItem
-            // 
-            recarregarToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            recarregarToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.recarregar_30_x_30_;
-            recarregarToolStripMenuItem.Name = "recarregarToolStripMenuItem";
-            recarregarToolStripMenuItem.Size = new Size(71, 20);
-            recarregarToolStripMenuItem.Text = "Reload";
-            recarregarToolStripMenuItem.Click += recarregarToolStripMenuItem_Click;
             // 
             // MenuPrincipal
             // 
