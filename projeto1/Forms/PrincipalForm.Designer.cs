@@ -256,44 +256,16 @@
             // 
             // lbProcessandoMsn
             // 
-<<<<<<< HEAD
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(5, 142);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.ReadOnly = true;
-            dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(681, 251);
-            dgvClientes.TabIndex = 6;
-=======
+
             lbProcessandoMsn.AutoSize = true;
             lbProcessandoMsn.Location = new Point(519, 283);
             lbProcessandoMsn.Name = "lbProcessandoMsn";
             lbProcessandoMsn.Size = new Size(16, 15);
             lbProcessandoMsn.TabIndex = 5;
             lbProcessandoMsn.Text = "...";
->>>>>>> cfaf070e251cb2b6e394cbc385702d92d2d38385
             // 
             // pBackupload
             // 
-<<<<<<< HEAD
-            panel6.BackColor = Color.Gray;
-            panel6.Controls.Add(btnApagar);
-            panel6.Controls.Add(btnGravar);
-            panel6.Controls.Add(rbNao);
-            panel6.Controls.Add(rbSim);
-            panel6.Controls.Add(btnVerificar);
-            panel6.Controls.Add(txbTell);
-            panel6.Controls.Add(txbCpf);
-            panel6.Controls.Add(txbNome);
-            panel6.Controls.Add(label8);
-            panel6.Controls.Add(label7);
-            panel6.Controls.Add(label6);
-            panel6.Controls.Add(label5);
-            panel6.Location = new Point(263, 7);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(423, 129);
-            panel6.TabIndex = 5;
-=======
             pBackupload.BackColor = Color.White;
             pBackupload.Controls.Add(lbBackupLoad);
             pBackupload.Controls.Add(pbBackupLoad);
@@ -301,7 +273,6 @@
             pBackupload.Name = "pBackupload";
             pBackupload.Size = new Size(173, 96);
             pBackupload.TabIndex = 2;
->>>>>>> cfaf070e251cb2b6e394cbc385702d92d2d38385
             // 
             // lbBackupLoad
             // 
