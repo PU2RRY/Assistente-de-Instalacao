@@ -36,6 +36,7 @@ namespace projeto1
         public string url = "";
         public string destino = "";
         private WebClient webClient;
+        private readonly vcContext vc;
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -43,6 +44,7 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
+        //  vc = new vcContext();
             backgroundWorkerRestore = new BackgroundWorker();
             backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
             backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
@@ -210,6 +212,15 @@ namespace projeto1
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             LigaDesliga(false);
+            //CarregaProdutos();
+        }
+        private void CarregaProdutos()
+        {
+            using (var vc = new vcContext())
+            {
+                var consultaP = vc.VcProdutos.ToList();
+                dgvProdutos.DataSource = consultaP;
+            }
         }
         public static string RetornaOsVersao()
         {
@@ -380,6 +391,7 @@ namespace projeto1
             SqlConnectionManager connectionManager = new SqlConnectionManager();
             if (connectionManager.OpenConnection())
             {
+                
                 if (connectionManager.RestoreDatabase(backupFilePath))
                 {
                     connectionManager.killConection();

@@ -102,7 +102,7 @@ namespace Assistente_de_Instalação.Models
                 sb.Append("DECLARE @kill varchar(8000); SET @kill = '';");
                 sb.Append("SELECT @kill = @kill + 'kill ' + CONVERT(varchar(5), spid) + ';' ");
                 sb.Append("FROM master..sysprocesses ");
-                sb.Append("WHERE dbid = db_id('vc')");
+                sb.Append($"WHERE dbid = db_id('vc')");
                 sb.Append("EXEC(@kill); ");
                 SqlCommand command = new SqlCommand(sb.ToString(), connection);
                 command.ExecuteNonQuery();

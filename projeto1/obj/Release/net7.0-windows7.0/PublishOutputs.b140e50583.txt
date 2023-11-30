@@ -1,0 +1,46 @@
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\MAS.cmd
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\obj\on_24x24.png
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.exe
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.runtimeconfig.json
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.pdb
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Azure.Core.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Azure.Identity.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Data.SqlClient.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.EntityFrameworkCore.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Logging.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Options.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Extensions.Primitives.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Identity.Client.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.Logging.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.Protocols.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Microsoft.SqlServer.Server.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.CodeDom.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.Management.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.Memory.Data.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\System.Runtime.Caching.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\rodri\OneDrive\Documentos\Meu projeto\Assistente de Instalação.deps.json

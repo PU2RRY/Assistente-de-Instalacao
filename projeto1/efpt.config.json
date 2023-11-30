@@ -13,6 +13,7 @@
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
    "Tables": [
       {
          "Name": "[dbo].[VC_CUPFECHA]",
@@ -20,6 +21,10 @@
       },
       {
          "Name": "[dbo].[VC_MAQUINAS]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VC_PRODUTOS]",
          "ObjectType": 0
       }
    ],
@@ -40,6 +45,7 @@
    "UseNodaTime": false,
    "UseNullableReferences": false,
    "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
    "UseSpatial": false,
    "UseT4": false
 }

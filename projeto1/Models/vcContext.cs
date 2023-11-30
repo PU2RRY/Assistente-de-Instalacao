@@ -17,6 +17,8 @@ public partial class vcContext : DbContext
 
     public virtual DbSet<VcMaquinas> VcMaquinas { get; set; }
 
+    public virtual DbSet<VcProdutos> VcProdutos { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<VcCupfecha>(entity =>
@@ -874,6 +876,555 @@ public partial class vcContext : DbContext
                 .HasDefaultValueSql("('N')")
                 .IsFixedLength()
                 .HasColumnName("WILLTECH");
+        });
+
+        modelBuilder.Entity<VcProdutos>(entity =>
+        {
+            entity.HasKey(e => e.IdProduto);
+
+            entity.ToTable("VC_PRODUTOS", tb => tb.HasTrigger("ATUALIZA_MOBILE_PRODUTOS2"));
+
+            entity.HasIndex(e => new { e.IdSubgrupo, e.Produto }, "IX_VC_PRODUTOS").IsUnique();
+
+            entity.HasIndex(e => e.IdUnidade, "IX_VC_PRODUTOS_1");
+
+            entity.HasIndex(e => e.IdInternet, "IX_VC_PRODUTOS_12");
+
+            entity.HasIndex(e => e.IdSubgrupo, "IX_VC_PRODUTOS_2");
+
+            entity.HasIndex(e => e.Cproduto, "IX_VC_PRODUTOS_3").IsUnique();
+
+            entity.Property(e => e.IdProduto).HasColumnName("ID_PRODUTO");
+            entity.Property(e => e.Aceitadec)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("ACEITADEC");
+            entity.Property(e => e.Alicota)
+                .HasMaxLength(13)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("ALICOTA");
+            entity.Property(e => e.Alicred).HasColumnName("alicred");
+            entity.Property(e => e.Aliquotacofins).HasColumnName("aliquotacofins");
+            entity.Property(e => e.Aliquotacofinsst).HasColumnName("aliquotacofinsst");
+            entity.Property(e => e.Aliquotapis).HasColumnName("aliquotapis");
+            entity.Property(e => e.Aliquotapisst).HasColumnName("aliquotapisst");
+            entity.Property(e => e.AlteradoPor)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("alteradoPor");
+            entity.Property(e => e.Atalho)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("ATALHO");
+            entity.Property(e => e.Automatico)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("automatico");
+            entity.Property(e => e.Balanca)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("BALANCA");
+            entity.Property(e => e.Bcop).HasColumnName("bcop");
+            entity.Property(e => e.CBenef)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("cBenef");
+            entity.Property(e => e.CadastradoPor)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("cadastradoPor");
+            entity.Property(e => e.CalculaProdPorTempo).HasColumnName("calculaProdPorTempo");
+            entity.Property(e => e.Capncm)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('00 - Selecionar')")
+                .HasColumnName("capncm");
+            entity.Property(e => e.Cbarra)
+                .HasMaxLength(14)
+                .IsUnicode(false)
+                .HasColumnName("CBARRA");
+            entity.Property(e => e.Cest)
+                .HasMaxLength(7)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('0000000')")
+                .HasColumnName("cest");
+            entity.Property(e => e.Cfop)
+                .IsRequired()
+                .HasMaxLength(4)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('0')")
+                .HasColumnName("CFOP");
+            entity.Property(e => e.CobraCatraca)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')");
+            entity.Property(e => e.Combo)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("combo");
+            entity.Property(e => e.Comissao).HasColumnName("comissao");
+            entity.Property(e => e.Compoe)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("COMPOE");
+            entity.Property(e => e.Composto)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("composto");
+            entity.Property(e => e.Cproduto)
+                .IsRequired()
+                .HasMaxLength(14)
+                .IsUnicode(false)
+                .HasColumnName("CPRODUTO");
+            entity.Property(e => e.CstCofins)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasColumnName("cst_cofins");
+            entity.Property(e => e.CstIcms)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasColumnName("cst_icms");
+            entity.Property(e => e.CstPis)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasColumnName("cst_pis");
+            entity.Property(e => e.Datafin)
+                .HasColumnType("datetime")
+                .HasColumnName("DATAFIN");
+            entity.Property(e => e.Dataini)
+                .HasColumnType("datetime")
+                .HasColumnName("DATAINI");
+            entity.Property(e => e.Divide)
+                .IsRequired()
+                .HasMaxLength(2)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(1)")
+                .HasColumnName("DIVIDE");
+            entity.Property(e => e.Eminimo).HasColumnName("EMINIMO");
+            entity.Property(e => e.EnviaMensagem)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength();
+            entity.Property(e => e.Estoue)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('S')")
+                .IsFixedLength()
+                .HasColumnName("ESTOUE");
+            entity.Property(e => e.Ex).HasColumnName("ex");
+            entity.Property(e => e.ExternalCode)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("externalCode");
+            entity.Property(e => e.Extra)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("extra");
+            entity.Property(e => e.Fabricacao)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('T')")
+                .IsFixedLength()
+                .HasColumnName("fabricacao");
+            entity.Property(e => e.FlCombinarPromo).HasColumnName("fl_combinarPromo");
+            entity.Property(e => e.FlHoraIniHoraFin).HasColumnName("fl_HoraIniHoraFin");
+            entity.Property(e => e.FlManterQtd).HasColumnName("flManterQtd");
+            entity.Property(e => e.FlMultiplaVlFixo).HasColumnName("flMultiplaVlFixo");
+            entity.Property(e => e.FlPromoData).HasColumnName("fl_promoData");
+            entity.Property(e => e.FlPromoDiaSemana).HasColumnName("fl_promoDiaSemana");
+            entity.Property(e => e.FlPromoHora).HasColumnName("fl_promoHora");
+            entity.Property(e => e.FlPromoSemana).HasColumnName("fl_promoSemana");
+            entity.Property(e => e.Foto)
+                .HasColumnType("image")
+                .HasColumnName("foto");
+            entity.Property(e => e.Horaf)
+                .IsRequired()
+                .HasMaxLength(5)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('00:00')")
+                .HasColumnName("horaf");
+            entity.Property(e => e.Horai)
+                .IsRequired()
+                .HasMaxLength(5)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('00:00')")
+                .HasColumnName("horai");
+            entity.Property(e => e.Iat)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('T')")
+                .HasColumnName("iat");
+            entity.Property(e => e.Icms).HasColumnName("icms");
+            entity.Property(e => e.Icmsst).HasColumnName("icmsst");
+            entity.Property(e => e.Icone)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("icone");
+            entity.Property(e => e.IdInternet).HasColumnName("id_internet");
+            entity.Property(e => e.IdProdint).HasColumnName("id_prodint");
+            entity.Property(e => e.IdReceita).HasColumnName("id_receita");
+            entity.Property(e => e.IdSubgrupo).HasColumnName("ID_SUBGRUPO");
+            entity.Property(e => e.IdUnidade).HasColumnName("ID_UNIDADE");
+            entity.Property(e => e.IgnoraTouch)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("ignora_touch");
+            entity.Property(e => e.ImpEtiqueta)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')");
+            entity.Property(e => e.IsAcomp)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("isAcomp");
+            entity.Property(e => e.IsCadAuto)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("isCadAuto");
+            entity.Property(e => e.IsComboMontagem).HasColumnName("isComboMontagem");
+            entity.Property(e => e.IsPizza).HasColumnName("isPizza");
+            entity.Property(e => e.IsPizzaMontagem).HasColumnName("isPizzaMontagem");
+            entity.Property(e => e.Iva).HasColumnName("iva");
+            entity.Property(e => e.Maior)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('S')")
+                .IsFixedLength()
+                .HasColumnName("MAIOR");
+            entity.Property(e => e.Manual)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("manual");
+            entity.Property(e => e.Margem).HasColumnName("margem");
+            entity.Property(e => e.Margemaddst).HasColumnName("margemaddst");
+            entity.Property(e => e.Modbc)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("modbc");
+            entity.Property(e => e.Modbcst)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("modbcst");
+            entity.Property(e => e.MotDesIcms)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasColumnName("motDesICMS");
+            entity.Property(e => e.Motdes)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("motdes");
+            entity.Property(e => e.Ncm)
+                .HasMaxLength(40)
+                .IsUnicode(false)
+                .HasColumnName("ncm");
+            entity.Property(e => e.Obrigaposicao)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("obrigaposicao");
+            entity.Property(e => e.Observacao)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("observacao");
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("observacoes");
+            entity.Property(e => e.Origem)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("origem");
+            entity.Property(e => e.PMvast)
+                .HasDefaultValueSql("((0.00))")
+                .HasColumnName("pMVAST");
+            entity.Property(e => e.Percent1).HasColumnName("PERCENT1");
+            entity.Property(e => e.Percent2).HasColumnName("PERCENT2");
+            entity.Property(e => e.PermiteTab)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .HasColumnName("permiteTab");
+            entity.Property(e => e.Pizza)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("pizza");
+            entity.Property(e => e.Preco2).HasColumnName("PRECO2");
+            entity.Property(e => e.Preco3).HasColumnName("PRECO3");
+            entity.Property(e => e.Preco4).HasColumnName("PRECO4");
+            entity.Property(e => e.PrecoDiaSemana)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("precoDiaSemana");
+            entity.Property(e => e.PrecoPromo)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("precoPromo");
+            entity.Property(e => e.ProdAutoCatraca)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')");
+            entity.Property(e => e.ProdComoServico).HasColumnName("prodComoServico");
+            entity.Property(e => e.ProdPromo)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("prodPromo");
+            entity.Property(e => e.ProdRodizio).HasColumnName("prodRodizio");
+            entity.Property(e => e.Prodauto)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("PRODAUTO");
+            entity.Property(e => e.Prodsob)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("PRODSOB");
+            entity.Property(e => e.Produto)
+                .IsRequired()
+                .HasMaxLength(160)
+                .IsUnicode(false)
+                .HasColumnName("PRODUTO");
+            entity.Property(e => e.PromoDom).HasColumnName("promoDom");
+            entity.Property(e => e.PromoQua).HasColumnName("promoQua");
+            entity.Property(e => e.PromoQui).HasColumnName("promoQui");
+            entity.Property(e => e.PromoSab).HasColumnName("promoSab");
+            entity.Property(e => e.PromoSeg).HasColumnName("promoSeg");
+            entity.Property(e => e.PromoSex).HasColumnName("promoSex");
+            entity.Property(e => e.PromoTer).HasColumnName("promoTer");
+            entity.Property(e => e.Pvenda).HasColumnName("PVENDA");
+            entity.Property(e => e.QuantMax).HasDefaultValueSql("((0.00))");
+            entity.Property(e => e.Redbc).HasColumnName("redbc");
+            entity.Property(e => e.Redbcst).HasColumnName("redbcst");
+            entity.Property(e => e.Saliq)
+                .IsRequired()
+                .HasMaxLength(4)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('F')")
+                .HasColumnName("SALIQ");
+            entity.Property(e => e.Saliqicms)
+                .IsRequired()
+                .HasMaxLength(4)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SALIQICMS");
+            entity.Property(e => e.Saliqipi)
+                .IsRequired()
+                .HasMaxLength(4)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SALIQIPI");
+            entity.Property(e => e.Scodncm)
+                .IsRequired()
+                .HasMaxLength(8)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SCODNCM");
+            entity.Property(e => e.Selecionado)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("selecionado");
+            entity.Property(e => e.Semanaf)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('1')")
+                .IsFixedLength()
+                .HasColumnName("SEMANAF");
+            entity.Property(e => e.Semanai)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('1')")
+                .IsFixedLength()
+                .HasColumnName("SEMANAI");
+            entity.Property(e => e.Servico)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('S')")
+                .IsFixedLength()
+                .HasColumnName("SERVICO");
+            entity.Property(e => e.ServicoAirSoft)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("servicoAirSoft");
+            entity.Property(e => e.Sreducalc)
+                .IsRequired()
+                .HasMaxLength(4)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SREDUCALC");
+            entity.Property(e => e.Ssittrib)
+                .IsRequired()
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SSITTRIB");
+            entity.Property(e => e.Ssubtrib)
+                .IsRequired()
+                .HasMaxLength(12)
+                .IsUnicode(false)
+                .HasDefaultValueSql("(0)")
+                .HasColumnName("SSUBTRIB");
+            entity.Property(e => e.Ticket)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('N')")
+                .IsFixedLength()
+                .HasColumnName("TICKET");
+            entity.Property(e => e.Tipocalccofins)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipocalccofins");
+            entity.Property(e => e.Tipocalccofinsst)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipocalccofinsst");
+            entity.Property(e => e.Tipocalcpis)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipocalcpis");
+            entity.Property(e => e.Tipocalcpisst)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipocalcpisst");
+            entity.Property(e => e.Tipocofins)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipocofins");
+            entity.Property(e => e.Tipopis)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tipopis");
+            entity.Property(e => e.Tribicms)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("tribicms");
+            entity.Property(e => e.Ufst)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('000 - Selecionar')")
+                .HasColumnName("ufst");
+            entity.Property(e => e.VBcstret)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasColumnName("vBCSTRet");
+            entity.Property(e => e.VIcms)
+                .HasDefaultValueSql("((0.00))")
+                .HasColumnName("vICMS");
+            entity.Property(e => e.VIcmsst)
+                .HasDefaultValueSql("((0.00))")
+                .HasColumnName("vICMSST");
+            entity.Property(e => e.VIcmsstret)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasColumnName("vICMSSTRet");
+            entity.Property(e => e.VPis).HasColumnName("vPIS");
+            entity.Property(e => e.ValCombo).HasColumnName("valCombo");
+            entity.Property(e => e.ValFixo).HasDefaultValueSql("((0.00))");
+            entity.Property(e => e.Valedias)
+                .HasDefaultValueSql("(3)")
+                .HasColumnName("VALEDIAS");
+            entity.Property(e => e.ValorAbate)
+                .HasDefaultValueSql("((0))")
+                .HasColumnName("valorAbate");
+            entity.Property(e => e.Venda)
+                .IsRequired()
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('S')")
+                .IsFixedLength()
+                .HasColumnName("VENDA");
+            entity.Property(e => e.Vminimo).HasColumnName("VMINIMO");
         });
 
         OnModelCreatingPartial(modelBuilder);

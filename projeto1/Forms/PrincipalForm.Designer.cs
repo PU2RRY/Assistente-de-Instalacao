@@ -41,7 +41,6 @@
             pastaInicializarToolStripMenuItem = new ToolStripMenuItem();
             renomeiaNomeMaquinaToolStripMenuItem = new ToolStripMenuItem();
             ativadorMASToolStripMenuItem = new ToolStripMenuItem();
-            redesToolStripMenuItem = new ToolStripMenuItem();
             pDVToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTVicommerceimpToolStripMenuItem = new ToolStripMenuItem();
             apagaTXTTempSATimpToolStripMenuItem = new ToolStripMenuItem();
@@ -49,9 +48,10 @@
             fazerBackupELogsToolStripMenuItem = new ToolStripMenuItem();
             fazerBackupToolStripMenuItem = new ToolStripMenuItem();
             restaToolStripMenuItem = new ToolStripMenuItem();
+            redesToolStripMenuItem = new ToolStripMenuItem();
             recarregarToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            lbProcessandoMsn = new Label();
+            dgvProdutos = new DataGridView();
             pBackupload = new Panel();
             lbBackupLoad = new Label();
             pbBackupLoad = new PictureBox();
@@ -59,6 +59,7 @@
             btnGravarApontamento = new Button();
             tbNomehost = new TextBox();
             label2 = new Label();
+            lbProcessandoMsn = new Label();
             lbOS = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -77,6 +78,7 @@
             bgwTestaConexao = new System.ComponentModel.BackgroundWorker();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             pBackupload.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBackupLoad).BeginInit();
             panel2.SuspendLayout();
@@ -88,10 +90,10 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.WhiteSmoke;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, redesToolStripMenuItem, pDVToolStripMenuItem, recarregarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { configuraçõesToolStripMenuItem, toolStripMenuItem1, pDVToolStripMenuItem, redesToolStripMenuItem, recarregarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(669, 24);
+            menuStrip1.Size = new Size(859, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -174,14 +176,6 @@
             ativadorMASToolStripMenuItem.Text = "Ativador M.A.S";
             ativadorMASToolStripMenuItem.Click += ativadorMASToolStripMenuItem_Click;
             // 
-            // redesToolStripMenuItem
-            // 
-            redesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.Redes;
-            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
-            redesToolStripMenuItem.Size = new Size(66, 20);
-            redesToolStripMenuItem.Text = "Redes";
-            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
-            // 
             // pDVToolStripMenuItem
             // 
             pDVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { apagaTXTVicommerceimpToolStripMenuItem, apagaTXTTempSATimpToolStripMenuItem, maquinasDCSPDVToolStripMenuItem, fazerBackupELogsToolStripMenuItem, fazerBackupToolStripMenuItem, restaToolStripMenuItem });
@@ -234,6 +228,14 @@
             restaToolStripMenuItem.Text = "Restaurar Backup";
             restaToolStripMenuItem.Click += restaToolStripMenuItem_Click;
             // 
+            // redesToolStripMenuItem
+            // 
+            redesToolStripMenuItem.Image = Assistente_de_Instalação.Properties.Resources.Redes;
+            redesToolStripMenuItem.Name = "redesToolStripMenuItem";
+            redesToolStripMenuItem.Size = new Size(66, 20);
+            redesToolStripMenuItem.Text = "Redes";
+            redesToolStripMenuItem.Click += redesToolStripMenuItem_Click;
+            // 
             // recarregarToolStripMenuItem
             // 
             recarregarToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
@@ -246,29 +248,29 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(lbProcessandoMsn);
+            panel1.Controls.Add(dgvProdutos);
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(4, 121);
             panel1.Name = "panel1";
-            panel1.Size = new Size(660, 307);
+            panel1.Size = new Size(850, 358);
             panel1.TabIndex = 4;
             // 
-            // lbProcessandoMsn
+            // dgvProdutos
             // 
-            lbProcessandoMsn.AutoSize = true;
-            lbProcessandoMsn.Location = new Point(519, 283);
-            lbProcessandoMsn.Name = "lbProcessandoMsn";
-            lbProcessandoMsn.Size = new Size(16, 15);
-            lbProcessandoMsn.TabIndex = 5;
-            lbProcessandoMsn.Text = "...";
+            dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProdutos.Location = new Point(264, 6);
+            dgvProdutos.Name = "dgvProdutos";
+            dgvProdutos.RowTemplate.Height = 25;
+            dgvProdutos.Size = new Size(581, 249);
+            dgvProdutos.TabIndex = 3;
             // 
             // pBackupload
             // 
             pBackupload.BackColor = Color.White;
             pBackupload.Controls.Add(lbBackupLoad);
             pBackupload.Controls.Add(pbBackupLoad);
-            pBackupload.Location = new Point(244, 101);
+            pBackupload.Location = new Point(674, 259);
             pBackupload.Name = "pBackupload";
             pBackupload.Size = new Size(173, 96);
             pBackupload.TabIndex = 2;
@@ -330,6 +332,16 @@
             label2.TabIndex = 2;
             label2.Text = "Apontamento de Servidor :";
             // 
+            // lbProcessandoMsn
+            // 
+            lbProcessandoMsn.AutoSize = true;
+            lbProcessandoMsn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbProcessandoMsn.Location = new Point(706, 8);
+            lbProcessandoMsn.Name = "lbProcessandoMsn";
+            lbProcessandoMsn.Size = new Size(18, 20);
+            lbProcessandoMsn.TabIndex = 5;
+            lbProcessandoMsn.Text = "...";
+            // 
             // lbOS
             // 
             lbOS.AutoSize = true;
@@ -371,12 +383,13 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(lbProcessandoMsn);
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
             panel5.Controls.Add(btDownloadPDV);
-            panel5.Location = new Point(5, 432);
+            panel5.Location = new Point(4, 483);
             panel5.Name = "panel5";
-            panel5.Size = new Size(660, 34);
+            panel5.Size = new Size(850, 34);
             panel5.TabIndex = 5;
             // 
             // btDownloadAtualizador
@@ -423,7 +436,7 @@
             label1.BackColor = SystemColors.ActiveBorder;
             label1.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(185, 30);
+            label1.Location = new Point(280, 30);
             label1.Name = "label1";
             label1.Size = new Size(298, 24);
             label1.TabIndex = 3;
@@ -432,9 +445,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tssLabel, tsslEvicommerce, toolStripStatusLabel1, tsslVicommerce });
-            statusStrip1.Location = new Point(0, 470);
+            statusStrip1.Location = new Point(0, 520);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(669, 22);
+            statusStrip1.Size = new Size(859, 22);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -478,7 +491,7 @@
             panel4.Controls.Add(label4);
             panel4.Location = new Point(4, 58);
             panel4.Name = "panel4";
-            panel4.Size = new Size(660, 60);
+            panel4.Size = new Size(430, 60);
             panel4.TabIndex = 6;
             // 
             // bgwTestaConexao
@@ -494,7 +507,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(669, 492);
+            ClientSize = new Size(859, 542);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(statusStrip1);
@@ -514,7 +527,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             pBackupload.ResumeLayout(false);
             pBackupload.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
@@ -577,5 +590,6 @@
         private ToolStripStatusLabel tsslVicommerce;
         private Label lbProcessandoMsn;
         private ToolStripMenuItem recarregarToolStripMenuItem;
+        private DataGridView dgvProdutos;
     }
 }
