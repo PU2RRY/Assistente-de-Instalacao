@@ -51,6 +51,7 @@
             redesToolStripMenuItem = new ToolStripMenuItem();
             recarregarToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            lbversaobd = new Label();
             dgvProdutos = new DataGridView();
             pBackupload = new Panel();
             lbBackupLoad = new Label();
@@ -76,6 +77,11 @@
             tsslVicommerce = new ToolStripStatusLabel();
             panel4 = new Panel();
             bgwTestaConexao = new System.ComponentModel.BackgroundWorker();
+            panel3 = new Panel();
+            lbcpu = new Label();
+            label6 = new Label();
+            lbmemoriaram = new Label();
+            label5 = new Label();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
@@ -85,6 +91,7 @@
             panel5.SuspendLayout();
             statusStrip1.SuspendLayout();
             panel4.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -248,13 +255,25 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(lbversaobd);
             panel1.Controls.Add(dgvProdutos);
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(4, 121);
+            panel1.Location = new Point(4, 111);
             panel1.Name = "panel1";
-            panel1.Size = new Size(850, 358);
+            panel1.Size = new Size(850, 367);
             panel1.TabIndex = 4;
+            // 
+            // lbversaobd
+            // 
+            lbversaobd.AutoSize = true;
+            lbversaobd.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lbversaobd.ForeColor = Color.Red;
+            lbversaobd.Location = new Point(7, 60);
+            lbversaobd.Name = "lbversaobd";
+            lbversaobd.Size = new Size(24, 28);
+            lbversaobd.TabIndex = 4;
+            lbversaobd.Text = "...";
             // 
             // dgvProdutos
             // 
@@ -262,7 +281,7 @@
             dgvProdutos.Location = new Point(264, 6);
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.RowTemplate.Height = 25;
-            dgvProdutos.Size = new Size(581, 249);
+            dgvProdutos.Size = new Size(581, 247);
             dgvProdutos.TabIndex = 3;
             // 
             // pBackupload
@@ -270,7 +289,7 @@
             pBackupload.BackColor = Color.White;
             pBackupload.Controls.Add(lbBackupLoad);
             pBackupload.Controls.Add(pbBackupLoad);
-            pBackupload.Location = new Point(674, 259);
+            pBackupload.Location = new Point(674, 265);
             pBackupload.Name = "pBackupload";
             pBackupload.Size = new Size(173, 96);
             pBackupload.TabIndex = 2;
@@ -279,7 +298,7 @@
             // 
             lbBackupLoad.AutoSize = true;
             lbBackupLoad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbBackupLoad.Location = new Point(12, 9);
+            lbBackupLoad.Location = new Point(21, 9);
             lbBackupLoad.Name = "lbBackupLoad";
             lbBackupLoad.Size = new Size(125, 20);
             lbBackupLoad.TabIndex = 2;
@@ -346,7 +365,7 @@
             // 
             lbOS.AutoSize = true;
             lbOS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbOS.Location = new Point(74, 28);
+            lbOS.Location = new Point(74, 24);
             lbOS.Name = "lbOS";
             lbOS.Size = new Size(20, 17);
             lbOS.TabIndex = 0;
@@ -355,7 +374,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 30);
+            label4.Location = new Point(7, 26);
             label4.Name = "label4";
             label4.Size = new Size(65, 15);
             label4.TabIndex = 1;
@@ -364,7 +383,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(7, 13);
+            label3.Location = new Point(7, 9);
             label3.Name = "label3";
             label3.Size = new Size(108, 15);
             label3.TabIndex = 3;
@@ -374,7 +393,7 @@
             // 
             lbHostName.AutoSize = true;
             lbHostName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbHostName.Location = new Point(121, 11);
+            lbHostName.Location = new Point(121, 7);
             lbHostName.Name = "lbHostName";
             lbHostName.Size = new Size(20, 17);
             lbHostName.TabIndex = 2;
@@ -491,7 +510,7 @@
             panel4.Controls.Add(label4);
             panel4.Location = new Point(4, 58);
             panel4.Name = "panel4";
-            panel4.Size = new Size(430, 60);
+            panel4.Size = new Size(430, 47);
             panel4.TabIndex = 6;
             // 
             // bgwTestaConexao
@@ -502,12 +521,63 @@
             bgwTestaConexao.ProgressChanged += bgwTestaConexao_ProgressChanged;
             bgwTestaConexao.RunWorkerCompleted += bgwTestaConexao_RunWorkerCompleted;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Silver;
+            panel3.Controls.Add(lbcpu);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(lbmemoriaram);
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(440, 58);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(414, 47);
+            panel3.TabIndex = 7;
+            // 
+            // lbcpu
+            // 
+            lbcpu.AutoSize = true;
+            lbcpu.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbcpu.Location = new Point(60, 7);
+            lbcpu.Name = "lbcpu";
+            lbcpu.Size = new Size(20, 17);
+            lbcpu.TabIndex = 7;
+            lbcpu.Text = "...";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(17, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(33, 15);
+            label6.TabIndex = 6;
+            label6.Text = "CPU:";
+            // 
+            // lbmemoriaram
+            // 
+            lbmemoriaram.AutoSize = true;
+            lbmemoriaram.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbmemoriaram.Location = new Point(60, 24);
+            lbmemoriaram.Name = "lbmemoriaram";
+            lbmemoriaram.Size = new Size(20, 17);
+            lbmemoriaram.TabIndex = 5;
+            lbmemoriaram.Text = "...";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 26);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 15);
+            label5.TabIndex = 4;
+            label5.Text = "RAM : ";
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(859, 542);
+            Controls.Add(panel3);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(statusStrip1);
@@ -527,6 +597,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             pBackupload.ResumeLayout(false);
             pBackupload.PerformLayout();
@@ -539,6 +610,8 @@
             statusStrip1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -591,5 +664,11 @@
         private Label lbProcessandoMsn;
         private ToolStripMenuItem recarregarToolStripMenuItem;
         private DataGridView dgvProdutos;
+        private Panel panel3;
+        private Label label5;
+        private Label lbmemoriaram;
+        private Label label6;
+        private Label lbcpu;
+        private Label lbversaobd;
     }
 }

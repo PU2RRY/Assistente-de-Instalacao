@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Data;
+using System;
 using System.Diagnostics;
 using System.Management;
 using System.Net;
@@ -23,6 +24,7 @@ using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace projeto1
 {
@@ -44,7 +46,7 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
-        //  vc = new vcContext();
+            //  vc = new vcContext();
             backgroundWorkerRestore = new BackgroundWorker();
             backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
             backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
@@ -212,8 +214,43 @@ namespace projeto1
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             LigaDesliga(false);
-            //CarregaProdutos();
+            CarregaProdutos();
+            PerfilMaquina();
+            VersaoBD();
         }
+        private void VersaoBD()
+        {
+            using (var vc = new vcContext())
+            {
+                var vbd = vc.VcConfigura.Select(w => w.VersaoBd).ToList();
+                lbversaobd.Text = vbd.FirstOrDefault()?.ToString();
+            }
+        }
+
+        private void PerfilMaquina()
+        {
+            //PROCESSADOR
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+            ManagementObjectCollection collection = searcher.Get();
+            foreach (ManagementObject obj in collection)
+            {
+                string cpuName = obj["Name"].ToString();
+                string architecture = obj["Architecture"].ToString();
+                string numberOfCores = obj["NumberOfCores"].ToString();
+                string maxClockSpeed = obj["MaxClockSpeed"].ToString();
+
+                lbcpu.Text = ($"{cpuName}");
+                // Console.WriteLine($"Arquitetura: {architecture}");
+                //  Console.WriteLine($"Número de Núcleos: {numberOfCores}");
+                //  Console.WriteLine($"Velocidade Máxima do Clock: {maxClockSpeed} MHz");
+            }
+
+            //MEMORIA RAM 
+            long totalMemory = (long)new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            double totalMemoryGB = totalMemory / (1024.0 * 1024.0 * 1024.0);
+            lbmemoriaram.Text = ($"{totalMemoryGB:F2} GB");
+        }
+
         private void CarregaProdutos()
         {
             using (var vc = new vcContext())
@@ -391,7 +428,8 @@ namespace projeto1
             SqlConnectionManager connectionManager = new SqlConnectionManager();
             if (connectionManager.OpenConnection())
             {
-                
+                connectionManager.killConection();
+
                 if (connectionManager.RestoreDatabase(backupFilePath))
                 {
                     connectionManager.killConection();

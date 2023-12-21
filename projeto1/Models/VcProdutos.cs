@@ -290,4 +290,8 @@ public partial class VcProdutos
     public bool IsComboMontagem { get; set; }
 
     public bool IsPizza { get; set; }
+
+    public bool Liberavel { get; set; }
+
+    public bool Liberador { get; set; }
 }
