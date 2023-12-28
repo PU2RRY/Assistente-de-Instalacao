@@ -238,7 +238,7 @@ namespace projeto1
                     // Define o texto com base no valor obtido
                     switch (tipoImpValue)
                     {
-                        case "0":
+                        case "0 ":
                             lbtipoimp.Text = "Não Fiscal";
                             break;
                         case "14":
