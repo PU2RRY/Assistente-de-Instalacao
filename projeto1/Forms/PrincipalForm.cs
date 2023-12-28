@@ -217,6 +217,7 @@ namespace projeto1
             CarregaProdutos();
             PerfilMaquina();
             VersaoBD();
+            TipoMaquina();
         }
         private void VersaoBD()
         {
@@ -226,7 +227,55 @@ namespace projeto1
                 lbversaobd.Text = vbd.FirstOrDefault()?.ToString();
             }
         }
-
+        private void TipoMaquina()
+        {
+            try
+            {
+                using (var vc = new vcContext())
+                {
+                    // Obtém o valor Tipoimp da tabela VcMaquinas (supondo que seja uma string)
+                    var tipoImpValue = vc.VcMaquinas.Select(w => w.Tipoimp).FirstOrDefault();
+                    // Define o texto com base no valor obtido
+                    switch (tipoImpValue)
+                    {
+                        case "0":
+                            lbtipoimp.Text = "Não Fiscal";
+                            break;
+                        case "14":
+                            lbtipoimp.Text = "SAT Dimep ou Elgin";
+                            break;
+                        case "15":
+                            lbtipoimp.Text = "SAT Bematech";
+                            break;
+                        case "16":
+                            lbtipoimp.Text = "NFC-e";
+                            break;
+                        case "17":
+                            lbtipoimp.Text = "SAT Tanca";
+                            break;
+                        case "18":
+                            lbtipoimp.Text = "SAT Sweda";
+                            break;
+                        case "19":
+                            lbtipoimp.Text = "SAT Gertec";
+                            break;
+                        case "20":
+                            lbtipoimp.Text = "API-SAT";
+                            break;
+                        case "21":
+                            lbtipoimp.Text = "SAT Epson";
+                            break;
+                        default:
+                            lbtipoimp.Text = "Tipo SAT";
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ocorreu um erro: {ex.Message}");
+            }
+        }
         private void PerfilMaquina()
         {
             //PROCESSADOR
@@ -333,10 +382,6 @@ namespace projeto1
             destino = "";
             return;
         }
-        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void redesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
@@ -374,9 +419,7 @@ namespace projeto1
             // Este método é executado na thread da interface do usuário após a conclusão do trabalho em segundo plano
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao fazer o backup.");
-
             else if (e.Cancelled) ;
-
             else
             {
                 MessageBox.Show("Backup concluído com sucesso.");
@@ -387,9 +430,7 @@ namespace projeto1
         {
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao restaurar o backup.");
-
             else if (e.Cancelled) ;
-
             else
             {
                 MessageBox.Show("Restauração concluída com sucesso.");
@@ -429,7 +470,6 @@ namespace projeto1
             if (connectionManager.OpenConnection())
             {
                 connectionManager.killConection();
-
                 if (connectionManager.RestoreDatabase(backupFilePath))
                 {
                     connectionManager.killConection();
@@ -440,7 +480,6 @@ namespace projeto1
                 {
                     throw new Exception("Erro ao restaurar o backup.");
                 }
-
                 connectionManager.CloseConnection();
             }
         }
@@ -460,7 +499,6 @@ namespace projeto1
                 lbProcessandoMsn.Text = "Testando Conexão...";
                 return;
             }
-
             if (e.ProgressPercentage == 1)
             {
                 tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
@@ -468,9 +506,7 @@ namespace projeto1
                 lbProcessandoMsn.Text = "";
                 return;
             }
-
         }
-
         private void LigaDesliga(bool chave)
         {
             maquinasDCSPDVToolStripMenuItem.Enabled = chave;
