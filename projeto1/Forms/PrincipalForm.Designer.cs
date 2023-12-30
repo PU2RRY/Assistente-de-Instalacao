@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             menuStrip1 = new MenuStrip();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
@@ -246,7 +245,6 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(lbProcessandoMsn);
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(4, 121);
@@ -256,9 +254,8 @@
             // 
             // lbProcessandoMsn
             // 
-
             lbProcessandoMsn.AutoSize = true;
-            lbProcessandoMsn.Location = new Point(519, 283);
+            lbProcessandoMsn.Location = new Point(531, 13);
             lbProcessandoMsn.Name = "lbProcessandoMsn";
             lbProcessandoMsn.Size = new Size(16, 15);
             lbProcessandoMsn.TabIndex = 5;
@@ -372,6 +369,7 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(lbProcessandoMsn);
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
             panel5.Controls.Add(btDownloadPDV);
@@ -504,7 +502,6 @@
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "MenuPrincipal";
@@ -515,7 +512,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             pBackupload.ResumeLayout(false);
             pBackupload.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
