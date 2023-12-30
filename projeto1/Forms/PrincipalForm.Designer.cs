@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             menuStrip1 = new MenuStrip();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
@@ -260,7 +259,7 @@
             // 
             panel1.BackColor = Color.Silver;
             panel1.Controls.Add(panel6);
-            panel1.Controls.Add(dgvProdutos);
+            panel1.Controls.Add(dgvProdutos);                                              
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
@@ -271,6 +270,12 @@
             // 
             // panel6
             // 
+            lbProcessandoMsn.AutoSize = true;
+            lbProcessandoMsn.Location = new Point(531, 13);
+            lbProcessandoMsn.Name = "lbProcessandoMsn";
+            lbProcessandoMsn.Size = new Size(16, 15);
+            lbProcessandoMsn.TabIndex = 5;
+            lbProcessandoMsn.Text = "...";
             panel6.BackColor = Color.Gray;
             panel6.Controls.Add(lbtipoimp);
             panel6.Controls.Add(label8);
@@ -633,7 +638,6 @@
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "MenuPrincipal";
