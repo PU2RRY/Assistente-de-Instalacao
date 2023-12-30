@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Data;
+using System;
 using System.Diagnostics;
 using System.Management;
 using System.Net;
@@ -23,6 +24,7 @@ using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace projeto1
 {
@@ -36,6 +38,7 @@ namespace projeto1
         public string url = "";
         public string destino = "";
         private WebClient webClient;
+        private readonly vcContext vc;
         private void OcultaExibForm(bool exibe)
         {
             Visible = exibe;
@@ -43,6 +46,7 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
+            //  vc = new vcContext();
             backgroundWorkerRestore = new BackgroundWorker();
             backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
             backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
@@ -210,6 +214,99 @@ namespace projeto1
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             LigaDesliga(false);
+            CarregaProdutos();
+            PerfilMaquina();
+            VersaoBD();
+            TipoMaquina();
+        }
+        private void VersaoBD()
+        {
+            using (var vc = new vcContext())
+            {
+                var vbd = vc.VcConfigura.Select(w => w.VersaoBd).ToList();
+                lbversaobd.Text = vbd.FirstOrDefault()?.ToString();
+            }
+        }
+        private void TipoMaquina()
+        {
+            try
+            {
+                using (var vc = new vcContext())
+                {
+                    // Obtém o valor Tipoimp da tabela VcMaquinas (supondo que seja uma string)
+                    var tipoImpValue = vc.VcMaquinas.Select(w => w.Tipoimp).FirstOrDefault();
+                    // Define o texto com base no valor obtido
+                    switch (tipoImpValue)
+                    {
+                        case "0 ":
+                            lbtipoimp.Text = "Não Fiscal";
+                            break;
+                        case "14":
+                            lbtipoimp.Text = "SAT Dimep ou Elgin";
+                            break;
+                        case "15":
+                            lbtipoimp.Text = "SAT Bematech";
+                            break;
+                        case "16":
+                            lbtipoimp.Text = "NFC-e";
+                            break;
+                        case "17":
+                            lbtipoimp.Text = "SAT Tanca";
+                            break;
+                        case "18":
+                            lbtipoimp.Text = "SAT Sweda";
+                            break;
+                        case "19":
+                            lbtipoimp.Text = "SAT Gertec";
+                            break;
+                        case "20":
+                            lbtipoimp.Text = "API-SAT";
+                            break;
+                        case "21":
+                            lbtipoimp.Text = "SAT Epson";
+                            break;
+                        default:
+                            lbtipoimp.Text = "Tipo SAT";
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ocorreu um erro: {ex.Message}");
+            }
+        }
+        private void PerfilMaquina()
+        {
+            //PROCESSADOR
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+            ManagementObjectCollection collection = searcher.Get();
+            foreach (ManagementObject obj in collection)
+            {
+                string cpuName = obj["Name"].ToString();
+                string architecture = obj["Architecture"].ToString();
+                string numberOfCores = obj["NumberOfCores"].ToString();
+                string maxClockSpeed = obj["MaxClockSpeed"].ToString();
+
+                lbcpu.Text = ($"{cpuName}");
+                // Console.WriteLine($"Arquitetura: {architecture}");
+                //  Console.WriteLine($"Número de Núcleos: {numberOfCores}");
+                //  Console.WriteLine($"Velocidade Máxima do Clock: {maxClockSpeed} MHz");
+            }
+
+            //MEMORIA RAM 
+            long totalMemory = (long)new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            double totalMemoryGB = totalMemory / (1024.0 * 1024.0 * 1024.0);
+            lbmemoriaram.Text = ($"{totalMemoryGB:F2} GB");
+        }
+
+        private void CarregaProdutos()
+        {
+            using (var vc = new vcContext())
+            {
+                var consultaP = vc.VcProdutos.ToList();
+                dgvProdutos.DataSource = consultaP;
+            }
         }
         public static string RetornaOsVersao()
         {
@@ -285,10 +382,6 @@ namespace projeto1
             destino = "";
             return;
         }
-        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void redesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PingForm form2 = new PingForm();
@@ -326,9 +419,7 @@ namespace projeto1
             // Este método é executado na thread da interface do usuário após a conclusão do trabalho em segundo plano
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao fazer o backup.");
-
             else if (e.Cancelled) ;
-
             else
             {
                 MessageBox.Show("Backup concluído com sucesso.");
@@ -339,9 +430,7 @@ namespace projeto1
         {
             if (e.Error != null)
                 MessageBox.Show("Ocorreu um erro ao restaurar o backup.");
-
             else if (e.Cancelled) ;
-
             else
             {
                 MessageBox.Show("Restauração concluída com sucesso.");
@@ -380,6 +469,7 @@ namespace projeto1
             SqlConnectionManager connectionManager = new SqlConnectionManager();
             if (connectionManager.OpenConnection())
             {
+                connectionManager.killConection();
                 if (connectionManager.RestoreDatabase(backupFilePath))
                 {
                     connectionManager.killConection();
@@ -390,7 +480,6 @@ namespace projeto1
                 {
                     throw new Exception("Erro ao restaurar o backup.");
                 }
-
                 connectionManager.CloseConnection();
             }
         }
@@ -410,7 +499,6 @@ namespace projeto1
                 lbProcessandoMsn.Text = "Testando Conexão...";
                 return;
             }
-
             if (e.ProgressPercentage == 1)
             {
                 tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
@@ -418,9 +506,7 @@ namespace projeto1
                 lbProcessandoMsn.Text = "";
                 return;
             }
-
         }
-
         private void LigaDesliga(bool chave)
         {
             maquinasDCSPDVToolStripMenuItem.Enabled = chave;

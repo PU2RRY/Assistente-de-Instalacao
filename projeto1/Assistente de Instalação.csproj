@@ -10,8 +10,8 @@
 	  <ApplicationIcon>robo.ico</ApplicationIcon>
 	  <Copyright>Rodrigo Dev</Copyright>
 	  <PackageReleaseNotes>Beta </PackageReleaseNotes>
-	  <FileVersion>1.1.0.1</FileVersion>
-	  <AssemblyVersion>1.1.0.1</AssemblyVersion>
+	  <FileVersion>1.1.0.4</FileVersion>
+	  <AssemblyVersion>1.1.0.4</AssemblyVersion>
 	  <RepositoryType>Git</RepositoryType>
 	  <Description>Programa desenvolvido para ajudar a instalação do DCS PDV</Description>
   </PropertyGroup>

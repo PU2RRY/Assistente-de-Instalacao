@@ -17,7 +17,6 @@ namespace Assistente_de_Instalação.Forms
 {
     public partial class MaquinasDCSPDV : Form
     {
-        string conexãoVC = "vc";
         private readonly vcContext vc;
         public MaquinasDCSPDV()
         {
