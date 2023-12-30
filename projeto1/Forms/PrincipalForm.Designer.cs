@@ -258,11 +258,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-<<<<<<< HEAD
-=======
             panel1.Controls.Add(panel6);
-            panel1.Controls.Add(dgvProdutos);
->>>>>>> 440a7fe17cc3a7e7182cb3b207f16e46bd788618
+            panel1.Controls.Add(dgvProdutos);                                              
             panel1.Controls.Add(pBackupload);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
@@ -273,14 +270,12 @@
             // 
             // panel6
             // 
-<<<<<<< HEAD
             lbProcessandoMsn.AutoSize = true;
             lbProcessandoMsn.Location = new Point(531, 13);
             lbProcessandoMsn.Name = "lbProcessandoMsn";
             lbProcessandoMsn.Size = new Size(16, 15);
             lbProcessandoMsn.TabIndex = 5;
             lbProcessandoMsn.Text = "...";
-=======
             panel6.BackColor = Color.Gray;
             panel6.Controls.Add(lbtipoimp);
             panel6.Controls.Add(label8);
@@ -318,7 +313,6 @@
             dgvProdutos.RowTemplate.Height = 25;
             dgvProdutos.Size = new Size(583, 226);
             dgvProdutos.TabIndex = 3;
->>>>>>> 440a7fe17cc3a7e7182cb3b207f16e46bd788618
             // 
             // pBackupload
             // 
@@ -461,11 +455,8 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-<<<<<<< HEAD
-=======
             panel5.Controls.Add(label7);
             panel5.Controls.Add(lbversaobd);
->>>>>>> 440a7fe17cc3a7e7182cb3b207f16e46bd788618
             panel5.Controls.Add(lbProcessandoMsn);
             panel5.Controls.Add(btDownloadAtualizador);
             panel5.Controls.Add(lbStatusDownload);
@@ -657,13 +648,10 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-<<<<<<< HEAD
-=======
             panel1.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
->>>>>>> 440a7fe17cc3a7e7182cb3b207f16e46bd788618
             pBackupload.ResumeLayout(false);
             pBackupload.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBackupLoad).EndInit();
