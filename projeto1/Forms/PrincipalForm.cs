@@ -278,7 +278,7 @@ namespace projeto1
         }
         private void PerfilMaquina()
         {
-            //PROCESSADOR
+            //Colete dados do PROCESSADOR
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
             ManagementObjectCollection collection = searcher.Get();
             foreach (ManagementObject obj in collection)
@@ -289,9 +289,9 @@ namespace projeto1
                 string maxClockSpeed = obj["MaxClockSpeed"].ToString();
 
                 lbcpu.Text = ($"{cpuName}");
-                // Console.WriteLine($"Arquitetura: {architecture}");
-                //  Console.WriteLine($"Número de Núcleos: {numberOfCores}");
-                //  Console.WriteLine($"Velocidade Máxima do Clock: {maxClockSpeed} MHz");
+                //Console.WriteLine($"Arquitetura: {architecture}");
+                //Console.WriteLine($"Número de Núcleos: {numberOfCores}");
+                //Console.WriteLine($"Velocidade Máxima do Clock: {maxClockSpeed} MHz");
             }
 
             //MEMORIA RAM 

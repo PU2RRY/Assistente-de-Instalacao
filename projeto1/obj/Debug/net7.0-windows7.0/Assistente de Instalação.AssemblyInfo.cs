@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Rodrigo Dev")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Programa desenvolvido para ajudar a instalação do DCS PDV")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.0.4")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97847b86a5864ca186758a8784ab4fd88a57603b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Assistente de Instalação")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Assistente de Instalação")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.0.4")]
