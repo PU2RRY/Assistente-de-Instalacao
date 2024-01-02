@@ -214,10 +214,10 @@ namespace projeto1
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             LigaDesliga(false);
-            CarregaProdutos();
-            PerfilMaquina();
-            VersaoBD();
-            TipoMaquina();
+           // CarregaProdutos();
+           // PerfilMaquina();
+           // VersaoBD();
+           // TipoMaquina();
         }
         private void VersaoBD()
         {
@@ -490,22 +490,32 @@ namespace projeto1
             if (connectionManager.TestaConexaoLocal())
             {
                 bgwTestaConexao.ReportProgress(1);
+                bgwTestaConexao.ReportProgress(2);
             }
         }
         private void bgwTestaConexao_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (e.ProgressPercentage == 0)
             {
-                lbProcessandoMsn.Text = "Testando Conexão...";
+                lbProcessandoMsn.Text = "Testando Conexão.";
                 return;
             }
             if (e.ProgressPercentage == 1)
             {
                 tsslVicommerce.Image = Assistente_de_Instalação.Properties.Resources.on_24x24;
                 LigaDesliga(true);
-                lbProcessandoMsn.Text = "";
+                lbProcessandoMsn.Text = "Testando Conexão..";
                 return;
             }
+            if(e.ProgressPercentage == 2)
+            {
+                CarregaProdutos();
+                PerfilMaquina();
+                VersaoBD();
+                TipoMaquina();
+                lbProcessandoMsn.Text = "Testando Conexão...";
+            }
+            lbProcessandoMsn.Text = "";
         }
         private void LigaDesliga(bool chave)
         {
@@ -526,6 +536,10 @@ namespace projeto1
         {
             reiniciar = true;
             this.Close();
+        }
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Desculpe função ainda em desenvolvimento");
         }
     }
 }

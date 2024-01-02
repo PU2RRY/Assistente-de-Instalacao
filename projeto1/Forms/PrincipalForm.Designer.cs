@@ -115,6 +115,7 @@
             configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
             configuraçõesToolStripMenuItem.Size = new Size(112, 20);
             configuraçõesToolStripMenuItem.Text = "Configurações";
+            configuraçõesToolStripMenuItem.Click += configuraçõesToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
