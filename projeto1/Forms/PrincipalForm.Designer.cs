@@ -303,8 +303,9 @@
             // 
             // dgvProdutos
             // 
+            dgvProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Location = new Point(262, 62);
+            dgvProdutos.Location = new Point(264, 63);
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.RowTemplate.Height = 25;
             dgvProdutos.Size = new Size(583, 226);
@@ -396,9 +397,9 @@
             lbversaobd.ForeColor = Color.Red;
             lbversaobd.Location = new Point(748, 1);
             lbversaobd.Name = "lbversaobd";
-            lbversaobd.Size = new Size(89, 28);
+            lbversaobd.Size = new Size(24, 28);
             lbversaobd.TabIndex = 4;
-            lbversaobd.Text = "v10.1.1.1";
+            lbversaobd.Text = "...";
             // 
             // lbProcessandoMsn
             // 

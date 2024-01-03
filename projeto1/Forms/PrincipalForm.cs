@@ -46,7 +46,7 @@ namespace projeto1
         public MenuPrincipal()
         {
             InitializeComponent();
-            //  vc = new vcContext();
+            vc = new vcContext();
             backgroundWorkerRestore = new BackgroundWorker();
             backgroundWorkerRestore.DoWork += new DoWorkEventHandler(BackgroundWorkerRestore_DoWork);
             backgroundWorkerRestore.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorkerRestore_RunWorkerCompleted);
@@ -214,18 +214,19 @@ namespace projeto1
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             LigaDesliga(false);
-           // CarregaProdutos();
-           // PerfilMaquina();
-           // VersaoBD();
-           // TipoMaquina();
         }
         private void VersaoBD()
         {
-            using (var vc = new vcContext())
+            try
             {
-                var vbd = vc.VcConfigura.Select(w => w.VersaoBd).ToList();
-                lbversaobd.Text = vbd.FirstOrDefault()?.ToString();
+                using (var vc = new vcContext())
+                {
+                    var vbd = vc.VcConfigura.Select(w => w.VersaoBd).ToList();
+                    lbversaobd.Text = vbd.FirstOrDefault()?.ToString();
+                }
             }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }                             
         }
         private void TipoMaquina()
         {
@@ -266,14 +267,14 @@ namespace projeto1
                             lbtipoimp.Text = "SAT Epson";
                             break;
                         default:
-                            lbtipoimp.Text = "Tipo SAT";
+                            lbtipoimp.Text = "Não encontrado.";
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ocorreu um erro: {ex.Message}");
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}");
             }
         }
         private void PerfilMaquina()
@@ -299,14 +300,35 @@ namespace projeto1
             double totalMemoryGB = totalMemory / (1024.0 * 1024.0 * 1024.0);
             lbmemoriaram.Text = ($"{totalMemoryGB:F2} GB");
         }
-
         private void CarregaProdutos()
-        {
-            using (var vc = new vcContext())
+        {          
+            dgvProdutos.Columns.Clear();
+            dgvProdutos.AutoGenerateColumns = false;
+            var listaprod = new List<KeyValuePair<string, string>>
             {
-                var consultaP = vc.VcProdutos.ToList();
-                dgvProdutos.DataSource = consultaP;
+                new KeyValuePair<string, string>(nameof(VcProdutos.Produto),"Nome produto"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.Cproduto),"Codigo"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.Pvenda),"Preço"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.Venda),"Venda"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.Ncm),"NCM"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.CstPis),"Pis"),
+                new KeyValuePair<string, string>(nameof(VcProdutos.CstCofins),"Cofins"),
+            };
+            foreach ( var kvp in listaprod )
+            {
+                DataGridViewTextBoxColumn colun = new DataGridViewTextBoxColumn();
+                colun.DataPropertyName = kvp.Key;
+                colun.HeaderText = kvp.Value;
+                dgvProdutos.Columns.Add(colun);
             }
+            dgvProdutos.DataSource = vc.VcProdutos.ToList();
+           // dgvProdutos.Columns["Produto"].AutoSizeMode=DataGridViewAutoSizeColumnMode.AllCells ;
+
+            /* using (var vc = new vcContext())
+             {
+                 var consultaP = vc.VcProdutos.ToList();
+                 dgvProdutos.DataSource = consultaP;
+             }*/
         }
         public static string RetornaOsVersao()
         {
